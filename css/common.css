@@ -1,6 +1,21 @@
 /* 폰트 */
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap");
+@import url(./reset.css);
+
+/* 
+Noto sans KR
+Regular 400
+Bold 700
+
+Roboto 
+Regular 400 
+Medium 500 
+Bold 700 
+Extrabold 900 
+*/
+
+/* Varients --------------------------------------------------- */
 
 :root {
   /* font size ------------------ */
@@ -21,4 +36,57 @@
   --mobile-sm-fz: 11px;
 
   /* color ------------------ */
+
+  --background-grad: linear-gradient(180deg, #cdd8cf 38.45%, #a9b8ae 100%);
+  --container-bg-C: #f3f6f5;
+  --line-btn-stroke-C: #e6e6e6;
+  --highlight-C: #afa1ff;
+  --highlight-Pink-C: #ff6f6f;
+  --primary-purple-C: #40367f;
+  --text-primary-C: #444349;
+  --text-secondary-C: #a0a0a0;
+
+  /* shadow & radius ------------------ */
+
+  --box-radius: 10px;
+  --btn-radius: 15px;
+
+  --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  --btn-shadow: 0px 6px 5px rgba(155, 129, 129, 0.25);
+}
+body {
+  background: var(--background-grad) no-repeat;
+  /* 높이 그냥 주지마세요... */
+}
+body * {
+  font-family: "Roboto", sans-serif;
+}
+
+.content-wrapper {
+  background: var(--container-bg-C);
+  width: 1140px;
+  margin: 0 auto;
+}
+
+h1,
+nav .gnb {
+  font-size: var(--web-sm-TT-fz);
+  color: var(--primary-purple-C);
+}
+
+h1 {
+  font-weight: 900;
+}
+
+nav .gnb {
+  font-weight: 500;
+}
+
+.header-main-tt {
+  font-size: var(--web-mainTT-fz);
+  font-weight: 900;
+  color: var(--primary-purple-C);
+}
+
+footer p {
 }
