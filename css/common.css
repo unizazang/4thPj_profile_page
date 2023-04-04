@@ -56,16 +56,16 @@ Extrabold 900
 }
 body {
   background: var(--background-grad) no-repeat;
-  /* 높이 그냥 주지마세요... */
-}
-body * {
+  /* 높이 그냥 주지마세요... 왜줌 */
   font-family: "Roboto", sans-serif;
 }
 
 .content-wrapper {
   background: var(--container-bg-C);
   width: 1140px;
-  margin: 0 auto;
+  margin: 105px auto 140px;
+  border-radius: 67px;
+  box-shadow: 0px 30px 60px 15px rgba(0, 0, 0, 0.1);
 }
 
 h1,
@@ -88,6 +88,11 @@ nav .gnb {
   color: var(--primary-purple-C);
 }
 
+.maincontent h2 {
+  color: var(--primary-purple-C);
+  font-weight: 900;
+}
+
 footer p {
   color: var(--primary-purple-C);
   font-size: var(--mobile-content-fz);
@@ -95,18 +100,30 @@ footer p {
   text-align: center;
 }
 /* btns --------------------- */
-.line-btn {
-  background: var(--container-bg-C);
+
+.line-btn,
+.filled-btn {
   border-radius: var(--btn-radius);
   width: 105px;
   height: 35px;
   line-height: 35px;
-  border: 1px solid var(--line-btn-stroke-C);
   text-align: center;
   font-weight: 700;
   font-size: var(--web-content-fz);
+}
+
+.line-btn {
+  background: var(--container-bg-C);
+  border: 1px solid var(--line-btn-stroke-C);
   color: var(--text-primary-C);
 }
+
+.filled-btn {
+  background: var(--highlight-C);
+  box-shadow: var(--btn-shadow);
+  color: #fff;
+}
+
 /* ---------------------------------- */
 
 .aside-nav {
@@ -114,4 +131,36 @@ footer p {
   height: 9px;
   background: var(--aside-circle-C);
   border-radius: 50%;
+}
+
+.mycontainer {
+  width: 86.49%;
+  margin: 0 auto;
+}
+
+.gnb {
+  padding-top: 61px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gnb nav ul {
+  display: flex;
+}
+.gnb nav ul li {
+  color: var(--primary-purple-C);
+  font-size: var(--web-sm-TT-fz);
+  font-weight: 500;
+  margin-right: 45px;
+}
+
+.gnb nav ul .menu-mail {
+  margin-right: 0;
+  margin-left: 53px;
+  color: var(--highlight-C);
+}
+
+.menu-mail i {
+  margin-right: 11px;
+  color: var(--highlight-C);
 }

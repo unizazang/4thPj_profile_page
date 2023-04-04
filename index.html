@@ -21,20 +21,22 @@
   </head>
   <body>
     <div class="content-wrapper">
-      <header>
-        <h1>Yoonhee's Profile page</h1>
-        <nav>
-          <ul class="gnb">
-            <li class="active">main</li>
-            <li>portfolio</li>
-            <li>contact</li>
-            <li class="menu-mail">
-              <i class="fa-regular fa-paper-plane"></i>
-              mail me!
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <div class="mycontainer">
+        <header class="gnb">
+          <h1>Yoonhee's Profile page</h1>
+          <nav>
+            <ul>
+              <li class="active">main</li>
+              <li>portfolio</li>
+              <li>contact</li>
+              <li class="menu-mail">
+                <i class="fa-regular fa-paper-plane"></i>
+                mail me!
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
       <!-- 여기까지 자르는게 좋을듯 -->
       <!-- 이거에서 다시 잘라 >>>> ssssㄴㄴㄴㄴ 완전 아예 안바뀔 부분만... 그냥 헤더 진짜헤더 네브만 해 -->
 
@@ -44,102 +46,111 @@
           <a href="#recent-portfolio"></a>
           <a href="#contact"></a>
         </nav>
-        <header>
+
+        <div class="mycontainer maintitles">
           <h2 class="header-main-tt">Hello, I'm Yoonhee Lee!</h2>
           <h2 class="header-sub-tt">Welcome to my place.</h2>
+        </div>
 
-          <div class="video-area"></div>
-          <span class="mouse-icon">
-            <img src="" alt="" />
-          </span>
-        </header>
+        <div class="video-area"></div>
+        <span class="mouse-icon">
+          <img src="./images/mouse.png" alt="" />
+        </span>
 
-        <section id="profile">
-          <p>
-            <a class="dm-btn"></a>
-            <a class="github-btn"></a>
-            <button class="share-profile">share profile</button>
-          </p>
-          <span><img src="" alt="" /></span>
-          <div class="myprofile">
-            <h2>Yoonhee Lee</h2>
-            <h4>Seoul, Korea</h4>
-            <h3>zifnffk32123@gmail.com</h3>
-            <h3>Web Frontend Developer</h3>
-            <span>freelancer</span>
-          </div>
-          <div class="myskills">
-            <ul>
-              <li class="line-btn">HTML, CSS</li>
-              <li class="line-btn">JavaScript</li>
-              <li class="line-btn">React</li>
-              <li class="line-btn">PHP</li>
-              <li class="line-btn">JQuery</li>
-              <li class="line-btn">MySQL</li>
-              <li class="line-btn">WordPress</li>
-              <li class="line-btn">UI Design</li>
-            </ul>
-          </div>
-        </section>
-        <section id="recent-portfolio">
-          <h2>Recent Portfolio</h2>
-          <div>
-            <div>
-              <a href="">
-                <img src="" alt="" />
-                <span>LakeSide</span>
-                <span>Renewal</span>
-                <span><i class="fa-solid fa-arrow-right"></i></span>
-              </a>
+        <div class="mycontainer maincontent">
+          <section id="profile">
+            <span class="profile-img"
+              ><span><img src="./images/profile-cat.jpg" alt="" /></span
+            ></span>
+            <p class="profilebtns">
+              <a href=""><i class="fa-regular fa-envelope"></i></a>
+              <a href=""><i class="fa-brands fa-github"></i></a>
+              <button class="share-profile">share profile</button>
+            </p>
+            <div class="myprofile">
+              <h2>Yoonhee Lee</h2>
+              <h4>Seoul, Korea</h4>
+              <h3>zifnffk32123@gmail.com</h3>
+              <h3>Web Frontend Developer</h3>
+              <span>freelancer</span>
             </div>
-            <div>
-              <a href="">
-                <img src="" alt="" />
-                <span>LakeSide</span>
-                <span>Renewal</span>
-                <span><i class="fa-solid fa-arrow-right"></i></span>
-              </a>
+            <div class="myskills">
+              <h2>My Skills</h2>
+              <ul>
+                <li class="line-btn">HTML, CSS</li>
+                <li class="line-btn">JavaScript</li>
+                <li class="line-btn">React</li>
+                <li class="filled-btn">PHP</li>
+                <li class="line-btn">JQuery</li>
+                <li class="line-btn">MySQL</li>
+                <li class="line-btn">WordPress</li>
+                <li class="line-btn">UI Design</li>
+              </ul>
             </div>
+          </section>
+          <!-- // profile  -->
+          <section id="recent-portfolio">
+            <h2>Recent Portfolio</h2>
             <div>
-              <a href="">
-                <img src="" alt="" />
-                <span>LakeSide</span>
-                <span>Renewal</span>
-                <span><i class="fa-solid fa-arrow-right"></i></span>
-              </a>
+              <div>
+                <a href="">
+                  <img src="" alt="" />
+                  <span>LakeSide</span>
+                  <span>Renewal</span>
+                  <span><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+              </div>
+              <div>
+                <a href="">
+                  <img src="" alt="" />
+                  <span>LakeSide</span>
+                  <span>Renewal</span>
+                  <span><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+              </div>
+              <div>
+                <a href="">
+                  <img src="" alt="" />
+                  <span>LakeSide</span>
+                  <span>Renewal</span>
+                  <span><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+              </div>
+              <a href="">more works <i class="fa-solid fa-arrow-right"></i></a>
             </div>
-            <a href="">more works <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </section>
-        <section id="contact">
-          <form action="">
-            <label for="cpname"></label>
-            <input
-              type="text"
-              id="cpname"
-              name="cpname"
-              placeholder="company name"
-            />
+          </section>
+          <!-- // recent portfolio -->
+          <section id="contact">
+            <form action="">
+              <label for="cpname"></label>
+              <input
+                type="text"
+                id="cpname"
+                name="cpname"
+                placeholder="company name"
+              />
 
-            <label for="email"></label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              placeholder="email address"
-            />
-            <label for="message"></label>
-            <textarea
-              name="message"
-              id="message"
-              cols="30"
-              rows="10"
-              placeholder="message"
-            >
-            </textarea>
-            <button>send</button>
-          </form>
-        </section>
+              <label for="email"></label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="email address"
+              />
+              <label for="message"></label>
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                placeholder="message"
+              >
+              </textarea>
+              <button>send</button>
+            </form>
+          </section>
+          <!-- // contact -->
+        </div>
       </main>
       <a href="" id="go-top"><i class="fa-solid fa-chevron-up"></i></a>
       <footer>
