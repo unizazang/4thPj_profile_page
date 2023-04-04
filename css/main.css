@@ -15,4 +15,5 @@ body {
   margin: 0 auto;
   padding-top: 744px;
   background: #ccc;
+  border-radius: var(--box-radius);
 }

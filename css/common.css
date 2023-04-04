@@ -30,7 +30,6 @@ Extrabold 900
   --web-sm-content-fz: 14px;
 
   --tab-TT-fz: 18px;
-  --tab-content-fz: 12px;
 
   --mobile-content-fz: 12px;
   --mobile-sm-fz: 11px;
@@ -45,6 +44,7 @@ Extrabold 900
   --primary-purple-C: #40367f;
   --text-primary-C: #444349;
   --text-secondary-C: #a0a0a0;
+  --aside-circle-C: #868686;
 
   /* shadow & radius ------------------ */
 
@@ -89,4 +89,29 @@ nav .gnb {
 }
 
 footer p {
+  color: var(--primary-purple-C);
+  font-size: var(--mobile-content-fz);
+  font-weight: 500;
+  text-align: center;
+}
+/* btns --------------------- */
+.line-btn {
+  background: var(--container-bg-C);
+  border-radius: var(--btn-radius);
+  width: 105px;
+  height: 35px;
+  line-height: 35px;
+  border: 1px solid var(--line-btn-stroke-C);
+  text-align: center;
+  font-weight: 700;
+  font-size: var(--web-content-fz);
+  color: var(--text-primary-C);
+}
+/* ---------------------------------- */
+
+.aside-nav {
+  width: 9px;
+  height: 9px;
+  background: var(--aside-circle-C);
+  border-radius: 50%;
 }
