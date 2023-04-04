@@ -1,0 +1,24 @@
+/* 폰트 */
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap");
+
+:root {
+  /* font size ------------------ */
+  --web-mainTT-fz: 50px;
+  --tab-mainTT-fz: 40px;
+  --mob-mainTT-fz: 30px;
+  /* h1 */
+
+  --web-TT-fz: 25px;
+  --web-sm-TT-fz: 20px;
+  --web-content-fz: 15px;
+  --web-sm-content-fz: 14px;
+
+  --tab-TT-fz: 18px;
+  --tab-content-fz: 12px;
+
+  --mobile-content-fz: 12px;
+  --mobile-sm-fz: 11px;
+
+  /* color ------------------ */
+}
