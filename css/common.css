@@ -132,6 +132,20 @@ footer p {
   color: #fff;
 }
 
+.white-btn {
+  font-size: var(--mobile-content-fz);
+  border-radius: var(--btn-radius);
+  line-height: 35px;
+  text-align: center;
+  font-weight: 700;
+  border: 1px solid var(--line-btn-stroke-C);
+  padding: 10.5px 15px;
+}
+
+.white-btn i {
+  color: var(--highlight-C);
+}
+
 /* ---------------------------------- */
 
 .aside-nav {

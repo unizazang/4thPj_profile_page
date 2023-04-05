@@ -1,0 +1,69 @@
+@import url(./common.css);
+
+:root {
+  /*  */
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  color: var(--text-primary-C);
+  font-weight: 400;
+}
+body > header,
+main > header {
+  font-family: "Roboto", sans-serif;
+}
+
+.header-main-tt {
+  margin: 115px 0 40px;
+}
+
+figure figcaption h4 {
+  font-weight: 700;
+  font-size: var(--web-sm-TT-fz);
+  margin: 25px 0 15px;
+}
+
+figure figcaption p {
+  font-size: var(--web-sm-content-fz);
+  line-height: 23px;
+  width: 88%;
+}
+
+.skilltags {
+  width: 470px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.skilltags a {
+  width: 22%;
+  transition: 0.3s;
+}
+.skilltags a:hover {
+  background: var(--highlight-C);
+  box-shadow: var(--btn-shadow);
+  color: #fff;
+  transform: translateY(-6px);
+}
+
+.pf-wrap {
+  display: flex;
+  gap: 56px;
+  flex-wrap: wrap;
+}
+
+.pf-card {
+}
+
+.pf-card figure {
+  width: 291px;
+}
+
+.pf-thumb {
+  display: inline-block;
+  border-radius: var(--box-radius);
+  width: 100%;
+  height: 380px;
+  background: #ccc;
+}
