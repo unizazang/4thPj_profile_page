@@ -104,8 +104,9 @@ footer p {
 .line-btn,
 .filled-btn {
   border-radius: var(--btn-radius);
-  width: 105px;
-  height: 35px;
+  /* width: 105px; */
+  /* 너비주지마세요 패딩으로처리하세요 내용만큼만 나오라고하면되잖아 */
+  /* height: 35px; */
   line-height: 35px;
   text-align: center;
   font-weight: 700;

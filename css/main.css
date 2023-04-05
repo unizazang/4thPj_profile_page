@@ -2,6 +2,7 @@
 
 :root {
   --lightgray-C: #ececec;
+  --typo-gray-C: #a9a9a9;
 }
 
 body {
@@ -124,16 +125,103 @@ body {
 .myprofile h2 {
   margin-bottom: 14px;
 }
-.myprofile h3,
+
 .myprofile h4 {
-  margin-bottom: 9px;
+  margin-bottom: 11px;
 }
-.myprofile h4 {
+.myprofile > h4 {
   font-weight: 500;
   font-size: var(--web-content-fz);
   color: var(--text-secondary-C);
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .myprofile > h3 {
   font-weight: 400;
+}
+
+.flag {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+}
+.flag img {
+  width: 100%;
+}
+
+.profiletag {
+  margin-top: 9px;
+  display: flex;
+  align-items: center;
+}
+.profiletag h3 {
+  display: inline-block;
+  font-size: var(--web-content-fz);
+  font-weight: 500;
+  color: #fff;
+  background: var(--highlight-Pink-C);
+  padding: 3px 2px;
+  box-sizing: border-box;
+}
+.profiletag > span {
+  color: var(--typo-gray-C);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.profiletag > span::after {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  position: absolute;
+  /* right: calc(-100% - 10px); */
+
+  left: -10px;
+  background: var(--typo-gray-C);
+}
+
+/* ---------------------------------- */
+
+.myskills {
+  margin-bottom: 120px;
+}
+
+.myskills > h2,
+#recent-portfolio > h2 {
+  margin-bottom: 50px;
+}
+
+.myprofile {
+  padding-bottom: 50px;
+  border-bottom: 1px solid var(--line-btn-stroke-C);
+  margin-bottom: 70px;
+}
+.skilltags {
+  width: 470px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.skilltags li {
+  width: 22%;
+}
+
+#recent-portfolio {
+}
+.pf-tt {
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.pf-tt > span {
+  display: block;
+  text-align: center;
 }
