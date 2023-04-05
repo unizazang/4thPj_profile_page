@@ -9,13 +9,16 @@ body {
   color: var(--text-primary-C);
   font-weight: 400;
 }
-body > header,
-main > header {
+header {
   font-family: "Roboto", sans-serif;
 }
 
 .header-main-tt {
   margin: 115px 0 40px;
+}
+
+.portfolio-list {
+  padding-bottom: 234px;
 }
 
 figure figcaption h4 {
@@ -28,6 +31,7 @@ figure figcaption p {
   font-size: var(--web-sm-content-fz);
   line-height: 23px;
   width: 88%;
+  padding-bottom: 17px;
 }
 
 .skilltags {
@@ -35,12 +39,14 @@ figure figcaption p {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  margin-bottom: 97px;
 }
 .skilltags a {
   width: 22%;
   transition: 0.3s;
 }
-.skilltags a:hover {
+.skilltags a:hover,
+.skilltags a.active {
   background: var(--highlight-C);
   box-shadow: var(--btn-shadow);
   color: #fff;
@@ -48,12 +54,10 @@ figure figcaption p {
 }
 
 .pf-wrap {
+  /* li가 아니라 ul한테 줘야지... */
   display: flex;
   gap: 56px;
   flex-wrap: wrap;
-}
-
-.pf-card {
 }
 
 .pf-card figure {
@@ -66,4 +70,20 @@ figure figcaption p {
   width: 100%;
   height: 380px;
   background: #ccc;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.pf-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pf-card figcaption {
+  display: none;
+}
+
+figcaption.active {
+  display: inline-block;
 }

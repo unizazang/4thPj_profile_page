@@ -1,0 +1,129 @@
+:root {
+  /*  */
+  --vivid-purple-C: #8d80dd;
+  --tags-radius: 6px;
+  --tags-shadow: 0px 2px 3px rgba(124, 124, 124, 0.2);
+  --round-btn-radius: 15px;
+  --p-btn-shadow: 0px 4px 4px rgba(109, 88, 107, 0.25);
+
+  --intro-TT-fz: 29px;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  color: var(--text-primary-C);
+  font-weight: 400;
+}
+
+header {
+  font-family: "Roboto", sans-serif;
+}
+
+h2,
+h3 {
+  font-weight: 700;
+}
+
+#pf-intro h2 {
+  font-size: var(--intro-TT-fz);
+  margin-bottom: 23px;
+}
+
+#pf-points h2,
+#pf-images h2 {
+  font-size: var(--web-TT-fz);
+}
+
+.back {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--highlight-C);
+  margin: 106px 0 14px;
+  font-size: var(--web-very-sm-fz);
+  line-height: var(--web-very-sm-fz);
+}
+
+.back i {
+  font-size: var(--web-sm-content-fz);
+  margin-right: 3px;
+}
+
+.header-main-tt {
+  margin-bottom: 89px;
+}
+#pf-intro {
+  display: flex;
+  gap: 20px;
+}
+
+.pf-big-thumb {
+  flex: 1;
+  background: #ccc;
+  border-radius: var(--box-radius);
+  box-shadow: var(--box-shadow);
+}
+.pf-description {
+  flex: 1;
+  padding: 0 53px 40px 97px;
+  border-bottom: var(--hr-stroke);
+}
+
+.pf-description h4 {
+  font-size: var(--web-very-sm-fz);
+  font-weight: 700;
+  color: var(--text-secondary-C);
+  margin-bottom: 21px;
+}
+
+.pf-description .desc {
+  line-height: 24px;
+  font-size: var(--web-content-fz);
+  margin-bottom: 67px;
+}
+.tags {
+  display: flex;
+  gap: 12px;
+}
+
+.tags p {
+  font-size: var(--web-content-fz);
+  font-weight: 500;
+  display: inline-block;
+  color: var(--vivid-purple-C);
+  padding: 2px 4px 3px;
+  border-radius: var(--tags-radius);
+  box-shadow: var(--tags-shadow);
+  margin-bottom: 29px;
+}
+
+#pf-points {
+  padding-top: 142px;
+}
+.detail-w-btn,
+.detail-git-btn {
+  border-radius: var(--round-btn-radius);
+  font-size: var(--web-sm-content-fz);
+  color: var(--text-primary-C);
+  padding: 9px 17px;
+  box-shadow: var(--p-btn-shadow);
+}
+
+.detail-w-btn {
+  outline: 2px solid var(--highlight-C);
+  margin-right: 20px;
+}
+
+.detail-git-btn {
+  font-size: var(--web-very-sm-fz);
+}
+
+.detail-git-btn i {
+  font-size: var(--web-TT-fz);
+  line-height: 35px;
+  vertical-align: bottom;
+}
+
+/* -------------------------- */
+
+#pf-points .points-wrapper {
+}

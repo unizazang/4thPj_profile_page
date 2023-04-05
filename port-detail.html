@@ -26,12 +26,17 @@
           <h1>Yoonhee's Profile page</h1>
           <nav>
             <ul>
-              <li class="active">main</li>
-              <li>portfolio</li>
-              <li>contact</li>
+              <li class="active">
+                <a href="">main</a>
+              </li>
+              <li><a href="">portfolio</a></li>
+              <li>
+                <a href="">contact</a>
+              </li>
               <li class="menu-mail">
-                <i class="fa-regular fa-paper-plane"></i>
-                mail me!
+                <a href=""
+                  ><i class="fa-regular fa-paper-plane"></i> mail me!</a
+                >
               </li>
             </ul>
           </nav>
@@ -46,35 +51,45 @@
             <a href="#pf-images"></a>
           </nav>
           <header>
-            <a href=""><i class="fa-solid fa-chevron-left"></i>back to list</a>
+            <a href="" class="back"
+              ><i class="fa-solid fa-chevron-left"></i>back to list</a
+            >
             <h2 class="header-main-tt">Portfolio Detail</h2>
           </header>
           <!-- ========================== 섹션 시작 ================================ -->
           <section id="pf-intro">
-            <h2>LakeSide 홈페이지 리뉴얼</h2>
-            <h4>2023. 02. 10</h4>
-            <div class="tags">
-              <p>HTML, CSS</p>
-              <p>JavaScript</p>
-              <p>JQuery</p>
-              <p>PHP</p>
+            <div class="pf-big-thumb">
+              <img src="" alt="" />
             </div>
-            <p class="desc">
-              html, css, javascript를 이용하여 반응형 웹사이트를 구축했습니다.
-              사랑의 이것을 이용하여 별과 얼마나 싶이 끝에 보이는 때문이다.
-              실현에서만 든 능히 그들은 있다. 끝에 보이는 때문이다. 은 동산에는
-              넣는 아름다우냐? 되려니와, 튼튼하며, 아니더면, 그것은 작고 있으랴?
-              끝에 얼음에 우리 찾아다녀도, 운다.
-            </p>
-            <a href=""
-              >페이지로 이동
-              <i class="fa-solid fa-arrow-up-right-from-square"></i
-            ></a>
-            <a href=""><i class="fa-brands fa-github"></i> Github</a>
+            <div class="pf-description">
+              <h2>LakeSide 홈페이지 리뉴얼</h2>
+              <h4>2023. 02. 10</h4>
+              <div class="tags">
+                <p>HTML, CSS</p>
+                <p>JavaScript</p>
+                <p>JQuery</p>
+                <p>PHP</p>
+              </div>
+              <p class="desc">
+                html, css, javascript를 이용하여 반응형 웹사이트를 구축했습니다.
+                사랑의 이것을 이용하여 별과 얼마나 싶이 끝에 보이는 때문이다.
+                실현에서만 든 능히 그들은 있다. 끝에 보이는 때문이다. 은
+                동산에는 넣는 아름다우냐? 되려니와, 튼튼하며, 아니더면, 그것은
+                작고 있으랴? 끝에 얼음에 우리 찾아다녀도, 운다.
+              </p>
+              <a href="" class="detail-w-btn"
+                >페이지로 이동
+                <i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+              <a href="" class="detail-git-btn"
+                ><i class="fa-brands fa-github"></i> Github</a
+              >
+            </div>
           </section>
           <!-- ======================== // 포폴소개 ================================== -->
           <section id="pf-points">
-            <ul>
+            <h2>주요 포인트</h2>
+            <ul class="points-wrapper">
               <li>
                 <img src="" alt="" />
                 <h3>본문 바로가기</h3>

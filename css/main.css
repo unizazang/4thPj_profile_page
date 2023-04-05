@@ -140,10 +140,13 @@ body {
   left: 50%;
   bottom: 187px;
   transform: translateX(-50%);
+
+  animation: mousebounce 0.8s infinite forwards;
 }
 .mouse-icon img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .myprofile h2 {
@@ -210,8 +213,12 @@ body {
 
 /* ---------------------------------- */
 
-.myskills {
+/* .myskills {
   margin-bottom: 120px;
+} */
+
+#recent-portfolio {
+  padding-top: 120px;
 }
 
 .myskills > h2,
@@ -233,14 +240,13 @@ body {
 }
 .skilltags li {
   width: 22%;
-  transition: 0.3s;
 }
-.skilltags li:hover {
+/* .skilltags li:hover {
   background: var(--highlight-C);
   box-shadow: var(--btn-shadow);
   color: #fff;
   transform: translateY(-6px);
-}
+} */
 
 .pf-tt {
   margin-top: 14px;
@@ -346,6 +352,46 @@ body {
   margin-left: 6px;
 }
 
+#recent-portfolio > p a:hover i {
+  transition: 0.3s;
+  animation: bounce 0.7s forwards ease-in infinite;
+}
+
+@keyframes mousebounce {
+  0% {
+    transform: translateX(-50%) translateY(0);
+    animation-timing-function: ease-in;
+  }
+
+  45% {
+    transform: translateX(-50%) translateY(60%);
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  90% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-4px);
+  }
+  60% {
+    transform: translateX(3px);
+  }
+
+  80% {
+    transform: translateX(9px);
+  }
+  100% {
+    transform: translateX(-1px);
+  }
+}
+
 #contact > h2 {
   padding-top: 82px;
   text-align: center;
@@ -364,6 +410,7 @@ body {
   padding-left: 15px;
   font-family: "Noto Sans KR", sans-serif;
   font-size: var(--web-sm-content-fz);
+  transition: 0.3s ease-in;
 }
 
 #contact > form textarea {
@@ -398,11 +445,12 @@ body {
   width: 105px;
   align-self: center;
   margin-bottom: 98px;
-  transition: 0.3s;
+  transition-property: color;
+  transition-property: background;
 }
 
 #contact > form button:hover {
   color: var(--highlight-C);
-  outline: 1px solid var(--highlight-C);
+  outline: 2px solid var(--highlight-C);
   background: #fff;
 }
