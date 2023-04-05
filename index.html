@@ -43,7 +43,7 @@
       <main>
         <nav class="aside-nav">
           <a href="#profile"></a>
-          <a href="#recent-portfolio"></a>
+          <a href="#recent-portfolio" class="active"></a>
           <a href="#contact"></a>
         </nav>
 
@@ -52,10 +52,12 @@
           <h2 class="header-sub-tt">Welcome to my place.</h2>
         </div>
 
-        <div class="video-area"></div>
-        <span class="mouse-icon">
-          <img src="./images/mouse.png" alt="" />
-        </span>
+        <div class="headercontent">
+          <div class="video-area"></div>
+          <span class="mouse-icon">
+            <img src="./images/mouse.png" alt="" />
+          </span>
+        </div>
 
         <div class="mycontainer maincontent">
           <section id="profile">
@@ -89,7 +91,7 @@
                 <li class="line-btn">HTML, CSS</li>
                 <li class="line-btn">JavaScript</li>
                 <li class="line-btn">React</li>
-                <li class="filled-btn">PHP</li>
+                <li class="line-btn">PHP</li>
                 <li class="line-btn">JQuery</li>
                 <li class="line-btn">MySQL</li>
                 <li class="line-btn">WordPress</li>
@@ -100,44 +102,48 @@
           <!-- // profile  -->
           <section id="recent-portfolio">
             <h2>Recent Portfolio</h2>
-            <div>
-              <div>
-                <a href="">
-                  <img src="" alt="" />
-                  <div class="pf-tt">
-                    <span>LakeSide</span>
-                    <span>Renewal</span>
-                    <span><i class="fa-solid fa-arrow-right"></i></span>
-                  </div>
+            <div class="portfolio">
+              <div class="pf-each">
+                <img src="./images/acme.jpeg" alt="" />
+                <!-- 이미지 부모, 100% 이건 맞는데 이미지 마다 줄 필요는 없고 그냥 큰 부모가 있잖아요 지금? ㄱㅊ -->
+
+                <a class="pf-tt">
+                  <h4>LakeSide</h4>
+                  <!-- wpahr, 제목, 링크
+                      이미지엔 어차피 링크 못거니까 얘한테 줘(클릭하려고해봤자 글자가 올라와서 가릴거잖아요)
+                    
+                    + 이거 스팬아니고 제목이에요 -->
+                  <h4>Renewal</h4>
+                  <span><i class="fa-solid fa-arrow-right"></i></span>
                 </a>
               </div>
-              <div>
-                <a href="">
-                  <img src="" alt="" />
-                  <div class="pf-tt">
-                    <span>LakeSide</span>
-                    <span>Renewal</span>
-                    <span><i class="fa-solid fa-arrow-right"></i></span>
-                  </div>
+              <div class="pf-each">
+                <img src="./images/acme.jpeg" alt="" />
+                <a class="pf-tt">
+                  <h4>LakeSide</h4>
+                  <h4>Renewal</h4>
+                  <span><i class="fa-solid fa-arrow-right"></i></span>
                 </a>
               </div>
-              <div>
-                <a href="">
-                  <img src="" alt="" />
-                  <div class="pf-tt">
-                    <span>LakeSide</span>
-                    <span>Renewal</span>
-                    <span><i class="fa-solid fa-arrow-right"></i></span>
-                  </div>
+              <div class="pf-each">
+                <img src="./images/acme.jpeg" alt="" />
+                <a class="pf-tt">
+                  <h4>LakeSide</h4>
+                  <h4>Renewal</h4>
+                  <span><i class="fa-solid fa-arrow-right"></i></span>
                 </a>
               </div>
-              <a href="">more works <i class="fa-solid fa-arrow-right"></i></a>
             </div>
+            <p>
+              <a href="">more works <i class="fa-solid fa-arrow-right"></i></a>
+            </p>
+            <!-- 부모없으면 끝에놓을 방법 없어요 p태그로 감싸던지 뭐...  -->
           </section>
           <!-- // recent portfolio -->
           <section id="contact">
+            <h2>Contact</h2>
             <form action="">
-              <label for="cpname"></label>
+              <label for="cpname">company name</label>
               <input
                 type="text"
                 id="cpname"
@@ -145,23 +151,22 @@
                 placeholder="company name"
               />
 
-              <label for="email"></label>
+              <label for="email">email address</label>
               <input
                 type="text"
                 id="email"
                 name="email"
                 placeholder="email address"
               />
-              <label for="message"></label>
+              <label for="message">message</label>
               <textarea
                 name="message"
                 id="message"
                 cols="30"
                 rows="10"
                 placeholder="message"
-              >
-              </textarea>
-              <button>send</button>
+              ></textarea>
+              <button class="filled-btn">send</button>
             </form>
           </section>
           <!-- // contact -->

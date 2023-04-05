@@ -3,6 +3,9 @@
 :root {
   --lightgray-C: #ececec;
   --typo-gray-C: #a9a9a9;
+
+  --form-focus-C: #0094ff;
+  --form-focus-shadow: 0px 4px 4px rgba(90, 75, 255, 0.2);
 }
 
 body {
@@ -34,6 +37,7 @@ body {
   padding-top: 744px;
   background: #ccc;
   border-radius: var(--box-radius);
+  position: relative;
 }
 
 .profiletop {
@@ -48,6 +52,7 @@ body {
   gap: 25px;
   align-items: center;
   /* 안되던이유 : 얘가 기본값이 stretch라... 늘어나잖아요 */
+  margin-top: 20px;
 }
 
 .profile-img,
@@ -103,6 +108,17 @@ body {
   background: var(--highlight-C);
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.05);
   border-radius: var(--box-radius);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.share-profile:hover {
+  /* background: var(--highlight-Pink-C); */
+  /* background: var(--hazy-pink-C); */
+  transform: translateY(-3px);
+  background: #fff;
+  color: var(--primary-purple-C);
+  box-shadow: 0 4px 4px rgba(75, 29, 107, 0.3);
 }
 
 .profiletag {
@@ -112,10 +128,18 @@ body {
 
 /* -------------------- */
 
+.headercontent {
+  position: relative;
+}
+
 .mouse-icon {
-  display: inline-block;
+  /* display: inline-block; */
   width: 25px;
   height: 25px;
+  position: absolute;
+  left: 50%;
+  bottom: 187px;
+  transform: translateX(-50%);
 }
 .mouse-icon img {
   width: 100%;
@@ -191,13 +215,14 @@ body {
 }
 
 .myskills > h2,
-#recent-portfolio > h2 {
+#recent-portfolio > h2,
+#contact > h2 {
   margin-bottom: 50px;
 }
 
 .myprofile {
   padding-bottom: 50px;
-  border-bottom: 1px solid var(--line-btn-stroke-C);
+  border-bottom: var(--hr-stroke);
   margin-bottom: 70px;
 }
 .skilltags {
@@ -208,20 +233,176 @@ body {
 }
 .skilltags li {
   width: 22%;
+  transition: 0.3s;
 }
-
-#recent-portfolio {
-}
-.pf-tt {
-  font-weight: 500;
+.skilltags li:hover {
+  background: var(--highlight-C);
+  box-shadow: var(--btn-shadow);
   color: #fff;
-  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
+  transform: translateY(-6px);
 }
 
-.pf-tt > span {
+.pf-tt {
+  margin-top: 14px;
+  position: absolute;
+  font-weight: 500;
+  font-size: var(--web-sm-TT-fz);
+  color: #fff;
+  letter-spacing: 0.05em;
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+}
+
+.pf-tt > * {
   display: block;
   text-align: center;
+}
+
+.portfolio .pf-each:hover .pf-tt {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: 0.4s;
+  z-index: 2;
+}
+
+.portfolio .pf-each {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio .pf-each::after {
+  opacity: 0;
+  visibility: hidden;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(176, 176, 176, 0.2) 0%,
+    rgba(0, 0, 0, 0.8) 85%
+  );
+  transition: 0.3s;
+}
+
+.portfolio .pf-each:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pf-tt > h4:first-of-type {
+  margin-bottom: 10px;
+}
+.pf-tt > h4:nth-of-type(2) {
+  margin-bottom: 14px;
+}
+
+.portfolio {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.portfolio .pf-each {
+  width: 298px;
+  height: 380px;
+  background: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--box-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.pf-each > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#recent-portfolio > p {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+
+  margin-top: 25px;
+  padding-bottom: 81px;
+  border-bottom: var(--hr-stroke);
+}
+
+#recent-portfolio > p a {
+  font-weight: 500;
+  font-size: var(--web-sm-content-fz);
+  color: var(--primary-purple-C);
+}
+#recent-portfolio > p a i {
+  margin-left: 6px;
+}
+
+#contact > h2 {
+  padding-top: 82px;
+  text-align: center;
+}
+#contact > form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 302px;
+}
+#contact > form input,
+#contact > form textarea {
+  border-radius: var(--box-radius);
+  border: 2px solid var(--highlight-C);
+  box-shadow: var(--box-shadow);
+  padding-left: 15px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: var(--web-sm-content-fz);
+}
+
+#contact > form textarea {
+  margin-bottom: 44px;
+  padding-top: 15px;
+}
+
+#contact > form label {
+  color: var(--text-primary-C);
+  margin: 0 0 12px 3px;
+}
+
+#contact > form input {
+  height: 35px;
+  line-height: 35px;
+  margin-bottom: 24px;
+}
+#contact > form input::placeholder,
+#contact > form textarea::placeholder {
+  font-family: "Roboto", sans-serif;
+  color: var(--typo-gray-C);
+  font-size: var(--web-content-fz);
+}
+#contact > form input:focus,
+#contact > form textarea:focus {
+  /* border: none; border가 아니라 outline이었다~~~~ */
+  outline: none;
+  border: 2px solid var(--form-focus-C);
+  box-shadow: var(--form-focus-shadow);
+}
+#contact > form button {
+  width: 105px;
+  align-self: center;
+  margin-bottom: 98px;
+  transition: 0.3s;
+}
+
+#contact > form button:hover {
+  color: var(--highlight-C);
+  outline: 1px solid var(--highlight-C);
+  background: #fff;
 }
