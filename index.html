@@ -60,7 +60,7 @@
 
         <div class="headercontent">
           <div class="video-area">
-            <video src="./images/ocean-65560_hr.mp4"></video>
+            <video src="./images/ocean-65560_hr.mp4" muted></video>
           </div>
           <span class="mouse-icon">
             <img src="./images/mouse.png" alt="" />
@@ -194,8 +194,12 @@
     <script src="./js/common.js"></script>
 
     <script>
-      var video = $(".video-area video").get(0);
+      let video = $(".video-area video").get(0);
       video.play();
+
+      video.click(function () {
+        $(this).prop("muted", false);
+      });
     </script>
   </body>
 </html>
