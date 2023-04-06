@@ -32,6 +32,7 @@ h3 {
 #pf-points h2,
 #pf-images h2 {
   font-size: var(--web-TT-fz);
+  margin-bottom: 85px;
 }
 
 .back {
@@ -126,4 +127,56 @@ h3 {
 /* -------------------------- */
 
 #pf-points .points-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 46px;
+}
+
+.points-wrapper > li {
+  text-align: center;
+}
+
+.points-wrapper > li > span {
+  border-radius: var(--box-radius);
+  overflow: hidden;
+  display: inline-block;
+  background: #ccc;
+  width: 298px;
+  height: 303px;
+}
+
+.points-wrapper > li > span img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.point-desc {
+  padding: 0 20px;
+}
+
+.point-desc h3 {
+  font-size: var(--web-sm-TT-fz);
+  margin: 39px 0 19px;
+}
+.point-desc p {
+  font-size: var(--web-sm-content-fz);
+  line-height: 23px;
+}
+
+#pf-images {
+  padding-top: 141px;
+}
+
+.imgs-top {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imgs-top figure {
+  display: flex;
+}
+
+.imgs-top figure figcaption {
+  padding-right: 18px;
 }
