@@ -298,13 +298,16 @@
       crossorigin="anonymous"
     ></script>
     <!-- masonry -->
-    <!-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script> -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <!-- <script>
-      // $(".pf-wrap").masonry({
-      //   // options
-      //   itemSelector: ".pf-card figure",
-      //   columnWidth: 290,
-      // });
+      $(".pf-wrap").masonry({
+        // options
+        itemSelector: ".pf-card",
+        columnWidth: ".pf-card figure",
+        gutter: 54,
+      });
     </script> -->
 
     <script>
@@ -312,9 +315,44 @@
         e.preventDefault();
         $(this).toggleClass("active");
       });
-      $(".pf-card").click(function (e) {
-        e.preventDefault();
-        $(this).find("figcaption").toggleClass("active");
+      $(".pf-card").click(function (e) {});
+    </script>
+
+    <script>
+      // change size of item by toggling gigante class
+
+      $(".pf-wrap").imagesLoaded(function () {
+        // images have loaded
+
+        let layout = $(".pf-wrap").masonry({
+          // options
+          itemSelector: ".pf-card",
+          columnWidth: ".pf-card figure",
+          gutter: 54,
+        });
+
+        layout.on("click", ".pf-card", function (e) {
+          $(this).toggleClass("active");
+          $(this).siblings(".pf-card").removeClass("active");
+          if ($(this).hasClass("active")) {
+            $(this).find("figcaption").slideDown();
+            setTimeout(() => {
+              layout.masonry("layout");
+            }, 200);
+          } else {
+            $(this).find("figcaption").slideUp();
+            setTimeout(() => {
+              layout.masonry("layout");
+            }, 200);
+          }
+          // $(this).find("figcaption").slideToggle();
+          e.preventDefault();
+
+          // trigger layout after item size changes
+          // setTimeout(() => {
+
+          // }, 200);
+        });
       });
     </script>
   </body>
