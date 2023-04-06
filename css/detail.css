@@ -258,8 +258,11 @@ h3 {
 .dt-menubtns {
   margin-bottom: 116px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .dt-menubtns .detail-w-btn i {
@@ -275,4 +278,7 @@ h3 {
   margin-left: 2px;
 }
 
+.dt-menubtns .backtolist {
+  align-self: flex-end;
+}
 /* 도대체 flex 하면 갑자기 왜 너비가 저렇게 됨? */
