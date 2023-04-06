@@ -79,6 +79,7 @@ h1,
 nav .gnb {
   font-size: var(--web-sm-TT-fz);
   color: var(--primary-purple-C);
+  transition: 0.3s;
 }
 
 h1 {
@@ -137,7 +138,8 @@ footer p {
 
 .filled-btn,
 .white-btn:hover,
-.skilltags li:hover {
+.skilltags li:hover,
+.pf-intro .detail-w-btn:hover {
   background: var(--highlight-C);
   box-shadow: var(--btn-shadow);
   color: #fff;
@@ -158,8 +160,13 @@ footer p {
   color: var(--highlight-C);
   margin-left: 5px;
 }
-
-.white-btn:hover i {
+/*
+.dt-menubtns .detail-w-btn:hover {
+  background: var(--hazy-pink-C);
+}
+*/
+.white-btn:hover i,
+.detail-w-btn:hover i {
   color: #fff;
 }
 
@@ -184,6 +191,7 @@ footer p {
   background: var(--aside-circle-C);
   border-radius: 50%;
   display: none;
+  transition: background 0.3s;
 }
 .aside-nav a.active {
   background: var(--hazy-pink-C);
@@ -207,17 +215,32 @@ footer p {
   font-size: var(--web-sm-TT-fz);
   font-weight: 500;
   margin-right: 45px;
+  transition: 0.3s;
+}
+
+.gnb nav ul li a:hover {
+  color: var(--highlight-C);
 }
 
 .gnb nav ul .menu-mail a {
   margin-right: 0;
   margin-left: 53px;
   color: var(--highlight-C);
+  transition: 0.3s;
+}
+
+.gnb nav ul .menu-mail a:hover {
+  color: var(--highlight-Pink-C);
 }
 
 .menu-mail i {
   margin-right: 11px;
   color: var(--highlight-C);
+  transition: 0.3s;
+}
+
+.gnb nav ul .menu-mail a:hover i {
+  color: var(--highlight-Pink-C);
 }
 /* ---------------- */
 

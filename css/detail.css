@@ -62,6 +62,13 @@ h3 {
   background: #ccc;
   border-radius: var(--box-radius);
   box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.pf-big-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .pf-description {
   flex: 1;
@@ -123,12 +130,20 @@ h3 {
   font-size: var(--web-very-sm-fz);
 }
 
+.detail-git-btn:hover {
+  background: var(--text-primary-C);
+  color: #fff;
+}
+
 .detail-git-btn i {
   font-size: var(--web-TT-fz);
   line-height: 35px;
   vertical-align: bottom;
 }
 
+.detail-git-btn:hover i {
+  color: #fff;
+}
 /* -------------------------- */
 
 #pf-points .points-wrapper {
@@ -229,6 +244,8 @@ h3 {
   transform: translateY(-50%);
   left: 50%;
   margin-left: 420px;
+
+  color: var(--text-primary-C);
 }
 
 .more-image {
@@ -258,11 +275,11 @@ h3 {
 .dt-menubtns {
   margin-bottom: 116px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
 
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+.nextprevpost {
+  display: flex;
 }
 
 .dt-menubtns .detail-w-btn i {
@@ -270,10 +287,12 @@ h3 {
 }
 
 .dt-menubtns .detail-w-btn {
+  transition: 0.3s;
   line-height: 1;
+  padding: 10px;
 }
 
-.dt-menubtns .nextpf i {
+.dt-menubtns .nextprevpost a:nth-child(2) i {
   margin-right: 0;
   margin-left: 2px;
 }
@@ -281,4 +300,13 @@ h3 {
 .dt-menubtns .backtolist {
   align-self: flex-end;
 }
-/* 도대체 flex 하면 갑자기 왜 너비가 저렇게 됨? */
+
+.dt-menubtns .detail-w-btn:hover {
+  box-shadow: var(--btn-shadow);
+  transform: translateY(-6px);
+  outline: 2px solid var(--hazy-pink-C);
+}
+
+.dt-menubtns .detail-w-btn:hover i {
+  color: var(--hazy-pink-C);
+}
