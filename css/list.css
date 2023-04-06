@@ -58,6 +58,7 @@ figure figcaption p {
   display: flex;
   gap: 56px;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .pf-card figure {

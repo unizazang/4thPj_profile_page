@@ -40,6 +40,12 @@ body {
   position: relative;
 }
 
+#profile {
+  margin-top: -81px;
+  position: relative;
+  z-index: 1;
+}
+
 .profiletop {
   display: flex;
   justify-content: space-between;

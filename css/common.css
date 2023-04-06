@@ -170,6 +170,7 @@ footer p {
   flex-direction: column;
   gap: 28px;
   position: fixed;
+  z-index: 100;
   left: 50%;
   top: 50%;
   margin-left: 521px;
