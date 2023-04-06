@@ -183,6 +183,7 @@ footer p {
   height: 9px;
   background: var(--aside-circle-C);
   border-radius: 50%;
+  display: none;
 }
 .aside-nav a.active {
   background: var(--hazy-pink-C);

@@ -24,7 +24,7 @@ h3 {
   font-weight: 700;
 }
 
-#pf-intro h2 {
+.pf-intro h2 {
   font-size: var(--intro-TT-fz);
   margin-bottom: 23px;
 }
@@ -52,7 +52,7 @@ h3 {
 .header-main-tt {
   margin-bottom: 89px;
 }
-#pf-intro {
+.pf-intro {
   display: flex;
   gap: 20px;
 }
@@ -76,11 +76,16 @@ h3 {
   margin-bottom: 21px;
 }
 
-.pf-description .desc {
+.pf-description .desc,
+.imgs-top figure figcaption p {
   line-height: 24px;
   font-size: var(--web-content-fz);
+}
+
+.pf-description .desc {
   margin-bottom: 67px;
 }
+
 .tags {
   display: flex;
   gap: 12px;
@@ -143,6 +148,7 @@ h3 {
   background: #ccc;
   width: 298px;
   height: 303px;
+  box-shadow: var(--box-shadow);
 }
 
 .points-wrapper > li > span img {
@@ -175,8 +181,98 @@ h3 {
 
 .imgs-top figure {
   display: flex;
+  gap: 20px;
+  margin-bottom: 60px;
 }
 
 .imgs-top figure figcaption {
-  padding-right: 18px;
+  padding: 0 39px 0 49px;
+  flex: 4;
 }
+
+.imgs-top span {
+  /* width: 559px; */
+  flex: 6;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--box-radius);
+  height: 420px;
+  overflow: hidden;
+}
+
+.imgs-top span img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imgs-top figure figcaption h4 {
+  font-weight: 700;
+  font-size: var(--web-sm-TT-fz);
+}
+
+.imgs-top figure figcaption p {
+  margin-top: 27px;
+}
+
+/* ---------------------------- */
+
+.additionalimgs {
+  position: relative;
+  margin-bottom: 40px;
+  right: 11px;
+}
+
+.additionalimgs .nextbtn {
+  position: absolute;
+  font-size: var(--web-TT-fz);
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  margin-left: 420px;
+}
+
+.more-image {
+  padding-right: 116px;
+}
+
+.slidewrap {
+  margin: 0 11px;
+}
+/* margin-right: 21px; */
+.more-image .image-slide {
+  border-radius: var(--box-radius);
+  box-shadow: var(--box-shadow);
+  background: none;
+  height: 276px;
+  overflow: hidden;
+}
+
+.more-image .image-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ----------- */
+
+.dt-menubtns {
+  margin-bottom: 116px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dt-menubtns .detail-w-btn i {
+  margin-right: 2px;
+}
+
+.dt-menubtns .detail-w-btn {
+  line-height: 1;
+}
+
+.dt-menubtns .nextpf i {
+  margin-right: 0;
+  margin-left: 2px;
+}
+
+/* 도대체 flex 하면 갑자기 왜 너비가 저렇게 됨? */
