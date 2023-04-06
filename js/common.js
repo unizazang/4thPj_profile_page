@@ -13,9 +13,9 @@ function btnFade(btn, ost) {
   }
 }
 
-$(window).scroll(function () {
-  btnFade(topBtn, 750);
-});
+// $(window).scroll(function () {
+
+// });
 
 // aside nav bar 시작 =====
 
@@ -50,14 +50,9 @@ asideNav.click(function (e) {
   });
 });
 
-$(window).scroll(function () {
-  let SCT = $(this).scrollTop();
-  btnFade(asideNav, 300);
-
-  $.each(sections, function (idx, item) {
-    if (SCT >= item.offset().top - 300) {
-      asideNav.removeClass("active");
-      asideNav.eq(idx).addClass("active");
-    }
+topBtn.click(function (e) {
+  e.preventDefault();
+  $("html, body").stop().animate({
+    scrollTop: 0,
   });
 });
