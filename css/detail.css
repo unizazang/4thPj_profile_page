@@ -34,6 +34,10 @@ h3 {
   font-size: var(--web-TT-fz);
   margin-bottom: 85px;
 }
+.back,
+.back i {
+  transition: 0.3s;
+}
 
 .back {
   display: inline-block;
@@ -47,6 +51,11 @@ h3 {
 .back i {
   font-size: var(--web-sm-content-fz);
   margin-right: 3px;
+}
+
+.back:hover,
+.back:hover i {
+  color: var(--highlight-Pink-C);
 }
 
 .header-main-tt {
