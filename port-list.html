@@ -301,14 +301,21 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-    <!-- <script>
-      $(".pf-wrap").masonry({
+    <script>
+      let layout = $(".pf-wrap").masonry({
         // options
         itemSelector: ".pf-card",
         columnWidth: ".pf-card figure",
         gutter: 54,
       });
-    </script> -->
+
+      layout.on("click", ".pf-card", function (e) {
+        e.preventDefault();
+        $(this).toggleClass("active");
+        // trigger layout after item size changes
+        layout.masonry("layout");
+      });
+    </script>
 
     <script>
       $(".skilltags .line-btn").click(function (e) {
@@ -321,7 +328,10 @@
     <script>
       // change size of item by toggling gigante class
 
-      $(".pf-wrap").imagesLoaded(function () {
+      /* 
+     선생님이랑 하던거
+     
+     $(".pf-wrap").imagesLoaded(function () {
         // images have loaded
 
         let layout = $(".pf-wrap").masonry({
@@ -332,8 +342,9 @@
         });
 
         layout.on("click", ".pf-card", function (e) {
+          e.preventDefault();
           $(this).toggleClass("active");
-          $(this).siblings(".pf-card").removeClass("active");
+          // $(this).siblings(".pf-card").removeClass("active");
           if ($(this).hasClass("active")) {
             $(this).find("figcaption").slideDown();
             setTimeout(() => {
@@ -346,14 +357,13 @@
             }, 200);
           }
           // $(this).find("figcaption").slideToggle();
-          e.preventDefault();
 
           // trigger layout after item size changes
           // setTimeout(() => {
 
           // }, 200);
         });
-      });
+      }); */
     </script>
   </body>
 </html>

@@ -95,3 +95,7 @@ figure figcaption p {
 .pf-card figcaption {
   display: none;
 }
+
+.pf-card.active figcaption {
+  display: inline-block;
+}
