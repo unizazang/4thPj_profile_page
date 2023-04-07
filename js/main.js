@@ -11,3 +11,11 @@ $(window).scroll(function () {
     }
   });
 });
+
+// video
+let video = $(".video-area video").get(0);
+video.play();
+
+video.click(function () {
+  $(this).prop("muted", false);
+});

@@ -11,3 +11,17 @@ $(window).scroll(function () {
     }
   });
 });
+
+// slick
+$(".more-image").slick({
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  prevArrow: false,
+  arrows: false,
+});
+
+$(".additionalimgs .nextbtn").click((e) => {
+  e.preventDefault();
+  $(".more-image").slick("slickNext");
+});
