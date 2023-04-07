@@ -57,6 +57,7 @@
           <h2 class="header-main-tt">Hello, I'm Yoonhee Lee!</h2>
           <h2 class="header-sub-tt">Welcome to my place.</h2>
         </div>
+
         <div class="headercontent">
           <div class="video-area">
             <video src="./images/ocean-65560_hr.mp4" muted autoplay></video>
