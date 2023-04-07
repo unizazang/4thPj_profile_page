@@ -1,0 +1,359 @@
+:root {
+  /*  */
+  --vivid-purple-C: #8d80dd;
+  --tags-radius: 6px;
+  --tags-shadow: 0px 2px 3px rgba(124, 124, 124, 0.2);
+  --round-btn-radius: 15px;
+  --p-btn-shadow: 0px 4px 4px rgba(109, 88, 107, 0.25);
+
+  --intro-TT-fz: 29px;
+
+  --thumbnail-shadow: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 75%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  color: var(--text-primary-C);
+  font-weight: 400;
+}
+
+header {
+  font-family: "Roboto", sans-serif;
+}
+
+h2,
+h3 {
+  font-weight: 700;
+}
+
+.pf-intro h2 {
+  font-size: var(--intro-TT-fz);
+  margin-bottom: 23px;
+}
+
+#pf-points h2,
+#pf-images h2 {
+  font-size: var(--web-TT-fz);
+  margin-bottom: 85px;
+}
+.back,
+.back i {
+  transition: 0.3s;
+}
+
+.pf-big-thumb,
+.points-wrapper li span,
+#pf-images figure span,
+.slidewrap .image-slide {
+  position: relative;
+}
+.pf-big-thumb::after,
+.points-wrapper li span::after,
+#pf-images figure span::after,
+.slidewrap .image-slide::after {
+  opacity: 1;
+  visibility: visible;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  background: var(--thumbnail-shadow);
+  transition: 0.5s;
+}
+
+.pf-big-thumb:hover::after,
+.points-wrapper span:hover::after,
+#pf-images figure span:hover::after,
+.slidewrap .image-slide:hover::after {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.back {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--highlight-C);
+  margin: 106px 0 14px;
+  font-size: var(--web-very-sm-fz);
+  line-height: var(--web-very-sm-fz);
+}
+
+.back i {
+  font-size: var(--web-sm-content-fz);
+  margin-right: 3px;
+}
+
+.back:hover,
+.back:hover i {
+  color: var(--highlight-Pink-C);
+}
+
+.header-main-tt {
+  margin-bottom: 89px;
+}
+.pf-intro {
+  display: flex;
+  gap: 20px;
+}
+
+.pf-big-thumb {
+  flex: 1;
+  background: #ccc;
+  border-radius: var(--box-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.pf-big-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pf-description {
+  flex: 1;
+  padding: 0 53px 40px 97px;
+  border-bottom: var(--hr-stroke);
+}
+
+.pf-description h4 {
+  font-size: var(--web-very-sm-fz);
+  font-weight: 700;
+  color: var(--text-secondary-C);
+  margin-bottom: 21px;
+}
+
+.pf-description .desc,
+.imgs-top figure figcaption p {
+  line-height: 24px;
+  font-size: var(--web-content-fz);
+}
+
+.pf-description .desc {
+  margin-bottom: 67px;
+}
+
+.tags {
+  display: flex;
+  gap: 12px;
+}
+
+.tags p {
+  font-size: var(--web-content-fz);
+  font-weight: 500;
+  display: inline-block;
+  color: var(--vivid-purple-C);
+  padding: 2px 4px 3px;
+  border-radius: var(--tags-radius);
+  box-shadow: var(--tags-shadow);
+  margin-bottom: 29px;
+}
+
+#pf-points {
+  padding-top: 142px;
+}
+.detail-w-btn,
+.detail-git-btn {
+  border-radius: var(--round-btn-radius);
+  font-size: var(--web-sm-content-fz);
+  color: var(--text-primary-C);
+  padding: 9px 17px;
+  box-shadow: var(--p-btn-shadow);
+}
+
+.detail-w-btn {
+  outline: 2px solid var(--highlight-C);
+  margin-right: 20px;
+}
+
+.detail-git-btn {
+  font-size: var(--web-very-sm-fz);
+}
+
+.detail-git-btn:hover {
+  background: var(--text-primary-C);
+  color: #fff;
+}
+
+.detail-git-btn i {
+  font-size: var(--web-TT-fz);
+  line-height: 35px;
+  vertical-align: bottom;
+}
+
+.detail-git-btn:hover i {
+  color: #fff;
+}
+/* -------------------------- */
+
+#pf-points .points-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 46px;
+}
+
+.points-wrapper > li {
+  text-align: center;
+}
+
+.points-wrapper > li > span {
+  border-radius: var(--box-radius);
+  overflow: hidden;
+  display: inline-block;
+  background: #ccc;
+  width: 298px;
+  height: 303px;
+  box-shadow: var(--box-shadow);
+}
+
+.points-wrapper > li > span img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.point-desc {
+  padding: 0 20px;
+}
+
+.point-desc h3 {
+  font-size: var(--web-sm-TT-fz);
+  margin: 39px 0 19px;
+}
+.point-desc p {
+  font-size: var(--web-sm-content-fz);
+  line-height: 23px;
+}
+
+#pf-images {
+  padding-top: 141px;
+}
+
+.imgs-top {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imgs-top figure {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.imgs-top figure figcaption {
+  padding: 0 39px 0 49px;
+  flex: 4;
+}
+
+.imgs-top span {
+  /* width: 559px; */
+  flex: 6;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--box-radius);
+  height: 420px;
+  overflow: hidden;
+}
+
+.imgs-top span img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imgs-top figure figcaption h4 {
+  font-weight: 700;
+  font-size: var(--web-sm-TT-fz);
+}
+
+.imgs-top figure figcaption p {
+  margin-top: 27px;
+}
+
+/* ---------------------------- */
+
+.additionalimgs {
+  position: relative;
+  margin-bottom: 40px;
+  right: 11px;
+}
+
+.additionalimgs .nextbtn {
+  position: absolute;
+  font-size: var(--web-TT-fz);
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  margin-left: 420px;
+
+  color: var(--text-primary-C);
+}
+
+.more-image {
+  padding-right: 116px;
+}
+
+.slidewrap {
+  margin: 0 11px;
+}
+/* margin-right: 21px; */
+.more-image .image-slide {
+  border-radius: var(--box-radius);
+  box-shadow: var(--box-shadow);
+  background: none;
+  height: 276px;
+  overflow: hidden;
+}
+
+.more-image .image-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ----------- */
+
+.dt-menubtns {
+  margin-bottom: 116px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nextprevpost {
+  display: flex;
+}
+
+.dt-menubtns .detail-w-btn i {
+  margin-right: 2px;
+}
+
+.dt-menubtns .detail-w-btn {
+  transition: 0.3s;
+  line-height: 1;
+  padding: 10px;
+}
+
+.dt-menubtns .nextprevpost a:nth-child(2) i {
+  margin-right: 0;
+  margin-left: 2px;
+}
+
+.dt-menubtns .backtolist {
+  align-self: flex-end;
+}
+
+.dt-menubtns .detail-w-btn:hover {
+  box-shadow: var(--btn-shadow);
+  transform: translateY(-6px);
+  outline: 2px solid var(--hazy-pink-C);
+}
+
+.dt-menubtns .detail-w-btn:hover i {
+  color: var(--hazy-pink-C);
+}
