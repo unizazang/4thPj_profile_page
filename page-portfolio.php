@@ -84,10 +84,11 @@
         </main>
         <!-- ========================== 메인끝 ================================ -->
 
-<?php get_footer('commonfirst'); ?>
-<!-- 탑버튼 ~ jQuery, common.js까지 -->
+    <?php get_footer('commonfirst'); ?>
+    <!-- 탑버튼 ~ jQuery, common.js까지 -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/list.js"></script>
 
-<script src="<?php bloginfo('template_url'); ?>/js/detail.js"></script>
-
-<?php get_footer('commonsecond'); ?>
-<!-- body, html -->
+    <?php get_footer('commonsecond'); ?>
+    <!-- body, html -->

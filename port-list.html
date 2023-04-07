@@ -20,7 +20,6 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- div 끝에 하나 지워야 -->
     <div class="content-wrapper">
       <div class="mycontainer">
         <header class="gnb">
@@ -300,71 +299,8 @@
     ></script>
     <!-- masonry -->
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-    <script>
-      let layout = $(".pf-wrap").masonry({
-        // options
-        itemSelector: ".pf-card",
-        columnWidth: ".pf-card figure",
-        gutter: 54,
-      });
 
-      layout.on("click", ".pf-card", function (e) {
-        e.preventDefault();
-        $(this).toggleClass("active");
-        // trigger layout after item size changes
-        layout.masonry("layout");
-      });
-    </script>
-
-    <script>
-      $(".skilltags .line-btn").click(function (e) {
-        e.preventDefault();
-        $(this).toggleClass("active");
-      });
-      $(".pf-card").click(function (e) {});
-    </script>
-
-    <script>
-      // change size of item by toggling gigante class
-
-      /* 
-     선생님이랑 하던거
-     
-     $(".pf-wrap").imagesLoaded(function () {
-        // images have loaded
-
-        let layout = $(".pf-wrap").masonry({
-          // options
-          itemSelector: ".pf-card",
-          columnWidth: ".pf-card figure",
-          gutter: 54,
-        });
-
-        layout.on("click", ".pf-card", function (e) {
-          e.preventDefault();
-          $(this).toggleClass("active");
-          // $(this).siblings(".pf-card").removeClass("active");
-          if ($(this).hasClass("active")) {
-            $(this).find("figcaption").slideDown();
-            setTimeout(() => {
-              layout.masonry("layout");
-            }, 200);
-          } else {
-            $(this).find("figcaption").slideUp();
-            setTimeout(() => {
-              layout.masonry("layout");
-            }, 200);
-          }
-          // $(this).find("figcaption").slideToggle();
-
-          // trigger layout after item size changes
-          // setTimeout(() => {
-
-          // }, 200);
-        });
-      }); */
-    </script>
+    <script src="./js/list.js"></script>
   </body>
 </html>
