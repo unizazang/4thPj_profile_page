@@ -1,7 +1,7 @@
 @import url(./common.css);
 
 :root {
-  /*  */
+  --card-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
 }
 
 body {
@@ -83,6 +83,37 @@ figure figcaption p {
   background: #ccc;
   overflow: hidden;
   box-shadow: var(--box-shadow);
+
+  position: relative;
+  transition: 0.4s;
+}
+
+.pf-thumb::after {
+  opacity: 1;
+  visibility: visible;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  background: var(--thumbnail-shadow);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.pf-thumb:hover {
+  transform: translateY(-15px);
+  box-shadow: var(--card-shadow);
+}
+
+.pf-thumb:hover::after,
+.pf-thumb.active::after {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .pf-thumb img {
@@ -99,3 +130,5 @@ figure figcaption p {
 .pf-card.active figcaption {
   display: inline-block;
 }
+
+/* img shadow */
