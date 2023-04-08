@@ -45,9 +45,13 @@ asideNav.click(function (e) {
 
   targetIdx = $(this).index();
 
-  $("html, body").stop().animate({
-    scrollTop: sectionsOST[targetIdx],
-  });
+  $("html, body").stop().animate(
+    {
+      scrollTop: sectionsOST[targetIdx],
+    },
+    600,
+    "easeOutCubic"
+  );
 });
 
 topBtn.click(function (e) {
@@ -56,6 +60,7 @@ topBtn.click(function (e) {
     {
       scrollTop: 0,
     },
-    600
+    900,
+    "easeInQuart"
   );
 });

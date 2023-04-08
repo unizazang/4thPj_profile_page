@@ -53,7 +53,7 @@ body {
 }
 
 #profile {
-  margin-top: -81px;
+  margin-top: -161px;
   position: relative;
   z-index: 1;
 }
@@ -63,6 +63,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 19px;
+  padding-top: 80px;
 }
 
 .profilebtns {
@@ -71,6 +72,14 @@ body {
   align-items: center;
   /* 안되던이유 : 얘가 기본값이 stretch라... 늘어나잖아요 */
   margin-top: 20px;
+}
+.profilebtns a {
+  transition: 0.3s;
+}
+
+.profilebtns a:hover {
+  background: var(--highlight-C);
+  color: #fff;
 }
 
 .profile-img,
@@ -373,7 +382,7 @@ body {
 
 #recent-portfolio > p a:hover i {
   transition: 0.3s;
-  animation: bounce 0.8s forwards ease-in infinite;
+  animation: bounce 0.7s forwards infinite ease-in;
 }
 
 @keyframes mousebounce {
@@ -394,17 +403,17 @@ body {
 
 @keyframes bounce {
   0% {
-    transform: translateX(-2px);
+    transform: translateX(-1px);
   }
   10% {
     transform: translateX(-5px);
   }
 
   80% {
-    transform: translateX(2px);
+    transform: translateX(4px);
   }
   100% {
-    transform: translateX(-1px);
+    transform: translateX(0px);
   }
 }
 

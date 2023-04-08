@@ -258,3 +258,15 @@ footer p {
   margin-left: 502px;
   bottom: 4%;
 }
+
+#go-top i {
+  transition: color 0.3s;
+}
+/* 
+#go-top:hover {
+  box-shadow: var(--btn-shadow);
+} */
+
+#go-top:hover i {
+  color: var(--highlight-Pink-C);
+}
