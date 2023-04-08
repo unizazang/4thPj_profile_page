@@ -52,7 +52,10 @@ asideNav.click(function (e) {
 
 topBtn.click(function (e) {
   e.preventDefault();
-  $("html, body").stop().animate({
-    scrollTop: 0,
-  });
+  $("html, body").stop().animate(
+    {
+      scrollTop: 0,
+    },
+    600
+  );
 });

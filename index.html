@@ -60,7 +60,12 @@
 
         <div class="headercontent">
           <div class="video-area">
-            <video src="./images/ocean-65560_hr.mp4" muted autoplay></video>
+            <video
+              src="./images/ocean-65560_hr.mp4"
+              muted
+              autoplay
+              loop
+            ></video>
           </div>
           <span class="mouse-icon">
             <img src="./images/mouse.png" alt="" />
@@ -151,30 +156,35 @@
           <section id="contact">
             <h2>Contact</h2>
             <form action="">
-              <label for="cpname">company name</label>
-              <input
-                type="text"
-                id="cpname"
-                name="cpname"
-                placeholder="company name"
-              />
-
-              <label for="email">email address</label>
-              <input
-                type="text"
-                id="email"
-                name="email"
-                placeholder="email address"
-              />
-              <label for="message">message</label>
-              <textarea
-                name="message"
-                id="message"
-                cols="30"
-                rows="10"
-                placeholder="message"
-              ></textarea>
-              <button class="filled-btn">send</button>
+              <div class="input-group">
+                <label for="cpname">company name</label>
+                <input
+                  type="text"
+                  id="cpname"
+                  name="cpname"
+                  placeholder="company name"
+                />
+              </div>
+              <div class="input-group">
+                <label for="email">email address</label>
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  placeholder="email address"
+                />
+              </div>
+              <div class="input-group">
+                <label for="message">message</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  cols="30"
+                  rows="10"
+                  placeholder="message"
+                ></textarea>
+                <button class="filled-btn">send</button>
+              </div>
             </form>
           </section>
           <!-- // contact -->
@@ -189,6 +199,11 @@
     <script
       src="https://code.jquery.com/jquery-3.6.4.min.js"
       integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+      integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
       crossorigin="anonymous"
     ></script>
     <script src="./js/common.js"></script>

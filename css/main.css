@@ -152,12 +152,13 @@ body {
 
 .mouse-icon {
   /* display: inline-block; */
-  width: 25px;
-  height: 25px;
+  width: 27px;
+  height: 27px;
   position: absolute;
   left: 50%;
   bottom: 187px;
   transform: translateX(-50%);
+  cursor: pointer;
 
   animation: mousebounce 0.8s infinite forwards;
 }
@@ -433,11 +434,6 @@ body {
   padding-top: 15px;
 }
 
-#contact > form label {
-  color: var(--text-primary-C);
-  margin: 0 0 12px 3px;
-}
-
 #contact > form input {
   height: 35px;
   line-height: 35px;
@@ -468,4 +464,38 @@ body {
   color: var(--highlight-C);
   outline: 2px solid var(--highlight-C);
   background: #fff;
+}
+
+#contact > form .input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: margin 0.3s;
+}
+
+#contact > form label {
+  position: absolute;
+  opacity: 0;
+  left: 3px;
+  top: 0;
+  visibility: hidden;
+  transition: 0.4s;
+  color: var(--text-primary-C);
+  margin: 0 0 12px 3px;
+  font-size: var(--web-content-fz);
+}
+
+#contact > form .input-group:focus-within label {
+  top: -25px;
+  opacity: 1;
+  visibility: visible;
+}
+
+#contact > form .input-group:focus-within {
+  margin-top: 15px;
+}
+
+#contact > form .input-group:focus-within input::placeholder,
+#contact > form .input-group:focus-within textarea::placeholder {
+  opacity: 0;
 }
