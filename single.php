@@ -142,8 +142,8 @@
           </section>
 
             <?php endwhile; else : ?>
-                            <p><?php esc_html_e( '최근 프로젝트가 없습니다.' ); ?></p>
-                            <?php endif; ?>
+              <p><?php esc_html_e( '해당하는 포트폴리오가 없습니다.' ); ?></p>
+            <?php endif; ?>
             <?php wp_reset_query(); ?> 
           <!-- ========================= //주요이미지================================= -->
         </main>
@@ -156,9 +156,10 @@
               >다음 포트폴리오<i class="fa-solid fa-chevron-right"></i
             ></a>
           </div>
-          <a href="" class="detail-w-btn"
+          <a href="<?php bloginfo('template_url'); ?>/category/portfolio/" class="detail-w-btn"
             ><i class="fa-solid fa-list"></i>목록으로</a
           >
+
         </div>
         
         <!-- 추가이미지클릭시 팝업 -->

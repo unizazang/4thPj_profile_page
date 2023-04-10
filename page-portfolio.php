@@ -62,23 +62,20 @@
               <li class="pf-card">
                 <figure>
                   <span class="pf-thumb"
-                    ><img src="./images/acme.jpeg" alt=""
+                    ><img src="<?php bloginfo('template_url'); ?>/images/acme.jpeg" alt=""
                   /></span>
                   <figcaption>
-                    <h4>LakeSide 홈페이지 리뉴얼</h4>
+                    <h4><?php the_field('top-title'); ?></h4>
                     <p>
-                      html, css, javascript를 이용하여 반응형 웹사이트를
-                      구축했습니다.
+                    <?php the_field('short-text'); ?>
                     </p>
-                    <a href="" class="white-btn"
+                    <a href="<?php the_permalink(); ?>" class="white-btn"
                       >페이지로 이동
                       <i class="fa-solid fa-arrow-up-right-from-square"></i
                     ></a>
                   </figcaption>
                 </figure>
               </li>
-
-
             </ul>
           </section>
         </main>
