@@ -8,8 +8,6 @@
 
 <!-- 게시물이 있으면 본문 출력 -->
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
 
     <main>
         <nav class="aside-nav">
@@ -26,10 +24,10 @@
 
         <div class="headercontent">
           <div class="video-area">
-            <video src="./images/ocean-65560_hr.mp4" muted autoplay></video>
+            <video src="<?php bloginfo('template_url'); ?>/images/ocean-65560_hr.mp4" muted autoplay></video>
           </div>
           <span class="mouse-icon">
-            <img src="./images/mouse.png" alt="" />
+            <img src="<?php bloginfo('template_url'); ?>/images/mouse.png" alt="" />
           </span>
         </div>
 
@@ -37,7 +35,7 @@
           <section id="profile">
             <div class="profiletop">
               <span class="profile-img"
-                ><span><img src="./images/profile-cat.jpg" alt="" /></span
+                ><span><img src="<?php bloginfo('template_url'); ?>/images/profile-cat.jpg" alt="" /></span
               ></span>
               <p class="profilebtns">
                 <a href=""><i class="fa-regular fa-envelope"></i></a>
@@ -49,7 +47,7 @@
               <h2>Yoonhee Lee</h2>
               <h4>
                 <span class="flag"
-                  ><img src="./images/flag-south-korea_1f1f0-1f1f7.png" alt=""
+                  ><img src="<?php bloginfo('template_url'); ?>/images/flag-south-korea_1f1f0-1f1f7.png" alt=""
                 /></span>
                 Seoul, Korea
               </h4>
@@ -78,7 +76,7 @@
             <h2>Recent Portfolio</h2>
             <div class="portfolio">
               <div class="pf-each">
-                <img src="./images/acme.jpeg" alt="" />
+                <img src="<?php bloginfo('template_url'); ?>/images/acme.jpeg" alt="" />
 
                 <a class="pf-tt">
                   <h4>LakeSide</h4>
@@ -88,7 +86,7 @@
                 </a>
               </div>
               <div class="pf-each">
-                <img src="./images/acme.jpeg" alt="" />
+                <img src="<?php bloginfo('template_url'); ?>/images/acme.jpeg" alt="" />
                 <a class="pf-tt">
                   <h4>LakeSide</h4>
                   <h4>Renewal</h4>
@@ -96,7 +94,7 @@
                 </a>
               </div>
               <div class="pf-each">
-                <img src="./images/acme.jpeg" alt="" />
+                <img src="<?php bloginfo('template_url'); ?>/images/acme.jpeg" alt="" />
                 <a class="pf-tt">
                   <h4>LakeSide</h4>
                   <h4>Renewal</h4>
@@ -141,11 +139,6 @@
           <!-- // contact -->
         </div>
     </main>
-
-
-<?php endwhile; else : ?>
-	<p><?php esc_html_e( '죄송합니다. 맞는 글이 없습니다.' ); ?></p>
-<?php endif; ?>
 
 
 
