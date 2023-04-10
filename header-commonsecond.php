@@ -8,16 +8,17 @@
           <nav>
             <ul>
               <li class="active">
-                <a href="./index.html">main</a>
+                <a href="/wp/">main</a>
               </li>
-              <li><a href="./port-list.html">portfolio</a></li>
+              <li><a href="/wp/?cat=3">portfolio</a></li>
               <li>
                 <a href="">contact</a>
               </li>
               <li class="menu-mail">
-                <a href="./index.html#contact"
+                <a href="/wp/index.php#contact"
                   ><i class="fa-regular fa-paper-plane"></i> mail me!</a
                 >
+                <!-- 이거 누르면 frontpage 로 가긴 하지만 index 로연결하면 됨!!! -->
               </li> 
             </ul>
           </nav>

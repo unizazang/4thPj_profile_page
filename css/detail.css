@@ -348,6 +348,10 @@ h3 {
   align-self: flex-end;
 }
 
+.dt-menubtns .detail-w-btn a {
+  color: var(--text-primary-C);
+}
+
 .dt-menubtns .detail-w-btn:hover {
   box-shadow: var(--btn-shadow);
   transform: translateY(-6px);

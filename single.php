@@ -1,5 +1,6 @@
 <?php get_header('commonfirst'); ?>
 <!-- head 끝나기전 -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/detail.css" />
 
 <?php get_header('commonsecond'); ?>
@@ -25,13 +26,28 @@
               <img src="<?php the_post_thumbnail('full'); ?>" alt="" />
             </div>
             <div class="pf-description">
-              <h2><?php the_field('top-title'); ?></h2>
-              <h4><?php the_field('top-date'); ?></h4>
+              <h2><?php the_title(); ?></h2>
+              <h4><?php the_field('date'); ?></h4>
               <div class="tags">
-                <p>HTML, CSS</p>
+
+              <?php 
+                foreach((get_the_category()) as $category){
+                  // 카테고리 번호가 부모카테고리의 번호와 같다면 아무것도 하지말기.
+                  if(get_cat_ID($category->name) == 3){
+                    echo '';
+                  }else{
+                    echo "<p>".$category->name."</p>";
+                  }
+                }
+                  //이거 넣으면 갑자기 아래가 안나옴...
+                  
+                  
+                ?>
+             
+            <!-- <p>HTML, CSS</p>
                 <p>JavaScript</p>
                 <p>JQuery</p>
-                <p>PHP</p>
+                <p>PHP</p> -->
               </div>
               <p class="desc">
                 <?php the_field('top-description'); ?>
@@ -126,13 +142,25 @@
 
                 <!-- 있을 때만 출력해라 -->
                 <?php if( get_field('additional-images4') ): ?>
-                    <h2><?php the_field('additional-images4'); ?></h2>
+                  <div class="slidewrap">
+                    <div class="image-slide">
+                      <img src="<?php the_field('additional-images4'); ?>" alt="" />
+                    </div>
+                  </div>
                 <?php endif; ?>
                 <?php if( get_field('additional-images5') ): ?>
-                    <h2><?php the_field('additional-images5'); ?></h2>
+                  <div class="slidewrap">
+                    <div class="image-slide">
+                      <img src="<?php the_field('additional-images5'); ?>" alt="" />
+                    </div>
+                  </div>
                 <?php endif; ?>
                 <?php if( get_field('additional-images6') ): ?>
-                    <h2><?php the_field('additional-images6'); ?></h2>
+                  <div class="slidewrap">
+                    <div class="image-slide">
+                      <img src="<?php the_field('additional-images6'); ?>" alt="" />
+                    </div>
+                  </div>
                 <?php endif; ?>
               </div>
               <a href="" class="nextbtn"
@@ -149,14 +177,22 @@
         </main>
         <div class="dt-menubtns">
           <div class="nextprevpost">
-            <a href="" class="detail-w-btn"
+            <!-- <a href="<?php get_previous_post_link(); ?>" class="detail-w-btn"
               ><i class="fa-solid fa-chevron-left"></i>이전 포트폴리오</a
             >
-            <a href="" class="detail-w-btn"
+            <a href="<?php get_next_post_link(); ?>" class="detail-w-btn"
               >다음 포트폴리오<i class="fa-solid fa-chevron-right"></i
-            ></a>
+            ></a> -->
+
+            <span class="detail-w-btn">
+            <?php previous_post_link( '%link', __( '<i class="fa-solid fa-chevron-left"></i>이전 포트폴리오', 'alikerock' ), true ); ?> 
+            </span>
+            <span class="detail-w-btn">
+            <?php next_post_link( '%link', __( '다음 포트폴리오<i class="fa-solid fa-chevron-right"></i>', 'alikerock' ), true ); ?> 
+            </span>
+            <!-- 기존 클래스명으로 여기에 감싸세요 -->
           </div>
-          <a href="<?php bloginfo('template_url'); ?>/category/portfolio/" class="detail-w-btn"
+          <a href="/wp/?cat=3" class="detail-w-btn"
             ><i class="fa-solid fa-list"></i>목록으로</a
           >
 
