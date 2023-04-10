@@ -60,6 +60,7 @@
             <div class="myskills">
               <h2>My Skills</h2>
               <ul class="skilltags">
+                <!-- 여기 카테고리 출력하는걸로 바꿀까? -->
                 <li class="line-btn">HTML, CSS</li>
                 <li class="line-btn">JavaScript</li>
                 <li class="line-btn">React</li>
@@ -78,16 +79,7 @@
               <div class="pf-each">
                 <img src="<?php bloginfo('template_url'); ?>/images/acme.jpeg" alt="" />
 
-                <a class="pf-tt">
-                  <h4>LakeSide</h4>
-
-                  <h4>Renewal</h4>
-                  <span><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </div>
-              <div class="pf-each">
-                <img src="<?php bloginfo('template_url'); ?>/images/acme.jpeg" alt="" />
-                <a class="pf-tt">
+                <a href="" class="pf-tt">
                   <h4>LakeSide</h4>
                   <h4>Renewal</h4>
                   <span><i class="fa-solid fa-arrow-right"></i></span>
@@ -95,7 +87,15 @@
               </div>
               <div class="pf-each">
                 <img src="<?php bloginfo('template_url'); ?>/images/acme.jpeg" alt="" />
-                <a class="pf-tt">
+                <a href="" class="pf-tt">
+                  <h4>LakeSide</h4>
+                  <h4>Renewal</h4>
+                  <span><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+              </div>
+              <div class="pf-each">
+                <img src="<?php bloginfo('template_url'); ?>/images/acme.jpeg" alt="" />
+                <a href="" class="pf-tt">
                   <h4>LakeSide</h4>
                   <h4>Renewal</h4>
                   <span><i class="fa-solid fa-arrow-right"></i></span>
@@ -139,9 +139,6 @@
           <!-- // contact -->
         </div>
     </main>
-
-
-
 
 <!-- =============== 푸터 시작 ================= -->
 <?php get_footer('commonfirst'); ?>
