@@ -9,7 +9,7 @@
 <!-- 게시물이 있으면 본문 출력 -->
 
 
-    <main>
+<main>
         <nav class="aside-nav">
           <a href="#headervideo"></a>
           <a href="#profile"></a>
@@ -145,7 +145,7 @@
 
 <!-- =============== 푸터 시작 ================= -->
 <?php get_footer('commonfirst'); ?>
-<!-- 탑버튼 ~ jQuery, common.js까지 -->
+<!-- 탑버튼 ~ jQuery, jQueryUi, common.js까지 -->
 
 <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 

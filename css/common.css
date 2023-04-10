@@ -58,6 +58,11 @@ font-family: 'Roboto', sans-serif;
 
   --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   --btn-shadow: 0px 6px 5px rgba(155, 129, 129, 0.25);
+  --thumbnail-shadow: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 75%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
 
   --hr-stroke: 1px solid var(--line-btn-stroke-C);
 }
@@ -257,4 +262,16 @@ footer p {
   left: 50%;
   margin-left: 502px;
   bottom: 4%;
+}
+
+#go-top i {
+  transition: color 0.3s;
+}
+/* 
+#go-top:hover {
+  box-shadow: var(--btn-shadow);
+} */
+
+#go-top:hover i {
+  color: var(--highlight-Pink-C);
 }

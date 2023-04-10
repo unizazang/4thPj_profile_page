@@ -53,7 +53,7 @@ body {
 }
 
 #profile {
-  margin-top: -81px;
+  margin-top: -161px;
   position: relative;
   z-index: 1;
 }
@@ -63,6 +63,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 19px;
+  padding-top: 80px;
 }
 
 .profilebtns {
@@ -71,6 +72,14 @@ body {
   align-items: center;
   /* 안되던이유 : 얘가 기본값이 stretch라... 늘어나잖아요 */
   margin-top: 20px;
+}
+.profilebtns a {
+  transition: 0.3s;
+}
+
+.profilebtns a:hover {
+  background: var(--highlight-C);
+  color: #fff;
 }
 
 .profile-img,
@@ -152,12 +161,13 @@ body {
 
 .mouse-icon {
   /* display: inline-block; */
-  width: 25px;
-  height: 25px;
+  width: 27px;
+  height: 27px;
   position: absolute;
   left: 50%;
   bottom: 187px;
   transform: translateX(-50%);
+  cursor: pointer;
 
   animation: mousebounce 0.8s infinite forwards;
 }
@@ -372,7 +382,7 @@ body {
 
 #recent-portfolio > p a:hover i {
   transition: 0.3s;
-  animation: bounce 0.8s forwards ease-in infinite;
+  animation: bounce 0.7s forwards infinite ease-in;
 }
 
 @keyframes mousebounce {
@@ -393,17 +403,17 @@ body {
 
 @keyframes bounce {
   0% {
-    transform: translateX(-2px);
+    transform: translateX(-1px);
   }
   10% {
     transform: translateX(-5px);
   }
 
   80% {
-    transform: translateX(2px);
+    transform: translateX(4px);
   }
   100% {
-    transform: translateX(-1px);
+    transform: translateX(0px);
   }
 }
 
@@ -431,11 +441,6 @@ body {
 #contact > form textarea {
   margin-bottom: 44px;
   padding-top: 15px;
-}
-
-#contact > form label {
-  color: var(--text-primary-C);
-  margin: 0 0 12px 3px;
 }
 
 #contact > form input {
@@ -468,4 +473,38 @@ body {
   color: var(--highlight-C);
   outline: 2px solid var(--highlight-C);
   background: #fff;
+}
+
+#contact > form .input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: margin 0.3s;
+}
+
+#contact > form label {
+  position: absolute;
+  opacity: 0;
+  left: 3px;
+  top: 0;
+  visibility: hidden;
+  transition: 0.4s;
+  color: var(--text-primary-C);
+  margin: 0 0 12px 3px;
+  font-size: var(--web-content-fz);
+}
+
+#contact > form .input-group:focus-within label {
+  top: -25px;
+  opacity: 1;
+  visibility: visible;
+}
+
+#contact > form .input-group:focus-within {
+  margin-top: 15px;
+}
+
+#contact > form .input-group:focus-within input::placeholder,
+#contact > form .input-group:focus-within textarea::placeholder {
+  opacity: 0;
 }

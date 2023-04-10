@@ -161,10 +161,24 @@
           >
         </div>
         
+        <!-- 추가이미지클릭시 팝업 -->
+        <div id="lightbox-overlay">
+          <img
+            src=""
+            alt="Lightbox image"
+            title="Click anywhere to close"
+            id="lightbox-image"
+          />
+        </div>
 
 <?php get_footer('commonfirst'); ?>
 <!-- 탑버튼 ~ jQuery, common.js까지 -->
 
+<!-- slick -->
+<script
+  type="text/javascript"
+  src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+></script>
 <script src="<?php bloginfo('template_url'); ?>/js/detail.js"></script>
 
 <?php get_footer('commonsecond'); ?>
