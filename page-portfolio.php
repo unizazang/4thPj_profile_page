@@ -62,10 +62,10 @@
               <li class="pf-card">
                 <figure>
                   <span class="pf-thumb"
-                    ><img src="<?php bloginfo('template_url'); ?>/images/acme.jpeg" alt=""
+                    ><img src="<?php the_post_thumbnail('full'); ?>" alt=""
                   /></span>
                   <figcaption>
-                    <h4><?php the_field('top-title'); ?></h4>
+                    <h4><?php the_title(); ?></h4>
                     <p>
                     <?php the_field('short-text'); ?>
                     </p>
@@ -76,6 +76,10 @@
                   </figcaption>
                 </figure>
               </li>
+
+              <?php endwhile; else : ?>
+              <li><?php esc_html_e( '최근 프로젝트가 없습니다.' ); ?></li>
+              <?php endif; ?>
             </ul>
           </section>
         </main>
