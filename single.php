@@ -177,18 +177,13 @@
         </main>
         <div class="dt-menubtns">
           <div class="nextprevpost">
-            <!-- <a href="<?php get_previous_post_link(); ?>" class="detail-w-btn"
-              ><i class="fa-solid fa-chevron-left"></i>이전 포트폴리오</a
-            >
-            <a href="<?php get_next_post_link(); ?>" class="detail-w-btn"
-              >다음 포트폴리오<i class="fa-solid fa-chevron-right"></i
-            ></a> -->
+
 
             <span class="detail-w-btn">
-            <?php previous_post_link( '%link', __( '<i class="fa-solid fa-chevron-left"></i>이전 포트폴리오', 'alikerock' ), true ); ?> 
+              <?php previous_post_link( '%link', __( '<i class="fa-solid fa-chevron-left"></i>이전 포트폴리오', 'alikerock' ), true ); ?> 
             </span>
             <span class="detail-w-btn">
-            <?php next_post_link( '%link', __( '다음 포트폴리오<i class="fa-solid fa-chevron-right"></i>', 'alikerock' ), true ); ?> 
+              <?php next_post_link( '%link', __( '다음 포트폴리오<i class="fa-solid fa-chevron-right"></i>', 'alikerock' ), true ); ?> 
             </span>
             <!-- 기존 클래스명으로 여기에 감싸세요 -->
           </div>
