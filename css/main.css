@@ -523,21 +523,33 @@ body {
   opacity: 0;
 }
 
-#contact form p:last-of-type input:focus {
-  outline: none;
-}
-
 .wpcf7-not-valid-tip {
   position: absolute;
-  top: 10px;
-  left: -30px;
+  font-size: var(--mobile-content-fz) !important;
+  padding: 10px;
+  top: 0;
+  left: -51%;
+  background: #fff;
+  border-radius: var(--box-radius);
+  height: 13px;
+  line-height: 13px;
+  border: 2px solid var(--hazy-pink-C);
+  color: var(--highlight-Pink-C) !important;
+  font-family: "Noto Sans KR", sans-serif !important;
+  font-weight: 700 !important;
+  /* transition: 0.3s;
+  transform: translateX(-5px); */
 }
 .wpcf7-not-valid-tip::after {
+  content: "";
+  display: inline-block;
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 20px;
-  border: 10px solid transparent #fff transparent transparent;
-  border-radius: 1px;
-  box-shadow: var(--box-shadow);
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100%;
+
+  border-style: solid; /* 이걸 빼먹어서 안되는거였음 ㅡㅡ... */
+  border-width: 10px;
+  border-color: transparent transparent transparent var(--hazy-pink-C);
+  /*  border: 34px solid transparent transparent transparent #fff; */
 }
