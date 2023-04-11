@@ -57,3 +57,12 @@ function minimal_menus() {
     echo '<h4>' . esc_html($title_1) . '</h4>'; // 첫 번째 문장을 출력합니다.
     echo '<h4>' . esc_html($title_2) . '</h4>'; // 두 번째 문장을 출력합니다.
   }
+  
+  // ======== 모든 글 출력 ===========
+
+  function custom_posts_per_page($query){
+    if(is_category()){
+        $query->set('posts_per_page', -1); // -1 은 모든 글을 출력
+    }
+  }
+  add_action('pre_get_posts', 'custom_posts_per_page');

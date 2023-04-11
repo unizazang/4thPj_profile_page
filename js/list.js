@@ -16,9 +16,9 @@ layout.on("click", ".pf-card", function () {
   // 얘 레이아웃 바꾼다음 링크가져와서 href 로 스크립트로 보내주기...
 });
 
-$(".skilltags .line-btn").filter(":first-of-type").addClass("active");
+//$(".skilltags .line-btn").filter(":first-of-type").addClass("active");
 $(".skilltags .line-btn").click(function (e) {
-  e.preventDefault();
+  // e.preventDefault();
   $(this).siblings().removeClass("active");
   $(this).toggleClass("active");
 });

@@ -82,7 +82,7 @@
                   // 하위 카테고리를 출력하는 코드
                   ?>
                   <?php if() //현재카테고리의 이름을 출력 ,, $child_category->name; 과 같으니?  ?>
-                  <li class="line-btn"><?php echo $child_category->name; ?></li>
+                  <li class="line-btn"><a href=""><?php echo $child_category->name; ?></a></li>
                 <?php
                 }
                 ?>
