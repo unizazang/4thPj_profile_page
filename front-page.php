@@ -81,8 +81,7 @@
                 foreach ( $child_categories as $child_category ) {
                   // 하위 카테고리를 출력하는 코드
                   ?>
-                  <?php if() //현재카테고리의 이름을 출력 ,, $child_category->name; 과 같으니?  ?>
-                  <li class="line-btn"><a href=""><?php echo $child_category->name; ?></a></li>
+                  <li class="line-btn"><?php echo $child_category->name; ?></li>
                 <?php
                 }
                 ?>
@@ -148,7 +147,7 @@
           <!-- // recent portfolio -->
           <section id="contact">
             <h2>Contact</h2>
-            <form action="">
+           <!-- <form action="">
               <label for="cpname">company name</label>
               <input
                 type="text"
@@ -173,7 +172,9 @@
                 placeholder="message"
               ></textarea>
               <button class="filled-btn">send</button>
-            </form>
+            </form> -->
+            <!-- do~~  -->
+            <?php echo do_shortcode( '[contact-form-7 id="218" title="profilepage-contact"]' ); ?>
           </section>
           <!-- // contact -->
         </div>

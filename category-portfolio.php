@@ -78,7 +78,7 @@
               </li>
 
               <?php endwhile; else : ?>
-              <li><?php esc_html_e( '최근 프로젝트가 없습니다.' ); ?></li>
+              <li class="no-project"><?php esc_html_e( '최근 프로젝트가 없습니다.' ); ?></li>
               <?php endif; ?>
             </ul>
           </section>

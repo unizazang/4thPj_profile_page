@@ -66,6 +66,14 @@ font-family: 'Roboto', sans-serif;
 
   --hr-stroke: 1px solid var(--line-btn-stroke-C);
 }
+
+.no-project {
+  font-weight: 700;
+  font-size: var(--web-content-fz);
+  text-align: center;
+  padding-top: 50px;
+}
+
 body {
   background: var(--background-grad) no-repeat;
   /* 높이 그냥 주지마세요... 왜줌 */

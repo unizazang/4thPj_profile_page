@@ -422,14 +422,14 @@ body {
   padding-top: 82px;
   text-align: center;
 }
-#contact > form {
+#contact form {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   width: 302px;
 }
-#contact > form input,
-#contact > form textarea {
+#contact form input,
+#contact form textarea {
   border-radius: var(--box-radius);
   border: 2px solid var(--highlight-C);
   box-shadow: var(--box-shadow);
@@ -439,51 +439,64 @@ body {
   transition: 0.3s ease-in;
 }
 
-#contact > form textarea {
+#contact form textarea {
   margin-bottom: 44px;
-  padding-top: 15px;
+  /* padding-top: 15px; */
 }
 
-#contact > form input {
-  height: 35px;
-  line-height: 35px;
+#contact form textarea,
+#contact form input {
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 39px;
+}
+
+#contact form input {
+  height: 39px;
+
   margin-bottom: 24px;
 }
-#contact > form input::placeholder,
-#contact > form textarea::placeholder {
+
+#contact form input::placeholder,
+#contact form textarea::placeholder {
   font-family: "Roboto", sans-serif;
   color: var(--typo-gray-C);
   font-size: var(--web-content-fz);
 }
-#contact > form input:focus,
-#contact > form textarea:focus {
+#contact form p:not(:last-of-type) input:focus,
+#contact form textarea:focus {
   /* border: none; border가 아니라 outline이었다~~~~ */
   outline: none;
   border: 2px solid var(--form-focus-C);
   box-shadow: var(--form-focus-shadow);
 }
-#contact > form button {
+#contact form .filled-btn {
   width: 105px;
+  height: 35px;
   align-self: center;
   margin-bottom: 98px;
   transition-property: color;
   transition-property: background;
+  padding: 0;
+  line-height: 35px;
+  border: 0;
+  border-radius: var(--btn-radius);
 }
 
-#contact > form button:hover {
+#contact form .filled-btn:hover {
   color: var(--highlight-C);
   outline: 2px solid var(--highlight-C);
   background: #fff;
 }
 
-#contact > form .input-group {
+#contact form p {
   position: relative;
   display: flex;
   flex-direction: column;
   transition: margin 0.3s;
 }
 
-#contact > form label {
+#contact form label {
   position: absolute;
   opacity: 0;
   left: 3px;
@@ -495,17 +508,36 @@ body {
   font-size: var(--web-content-fz);
 }
 
-#contact > form .input-group:focus-within label {
+#contact form p:focus-within label {
   top: -25px;
   opacity: 1;
   visibility: visible;
 }
 
-#contact > form .input-group:focus-within {
+#contact form p:not(:last-of-type):focus-within {
   margin-top: 15px;
 }
 
-#contact > form .input-group:focus-within input::placeholder,
-#contact > form .input-group:focus-within textarea::placeholder {
+#contact form p:focus-within input::placeholder,
+#contact form p:focus-within textarea::placeholder {
   opacity: 0;
+}
+
+#contact form p:last-of-type input:focus {
+  outline: none;
+}
+
+.wpcf7-not-valid-tip {
+  position: absolute;
+  top: 10px;
+  left: -30px;
+}
+.wpcf7-not-valid-tip::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  border: 10px solid transparent #fff transparent transparent;
+  border-radius: 1px;
+  box-shadow: var(--box-shadow);
 }
