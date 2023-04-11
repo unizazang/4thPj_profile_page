@@ -43,8 +43,10 @@ body {
 
 .video-area video {
   width: 100%;
-  height: 744px;
+  height: 100%;
   object-fit: fill;
+  /*     height: 100%;
+    object-fit: cover; 이게 낫지않나 - 반응형하면서봄 */
   position: absolute;
   top: 0;
   left: 0;
@@ -287,6 +289,7 @@ body {
   opacity: 0;
   /* visibility: hidden; 호버해도 링크안걸리니까 뺌 */
   transform: translateY(50px);
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 .pf-tt > * {
@@ -421,14 +424,14 @@ body {
   padding-top: 82px;
   text-align: center;
 }
-#contact > form {
+#contact form {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   width: 302px;
 }
-#contact > form input,
-#contact > form textarea {
+#contact form input,
+#contact form textarea {
   border-radius: var(--box-radius);
   border: 2px solid var(--highlight-C);
   box-shadow: var(--box-shadow);
@@ -438,51 +441,64 @@ body {
   transition: 0.3s ease-in;
 }
 
-#contact > form textarea {
+#contact form textarea {
   margin-bottom: 44px;
-  padding-top: 15px;
+  /* padding-top: 15px; */
 }
 
-#contact > form input {
-  height: 35px;
-  line-height: 35px;
+#contact form textarea,
+#contact form input {
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 39px;
+}
+
+#contact form input {
+  height: 39px;
+
   margin-bottom: 24px;
 }
-#contact > form input::placeholder,
-#contact > form textarea::placeholder {
+
+#contact form input::placeholder,
+#contact form textarea::placeholder {
   font-family: "Roboto", sans-serif;
   color: var(--typo-gray-C);
   font-size: var(--web-content-fz);
 }
-#contact > form input:focus,
-#contact > form textarea:focus {
+#contact form p:not(:last-of-type) input:focus,
+#contact form textarea:focus {
   /* border: none; border가 아니라 outline이었다~~~~ */
   outline: none;
   border: 2px solid var(--form-focus-C);
   box-shadow: var(--form-focus-shadow);
 }
-#contact > form button {
+#contact form .filled-btn {
   width: 105px;
+  height: 35px;
   align-self: center;
   margin-bottom: 98px;
   transition-property: color;
   transition-property: background;
+  padding: 0;
+  line-height: 35px;
+  border: 0;
+  border-radius: var(--btn-radius);
 }
 
-#contact > form button:hover {
+#contact form .filled-btn:hover {
   color: var(--highlight-C);
   outline: 2px solid var(--highlight-C);
   background: #fff;
 }
 
-#contact > form .input-group {
+#contact form p {
   position: relative;
   display: flex;
   flex-direction: column;
   transition: margin 0.3s;
 }
 
-#contact > form label {
+#contact form label {
   position: absolute;
   opacity: 0;
   left: 3px;
@@ -494,17 +510,102 @@ body {
   font-size: var(--web-content-fz);
 }
 
-#contact > form .input-group:focus-within label {
+#contact form p:focus-within label {
   top: -25px;
   opacity: 1;
   visibility: visible;
 }
 
-#contact > form .input-group:focus-within {
+#contact form p:not(:last-of-type):focus-within {
   margin-top: 15px;
 }
 
-#contact > form .input-group:focus-within input::placeholder,
-#contact > form .input-group:focus-within textarea::placeholder {
+#contact form p:focus-within input::placeholder,
+#contact form p:focus-within textarea::placeholder {
   opacity: 0;
+}
+
+.wpcf7-not-valid-tip {
+  position: absolute;
+  font-size: var(--mobile-content-fz) !important;
+  padding: 10px;
+  top: 0;
+  left: -51%;
+  background: #fff;
+  border-radius: var(--box-radius);
+  height: 13px;
+  line-height: 13px;
+  border: 2px solid var(--hazy-pink-C);
+  color: var(--highlight-Pink-C) !important;
+  font-family: "Noto Sans KR", sans-serif !important;
+  font-weight: 700 !important;
+  /* transition: 0.3s;
+  transform: translateX(-5px); */
+}
+.wpcf7-not-valid-tip::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100%;
+
+  border-style: solid; /* 이걸 빼먹어서 안되는거였음 ㅡㅡ... */
+  border-width: 10px;
+  border-color: transparent transparent transparent var(--hazy-pink-C);
+  /*  border: 34px solid transparent transparent transparent #fff; */
+}
+
+/* ======================== 반응형 =========================== */
+
+/* 태블릿 768px ~ 1080 */
+@media (max-width: 1080px) {
+  .mouse-icon {
+    display: none;
+  }
+  .video-area {
+    width: 100%;
+
+    border-radius: 0;
+    padding-top: 883px;
+  }
+
+  .header-main-tt {
+    font-size: var(--tab-mainTT-fz);
+    padding: 142px 0 20px 0;
+  }
+  .header-sub-tt {
+    font-size: var(--sub-TT-fz);
+    padding-bottom: 81px;
+  }
+  .profilebtns {
+    gap: 17px;
+  }
+  .myprofile {
+    padding-bottom: 48px;
+    margin-bottom: 54px;
+  }
+
+  .portfolio .pf-each {
+    width: 193px;
+    height: 246px;
+  }
+  #recent-portfolio > p {
+    padding-bottom: 59px;
+  }
+  .pf-tt {
+    font-size: var(--web-very-sm-fz);
+  }
+  .pf-tt > h4:first-of-type {
+    margin-bottom: 8px;
+  }
+  .pf-tt > h4:nth-of-type(2) {
+    margin-bottom: 12px;
+  }
+  #contact > h2 {
+    padding-top: 69px;
+  }
+  #contact form input.filled-btn {
+    margin-bottom: 94px;
+  }
 }

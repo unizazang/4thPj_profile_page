@@ -132,3 +132,12 @@ figure figcaption p {
 }
 
 /* img shadow */
+
+/* ======================== 반응형 =========================== */
+
+/* 태블릿 768px ~ 1080 */
+@media (max-width: 1080px) {
+  .pf-card figure {
+    width: 193px;
+  }
+}

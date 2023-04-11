@@ -119,7 +119,8 @@ h3 {
 }
 .pf-description {
   flex: 1;
-  padding: 0 53px 40px 97px;
+  margin: 0 53px 0 97px;
+  padding: 0 0px 40px 0px;
   border-bottom: var(--hr-stroke);
 }
 
@@ -143,6 +144,8 @@ h3 {
 .tags {
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 29px;
 }
 
 .tags p {
@@ -153,7 +156,6 @@ h3 {
   padding: 2px 4px 3px;
   border-radius: var(--tags-radius);
   box-shadow: var(--tags-shadow);
-  margin-bottom: 29px;
 }
 
 #pf-points {
@@ -346,6 +348,10 @@ h3 {
 
 .dt-menubtns .backtolist {
   align-self: flex-end;
+}
+
+.dt-menubtns .detail-w-btn a {
+  color: var(--text-primary-C);
 }
 
 .dt-menubtns .detail-w-btn:hover {
