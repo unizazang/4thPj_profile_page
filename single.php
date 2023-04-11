@@ -15,7 +15,7 @@
             <a href="#pf-images"></a>
           </nav>
           <header id="pf-top">
-            <a href="" class="back"
+            <a href="/wp/?cat=3" class="back"
               ><i class="fa-solid fa-chevron-left"></i>back to list</a
             >
             <h2 class="header-main-tt">Portfolio Detail</h2>
@@ -23,7 +23,7 @@
           <!-- ========================== 섹션 시작 ================================ -->
             <section class="pf-intro">
             <div class="pf-big-thumb">
-              <img src="<?php the_post_thumbnail('full'); ?>" alt="" />
+              <?php the_post_thumbnail('full'); ?>
             </div>
             <div class="pf-description">
               <h2><?php the_title(); ?></h2>
@@ -39,9 +39,7 @@
                     echo "<p>".$category->name."</p>";
                   }
                 }
-                  //이거 넣으면 갑자기 아래가 안나옴...
-                  
-                  
+                  //이거 넣으면 갑자기 아래가 안나옴... -> return 시키니까 아무것도안하죠 '' 로 교체
                 ?>
              
             <!-- <p>HTML, CSS</p>
@@ -179,12 +177,16 @@
           <div class="nextprevpost">
 
 
-            <span class="detail-w-btn">
-              <?php previous_post_link( '%link', __( '<i class="fa-solid fa-chevron-left"></i>이전 포트폴리오', 'alikerock' ), true ); ?> 
-            </span>
-            <span class="detail-w-btn">
-              <?php next_post_link( '%link', __( '다음 포트폴리오<i class="fa-solid fa-chevron-right"></i>', 'alikerock' ), true ); ?> 
-            </span>
+          <?php if(get_previous_post_link()){ ?>
+              <span class="detail-w-btn">
+                <?php previous_post_link( '%link', __( '<i class="fa-solid fa-chevron-left"></i>이전 포트폴리오', 'alikerock' ), true ); ?> 
+              </span>
+            <?php } ?>
+            <?php if(get_next_post_link()){ ?>
+              <span class="detail-w-btn">
+                <?php next_post_link( '%link', __( '다음 포트폴리오<i class="fa-solid fa-chevron-right"></i>', 'alikerock' ), true ); ?> 
+              </span>
+            <?php } ?>
             <!-- 기존 클래스명으로 여기에 감싸세요 -->
           </div>
           <a href="/wp/?cat=3" class="detail-w-btn"

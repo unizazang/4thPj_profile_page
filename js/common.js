@@ -61,6 +61,6 @@ topBtn.click(function (e) {
       scrollTop: 0,
     },
     900,
-    "easeInQuart"
+    "easeInOutCubic"
   );
 });

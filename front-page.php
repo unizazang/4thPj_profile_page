@@ -24,7 +24,7 @@
 
         <div class="headercontent">
           <div class="video-area">
-            <video src="<?php bloginfo('template_url'); ?>/images/ocean-65560_hr.mp4" muted autoplay></video>
+            <video src="<?php bloginfo('template_url'); ?>/images/ocean-65560_hr.mp4" muted autoplay loop></video>
           </div>
           <span class="mouse-icon">
             <img src="<?php bloginfo('template_url'); ?>/images/mouse.png" alt="" />
@@ -61,14 +61,31 @@
               <h2>My Skills</h2>
               <ul class="skilltags">
                 <!-- 여기 카테고리 출력하는걸로 바꿀까? -->
-                <li class="line-btn">HTML, CSS</li>
+                <!-- <li class="line-btn">HTML, CSS</li>
                 <li class="line-btn">JavaScript</li>
                 <li class="line-btn">React</li>
                 <li class="line-btn">PHP</li>
                 <li class="line-btn">JQuery</li>
                 <li class="line-btn">MySQL</li>
                 <li class="line-btn">WordPress</li>
-                <li class="line-btn">UI Design</li>
+                <li class="line-btn">UI Design</li> -->
+
+                <?php 
+                
+                $parent_cat_ID = get_cat_ID( 'portfolio' );
+                $childcat = array(
+                  'child_of' => $parent_cat_ID
+                );
+                $child_categories = get_categories( $childcat );
+
+                foreach ( $child_categories as $child_category ) {
+                  // 하위 카테고리를 출력하는 코드
+                  ?>
+                  <?php if() //현재카테고리의 이름을 출력 ,, $child_category->name; 과 같으니?  ?>
+                  <li class="line-btn"><?php echo $child_category->name; ?></li>
+                <?php
+                }
+                ?>
               </ul>
             </div>
           </section>
@@ -76,34 +93,56 @@
           <section id="recent-portfolio">
             <h2>Recent Portfolio</h2>
             <div class="portfolio">
-              <div class="pf-each">
-                <img src="<?php bloginfo('template_url'); ?>/images/acme.jpeg" alt="" />
+
+              <?php 
+              $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 3,
+                'category_name' => 'portfolio',
+                'orderby' => 'date',
+                'order' => 'DESC'
+              );
+              
+              $query = new WP_Query( $args );
+              
+              if ( $query->have_posts() ) {
+                while ( $query->have_posts() ) {
+                  $query->the_post();
+                  // 최신 글을 출력하는 코드
+                  ?>
+                <div class="pf-each">
+                  <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>" alt="">
+                  <a href="<?php the_permalink(); ?>" class="pf-tt">
+                    <?php split_title(); ?>
+                    <span><i class="fa-solid fa-arrow-right"></i></span>
+                  </a>
+                </div>
+                  <?php
+                }
+              } else {
+                // 포스트가 없을 경우 출력하는 코드
+                ?>
+                <div class="pf-each">
+                  <p>아직 글이 없습니다.</p>
+                </div>
+                <?php
+              }
+              ?>
+
+              <!-- <div class="pf-each">
+                <img src="< ?php bloginfo('template_url'); ?>/images/acme.jpeg" alt="" />
 
                 <a href="" class="pf-tt">
                   <h4>LakeSide</h4>
                   <h4>Renewal</h4>
                   <span><i class="fa-solid fa-arrow-right"></i></span>
                 </a>
-              </div>
-              <div class="pf-each">
-                <img src="<?php bloginfo('template_url'); ?>/images/acme.jpeg" alt="" />
-                <a href="" class="pf-tt">
-                  <h4>LakeSide</h4>
-                  <h4>Renewal</h4>
-                  <span><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </div>
-              <div class="pf-each">
-                <img src="<?php bloginfo('template_url'); ?>/images/acme.jpeg" alt="" />
-                <a href="" class="pf-tt">
-                  <h4>LakeSide</h4>
-                  <h4>Renewal</h4>
-                  <span><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </div>
+              </div> -->
+
+              <?php wp_reset_postdata(); ?>
             </div>
             <p>
-              <a href="">more works <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="/wp/?cat=3">more works <i class="fa-solid fa-arrow-right"></i></a>
             </p>
           </section>
           <!-- // recent portfolio -->

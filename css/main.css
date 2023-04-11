@@ -287,6 +287,7 @@ body {
   opacity: 0;
   /* visibility: hidden; 호버해도 링크안걸리니까 뺌 */
   transform: translateY(50px);
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 .pf-tt > * {
