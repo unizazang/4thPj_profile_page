@@ -42,9 +42,9 @@ body {
 }
 
 .video-area video {
-  width: 100%;
+  /* width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover; */
   /*     height: 100%;
     object-fit: cover; 이게 낫지않나 - 반응형하면서봄 */
   position: absolute;
@@ -104,12 +104,6 @@ body {
   height: 137.98px;
   background: #fff;
   overflow: hidden;
-}
-
-.profile-img > span img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .profilebtns a {
@@ -172,11 +166,6 @@ body {
   cursor: pointer;
 
   animation: mousebounce 0.8s infinite forwards;
-}
-.mouse-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .myprofile h2 {
@@ -358,6 +347,9 @@ body {
   box-shadow: var(--box-shadow);
 }
 
+.video-area video,
+.profile-img > span img,
+.mouse-icon img,
 .pf-each > img {
   width: 100%;
   height: 100%;

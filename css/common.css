@@ -275,6 +275,7 @@ footer p {
   left: 50%;
   margin-left: 502px;
   bottom: 4%;
+  z-index: 10000;
 }
 
 #go-top i {
