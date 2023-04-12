@@ -570,6 +570,11 @@ body {
     padding-top: 883px;
   }
 
+  .header-main-tt,
+  .header-sub-tt {
+    text-align: center;
+  }
+
   .header-main-tt {
     font-size: var(--tab-mainTT-fz);
     padding: 142px 0 20px 0;
@@ -607,5 +612,94 @@ body {
   }
   #contact form input.filled-btn {
     margin-bottom: 94px;
+  }
+}
+
+@media (max-width: 500px) {
+  .portfolio .pf-each:last-of-type {
+    display: none;
+  }
+  .portfolio .pf-each {
+    width: 47.8%;
+    height: 286px;
+  }
+  .skilltags {
+    width: 100%;
+  }
+  .skilltags li {
+    width: 21.9%;
+  }
+  #profile {
+    margin-top: -136px;
+  }
+
+  .profilebtns {
+    margin-top: 10px;
+  }
+
+  .profiletop {
+    margin-bottom: 11px;
+  }
+
+  .profile-img {
+    width: 102px;
+    height: 102px;
+  }
+  .profile-img > span {
+    width: 93.21px;
+    height: 93.21px;
+  }
+  .myprofile h2 {
+    font-size: var(--web-sm-TT-fz);
+  }
+  .myprofile > h4,
+  .myprofile > h3 {
+    font-size: var(--mobile-medium-fz);
+  }
+  .myprofile > h4 {
+    margin-bottom: 17px;
+  }
+  .flag {
+    width: 14px;
+    height: 14px;
+  }
+
+  .profiletag > span {
+    font-size: var(--mobile-medium-fz);
+  }
+
+  .myprofile {
+    padding-bottom: 44px;
+    margin-bottom: 52px;
+  }
+  .myskills > h2 {
+    margin-bottom: 35px;
+  }
+  #recent-portfolio {
+    padding-top: 90px;
+  }
+
+  #recent-portfolio > p {
+    margin-top: 22px;
+  }
+  #contact > h2 {
+    padding-top: 81px;
+  }
+  #contact form .filled-btn {
+    margin-bottom: 161px;
+  }
+  footer p {
+    padding-bottom: 85px;
+  }
+  .skilltags li {
+    font-size: var(--mobile-medium-fz);
+  }
+}
+@media (max-width: 400px) {
+  .skilltags {
+    gap: 4%;
+  }
+  .skilltags li {
+    width: 21.3%;
   }
 }
