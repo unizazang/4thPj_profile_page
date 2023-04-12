@@ -28,9 +28,9 @@ $(".more-image").slick({
     //   },
     // },
     {
-      breakpoint: 500,
+      breakpoint: 502,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
       },
     },

@@ -23,3 +23,7 @@ $(".skilltags .line-btn").click(function (e) {
   $(this).toggleClass("active");
 });
 // $(".pf-card").click(function (e) {});
+
+$(window).scroll(function () {
+  btnFade(topBtn, 750);
+});

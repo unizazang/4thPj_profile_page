@@ -283,7 +283,7 @@ h3 {
 .additionalimgs {
   position: relative;
   margin-bottom: 40px;
-  right: 11px;
+  /* right: 11px; */
 }
 
 .additionalimgs .nextbtn {
@@ -454,14 +454,117 @@ h3 {
   .more-image .image-slide {
     height: 184px;
   }
+  .additionalimgs {
+    margin-bottom: 65px;
+  }
   .additionalimgs .nextbtn {
     left: 100%;
     margin-left: 23px;
     font-size: var(--web-sm-TT-fz);
   }
+  .dt-menubtns {
+    margin-bottom: 69px;
+  }
 }
 
 @media (max-width: 500px) {
+  .back {
+    display: none;
+  }
+  .header-main-tt {
+    margin: 107px 0 79px;
+    position: relative;
+    padding-bottom: 75px;
+  }
+  .header-main-tt:after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    border: 1px solid var(--primary-purple-C);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .pf-intro {
+    text-align: center;
+    flex-direction: column-reverse;
+  }
+  .pf-intro h2 {
+    margin-bottom: 20px;
+  }
+  .pf-description h4 {
+    margin-bottom: 23px;
+  }
+  .tags {
+    justify-content: center;
+  }
+  #pf-points .points-wrapper {
+    gap: 45px;
+    flex-direction: column;
+  }
+  .points-wrapper > li {
+    display: flex;
+    text-align: left;
+  }
+  .points-wrapper > li > span {
+    flex: 1;
+  }
+  .point-desc {
+    flex: 1;
+  }
+  .point-desc h3 {
+    margin-top: 0;
+  }
+  .additionalimgs .nextbtn {
+    margin-left: -3px;
+  }
+  .additionalimgs .nextbtn i {
+    color: var(--primary-purple-C);
+  }
+  .more-image .image-slide {
+    height: 215px;
+  }
+  .slidewrap {
+    margin: 0 6px;
+  }
+  .dt-menubtns > .detail-w-btn {
+    margin-right: 0;
+  }
+  #pf-points h2,
+  #pf-images h2 {
+    text-align: center;
+  }
+  .imgs-top figure {
+    flex-direction: column-reverse;
+    height: 450px;
+  }
+  .imgs-top figure figcaption {
+    display: none;
+  }
+  .imgs-top figure figcaption {
+    padding-left: 5px;
+  }
+  #pf-points h2,
+  #pf-images h2 {
+    margin-bottom: 83px;
+  }
+  .pf-description {
+    border: none;
+    padding: 0 20px 42px;
+  }
+  .pf-intro {
+    padding-bottom: 110px;
+    border-bottom: var(--hr-stroke);
+  }
+  #pf-points {
+    padding-top: 77px;
+    padding-bottom: 87px;
+    border-bottom: var(--hr-stroke);
+  }
+  #pf-images {
+    padding-top: 77px;
+  }
 }
 @media (max-width: 400px) {
 }

@@ -322,6 +322,9 @@ footer p {
   .aside-nav {
     display: none;
   }
+  #go-top {
+    margin-left: 297px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -356,11 +359,7 @@ footer p {
     font-size: var(--mob-mainTT-fz);
     text-align: center;
   }
-  .header-sub-tt {
-    font-size: var(--web-TT-fz);
-    padding-bottom: 106px;
-  }
   #go-top {
-    display: none;
+    margin-left: 195px;
   }
 }

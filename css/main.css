@@ -570,11 +570,6 @@ body {
     padding-top: 883px;
   }
 
-  .header-main-tt,
-  .header-sub-tt {
-    text-align: center;
-  }
-
   .header-main-tt {
     padding: 142px 0 20px 0;
   }
@@ -615,6 +610,11 @@ body {
 }
 
 @media (max-width: 500px) {
+  .header-sub-tt {
+    font-size: var(--web-TT-fz);
+    padding-bottom: 106px;
+    text-align: center;
+  }
   .portfolio .pf-each:last-of-type {
     display: none;
   }
@@ -694,6 +694,9 @@ body {
   }
   .skilltags li {
     font-size: var(--mobile-medium-fz);
+  }
+  #contact > h2 {
+    margin-bottom: 52px;
   }
 }
 @media (max-width: 400px) {
