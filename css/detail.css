@@ -462,7 +462,9 @@ h3 {
     position: relative;
     padding-bottom: 75px;
   }
-  .header-main-tt:after {
+  .header-main-tt:after,
+  .pf-intro::after,
+  #pf-points::after {
     content: "";
     display: inline-block;
     width: 20px;
@@ -544,12 +546,22 @@ h3 {
   }
   .pf-intro {
     padding-bottom: 96px;
-    border-bottom: var(--hr-stroke);
+    /* border-bottom: var(--hr-stroke); */
   }
+  .pf-intro,
+  #pf-points {
+    position: relative;
+  }
+  /* .pf-intro::after , #pf-points::after{
+    content: '';
+    position: absolute;
+
+  } */
+
   #pf-points {
     padding-top: 77px;
     padding-bottom: 87px;
-    border-bottom: var(--hr-stroke);
+    /* border-bottom: var(--hr-stroke); */
   }
   #pf-images {
     padding-top: 77px;

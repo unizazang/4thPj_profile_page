@@ -522,17 +522,15 @@ body {
   font-size: var(--mobile-content-fz) !important;
   padding: 10px;
   top: 0;
-  left: -51%;
-  background: #fff;
+  left: -60%;
+  background: var(--highlight-C);
   border-radius: var(--box-radius);
   height: 13px;
   line-height: 13px;
-  border: 2px solid var(--hazy-pink-C);
-  color: var(--highlight-Pink-C) !important;
+
+  color: #fff !important;
   font-family: "Noto Sans KR", sans-serif !important;
   font-weight: 700 !important;
-  /* transition: 0.3s;
-  transform: translateX(-5px); */
 }
 .wpcf7-not-valid-tip::after {
   content: "";
@@ -540,14 +538,46 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 100%;
+  left: 98%;
 
   border-style: solid; /* 이걸 빼먹어서 안되는거였음 ㅡㅡ... */
   border-width: 10px;
-  border-color: transparent transparent transparent var(--hazy-pink-C);
+  border-color: transparent transparent transparent var(--highlight-C);
   /*  border: 34px solid transparent transparent transparent #fff; */
 }
 
+.wpcf7-response-output {
+  background: #fff;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--box-radius);
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: var(--web-content-fz);
+  color: var(--text-primary-C);
+  border: 2px solid var(--highlight-Pink-C) !important;
+  position: absolute;
+  margin: 0 !important;
+  bottom: 7%;
+  padding: 13px !important;
+  display: inline-block;
+  line-height: 20px;
+  text-align: center;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#contact form {
+  position: relative;
+}
+.wpcf7-form.sent .wpcf7-response-output {
+  border: 2px solid #9afda4 !important;
+}
+
+#contact form textarea {
+  height: 300px;
+}
+/* .wpcf7-not-valid .wpcf7-not-valid-tip {
+  left: -30px;
+} */
 /* ======================== 반응형 =========================== */
 
 /* 태블릿 768px ~ 1080 */
@@ -693,9 +723,38 @@ body {
 }
 @media (max-width: 400px) {
   .skilltags {
-    gap: 4%;
+    gap: 10px;
   }
-  .skilltags li {
-    width: 21.3%;
+  .skilltags a {
+    width: 25%;
+  }
+}
+@media (max-width: 340px) {
+  #go-top {
+    display: none;
+  }
+
+  .portfolio .pf-each {
+    height: 213px;
+  }
+
+  .wpcf7-not-valid-tip,
+  .wpcf7-not-valid-tip::after {
+    display: none;
+  }
+  .profilebtns {
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .profilebtns a {
+    width: 30px;
+    height: 30px;
+  }
+  .profilebtns a i {
+    font-size: var(--m--web-sm-content-fz);
+  }
+
+  .profilebtns a .fa-github {
+    font-size: var(--web-sm-TT-fz);
   }
 }

@@ -224,3 +224,23 @@ figure figcaption p {
     font-size: var(--mobile-medium-fz);
   }
 }
+@media (max-width: 340px) {
+  .skilltags {
+    gap: 10px;
+  }
+  .skilltags a {
+    width: 25%;
+  }
+
+  .pf-card figure {
+    width: 148px;
+  }
+  .pf-thumb {
+    height: 213px;
+  }
+
+  figure figcaption p {
+    font-size: var(--mobile-sm-fz);
+    line-height: 19px;
+  }
+}
