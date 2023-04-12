@@ -565,6 +565,8 @@ h3 {
   #pf-images {
     padding-top: 77px;
   }
-}
-@media (max-width: 400px) {
+  .pf-big-thumb {
+    flex: none;
+    height: 450px;
+  }
 }
