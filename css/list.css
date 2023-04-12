@@ -178,7 +178,7 @@ figure figcaption p {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 516px) {
   .header-main-tt {
     margin: 108px 0 73px;
   }

@@ -28,7 +28,7 @@ $(".more-image").slick({
     //   },
     // },
     {
-      breakpoint: 502,
+      breakpoint: 517,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,

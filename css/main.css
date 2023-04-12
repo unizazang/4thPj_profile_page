@@ -601,7 +601,7 @@ body {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 516px) {
   .header-sub-tt {
     font-size: var(--web-TT-fz);
     padding-bottom: 106px;
