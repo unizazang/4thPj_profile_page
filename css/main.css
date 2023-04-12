@@ -576,7 +576,6 @@ body {
   }
 
   .header-main-tt {
-    font-size: var(--tab-mainTT-fz);
     padding: 142px 0 20px 0;
   }
   .header-sub-tt {
@@ -636,7 +635,9 @@ body {
   .profilebtns {
     margin-top: 10px;
   }
-
+  .header-main-tt {
+    padding: 112px 0 18px 0;
+  }
   .profiletop {
     margin-bottom: 11px;
   }

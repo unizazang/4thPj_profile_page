@@ -387,3 +387,81 @@ h3 {
   text-indent: -99999px;
   border-radius: var(--box-radius);
 }
+
+/* ======================== 반응형 =========================== */
+
+/* 태블릿 768px ~ 1080 */
+@media (max-width: 1080px) {
+  .back {
+    margin-top: 84px;
+  }
+  .header-main-tt {
+    margin-bottom: 75px;
+  }
+  .pf-intro h2 {
+    font-size: var(--web-sm-TT-fz);
+  }
+  .pf-description {
+    padding: 9px 10px 42px 21px;
+    margin: 0;
+  }
+  .pf-description .desc {
+    margin-bottom: 50px;
+    font-size: var(--mobile-content-fz);
+    line-height: 22px;
+  }
+  .tags p {
+    font-size: var(--mobile-medium-fz);
+  }
+  #pf-points {
+    padding-top: 111px;
+  }
+  #pf-points h2,
+  #pf-images h2 {
+    font-size: var(--tab-TT-fz);
+    margin-bottom: 48px;
+  }
+  #pf-points .points-wrapper {
+    gap: 28px;
+  }
+  .points-wrapper > li > span {
+    width: 186.83px;
+    height: 198px;
+  }
+  .point-desc h3,
+  .imgs-top figure figcaption h4 {
+    font-size: var(--web-sm-content-fz);
+  }
+  .point-desc h3 {
+    margin: 29px 0 21px;
+  }
+  .point-desc p,
+  .imgs-top figure figcaption p {
+    font-size: var(--mobile-sm-fz);
+    line-height: 20px;
+  }
+  .imgs-top figure figcaption {
+    flex: 3;
+    padding-left: 20px;
+    padding-right: 0;
+  }
+  .imgs-top figure {
+    margin-bottom: 31.5px;
+  }
+  .more-image {
+    padding: 0;
+  }
+  .more-image .image-slide {
+    height: 184px;
+  }
+  .additionalimgs .nextbtn {
+    left: 100%;
+    margin-left: 23px;
+    font-size: var(--web-sm-TT-fz);
+  }
+}
+
+@media (max-width: 500px) {
+}
+@media (max-width: 400px) {
+}

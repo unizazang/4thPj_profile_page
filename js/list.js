@@ -2,7 +2,7 @@ let layout = $(".pf-wrap").masonry({
   // options
   itemSelector: ".pf-card",
   columnWidth: ".pf-card figure",
-  gutter: 54,
+  gutter: ".gutter-sizer",
 
   isResizable: true,
 });

@@ -258,6 +258,10 @@ footer p {
 }
 /* ---------------- */
 
+.white-btn {
+  color: var(--text-primary-C);
+}
+
 #go-top {
   display: none;
   width: 38px;
@@ -299,6 +303,10 @@ footer p {
   }
   .gnb nav ul {
     justify-content: flex-end;
+  }
+
+  .header-main-tt {
+    font-size: var(--tab-mainTT-fz);
   }
 
   .gnb nav ul li a {
@@ -346,7 +354,7 @@ footer p {
   }
   .header-main-tt {
     font-size: var(--mob-mainTT-fz);
-    padding: 112px 0 18px 0;
+    text-align: center;
   }
   .header-sub-tt {
     font-size: var(--web-TT-fz);
