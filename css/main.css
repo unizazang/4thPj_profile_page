@@ -578,6 +578,33 @@ body {
 /* .wpcf7-not-valid .wpcf7-not-valid-tip {
   left: -30px;
 } */
+
+/* === toast message ==== */
+
+#toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  padding: 15px 20px;
+  transform: translate(-50%, 10px);
+  border-radius: 30px;
+  overflow: hidden;
+  font-size: 0.8rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  z-index: 10000;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+}
+
+#toast.reveal {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
 /* ======================== 반응형 =========================== */
 
 /* 태블릿 768px ~ 1080 */

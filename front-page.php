@@ -35,9 +35,10 @@
                 ><span><img src="<?php bloginfo('template_url'); ?>/images/profile-cat.jpg" alt="" /></span
               ></span>
               <p class="profilebtns">
-                <a href=""><i class="fa-regular fa-envelope"></i></a>
-                <a href=""><i class="fa-brands fa-github"></i></a>
+                <a href="#contact"><i class="fa-regular fa-envelope"></i></a>
+                <a href="https://github.com/unizazang" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <button class="share-profile">share profile</button>
+                <span id="toast"></span>
               </p>
             </div>
             <div class="myprofile">
