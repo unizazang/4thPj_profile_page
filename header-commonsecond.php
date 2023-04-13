@@ -18,7 +18,6 @@
                 <a href="/wp/index.php#contact"
                   ><i class="fa-regular fa-paper-plane"></i> mail me!</a
                 >
-                <!-- 이거 누르면 frontpage 로 가긴 하지만 index 로연결하면 됨!!! -->
               </li> 
             </ul>
           </nav>

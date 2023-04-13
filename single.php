@@ -29,23 +29,15 @@
               <h2><?php the_title(); ?></h2>
               <h4><?php the_field('date'); ?></h4>
               <div class="tags">
-
               <?php 
                 foreach((get_the_category()) as $category){
-                  // 카테고리 번호가 부모카테고리의 번호와 같다면 아무것도 하지말기.
                   if(get_cat_ID($category->name) == 3){
                     echo '';
                   }else{
                     echo "<p>".$category->name."</p>";
                   }
                 }
-                  //이거 넣으면 갑자기 아래가 안나옴... -> return 시키니까 아무것도안하죠 '' 로 교체
                 ?>
-             
-            <!-- <p>HTML, CSS</p>
-                <p>JavaScript</p>
-                <p>JQuery</p>
-                <p>PHP</p> -->
               </div>
               <p class="desc">
                 <?php the_field('top-description'); ?>
@@ -175,8 +167,6 @@
         </main>
         <div class="dt-menubtns">
           <div class="nextprevpost">
-
-
           <?php if(get_previous_post_link()){ ?>
               <span class="detail-w-btn">
                 <?php previous_post_link( '%link', __( '<i class="fa-solid fa-chevron-left"></i>이전 포트폴리오', 'alikerock' ), true ); ?> 
@@ -187,14 +177,11 @@
                 <?php next_post_link( '%link', __( '다음 포트폴리오<i class="fa-solid fa-chevron-right"></i>', 'alikerock' ), true ); ?> 
               </span>
             <?php } ?>
-            <!-- 기존 클래스명으로 여기에 감싸세요 -->
           </div>
           <a href="/wp/?cat=3" class="detail-w-btn"
             ><i class="fa-solid fa-list"></i>목록으로</a
           >
-
         </div>
-        
         <!-- 추가이미지클릭시 팝업 -->
         <div id="lightbox-overlay">
           <img
@@ -204,7 +191,6 @@
             id="lightbox-image"
           />
         </div>
-
 <?php get_footer('commonfirst'); ?>
 <!-- 탑버튼 ~ jQuery, common.js까지 -->
 

@@ -6,9 +6,6 @@
 </div>
 <!-- ==========  head~ nav gnb까지 ========== -->
 
-<!-- 게시물이 있으면 본문 출력 -->
-
-
 <main>
         <nav class="aside-nav">
           <a href="#headervideo"></a>
@@ -60,26 +57,15 @@
             <div class="myskills">
               <h2>My Skills</h2>
               <ul class="skilltags">
-                <!-- 여기 카테고리 출력하는걸로 바꿀까? -->
-                <!-- <li class="line-btn">HTML, CSS</li>
-                <li class="line-btn">JavaScript</li>
-                <li class="line-btn">React</li>
-                <li class="line-btn">PHP</li>
-                <li class="line-btn">JQuery</li>
-                <li class="line-btn">MySQL</li>
-                <li class="line-btn">WordPress</li>
-                <li class="line-btn">UI Design</li> -->
-
                 <?php 
-                
                 $parent_cat_ID = get_cat_ID( 'portfolio' );
                 $childcat = array(
                   'child_of' => $parent_cat_ID
                 );
                 $child_categories = get_categories( $childcat );
 
-                foreach ( $child_categories as $child_category ) {
-                  // 하위 카테고리를 출력하는 코드
+                foreach ( $child_categories as $child_category ) { 
+                  // 하위카테고리 출력
                   ?>
                   <li class="line-btn"><?php echo $child_category->name; ?></li>
                 <?php
@@ -92,7 +78,6 @@
           <section id="recent-portfolio">
             <h2>Recent Portfolio</h2>
             <div class="portfolio">
-
               <?php 
               $args = array(
                 'post_type' => 'post',
@@ -101,13 +86,12 @@
                 'orderby' => 'date',
                 'order' => 'DESC'
               );
-              
               $query = new WP_Query( $args );
               
               if ( $query->have_posts() ) {
                 while ( $query->have_posts() ) {
                   $query->the_post();
-                  // 최신 글을 출력하는 코드
+                  // 최신 글 출력
                   ?>
                 <div class="pf-each">
                   <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>" alt="">
@@ -119,7 +103,7 @@
                   <?php
                 }
               } else {
-                // 포스트가 없을 경우 출력하는 코드
+                // 포스트가 없을 경우 출력
                 ?>
                 <div class="pf-each">
                   <p>아직 글이 없습니다.</p>
@@ -127,17 +111,6 @@
                 <?php
               }
               ?>
-
-              <!-- <div class="pf-each">
-                <img src="< ?php bloginfo('template_url'); ?>/images/acme.jpeg" alt="" />
-
-                <a href="" class="pf-tt">
-                  <h4>LakeSide</h4>
-                  <h4>Renewal</h4>
-                  <span><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </div> -->
-
               <?php wp_reset_postdata(); ?>
             </div>
             <p>
@@ -147,33 +120,6 @@
           <!-- // recent portfolio -->
           <section id="contact">
             <h2>Contact</h2>
-           <!-- <form action="">
-              <label for="cpname">company name</label>
-              <input
-                type="text"
-                id="cpname"
-                name="cpname"
-                placeholder="company name"
-              />
-
-              <label for="email">email address</label>
-              <input
-                type="text"
-                id="email"
-                name="email"
-                placeholder="email address"
-              />
-              <label for="message">message</label>
-              <textarea
-                name="message"
-                id="message"
-                cols="30"
-                rows="10"
-                placeholder="message"
-              ></textarea>
-              <button class="filled-btn">send</button>
-            </form> -->
-            <!-- do~~  -->
             <?php echo do_shortcode( '[contact-form-7 id="218" title="profilepage-contact"]' ); ?>
           </section>
           <!-- // contact -->
