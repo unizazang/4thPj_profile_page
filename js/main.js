@@ -23,11 +23,13 @@ video.click(function () {
 // mouse
 let mouseIcon = $(".mouse-icon");
 mouseIcon.click(function () {
-  $("html, body").stop().animate(
-    {
-      scrollTop: sectionsOST[1],
-    },
-    800,
-    "easeInOutCubic"
-  );
+  scrollAnimation(1, 800);
+
+  // $("html, body").stop().animate(
+  //   {
+  //     scrollTop: sectionsOST[1],
+  //   },
+  //   800,
+  //   "easeInOutCubic"
+  // );
 });

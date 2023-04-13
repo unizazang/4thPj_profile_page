@@ -25,16 +25,14 @@ font-family: 'Roboto', sans-serif;
   --web-mainTT-fz: 50px;
   --tab-mainTT-fz: 40px;
   --mob-mainTT-fz: 30px;
-  /* h1 */
   --sub-TT-fz: 35px;
 
   --web-TT-fz: 25px;
   --web-sm-TT-fz: 20px;
+  --tab-TT-fz: 18px;
   --web-very-sm-fz: 16px;
   --web-content-fz: 15px;
   --web-sm-content-fz: 14px;
-
-  --tab-TT-fz: 18px;
 
   --mobile-medium-fz: 13px;
   --mobile-content-fz: 12px;

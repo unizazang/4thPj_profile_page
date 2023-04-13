@@ -71,15 +71,17 @@ additionalSlideImgs.click(function () {
 }); //추가 이미지
 
 function imgModal($this) {
-  let target = $this.find("img").attr("src"); //선생님이 data속성으로했던이유 : 원래 이미지 src 가 없었고 a태그에 있었어서...
+  let target = $this.find("img").attr("src");
   lightboxImg.attr("src", target);
   $("body").addClass("modal");
   lightbox.fadeIn(500, "easeOutCubic");
 }
+
 // let target = $(this).find("img").attr("src");
 // lightboxImg.attr("src", target);
 // $("body").addClass("modal");
 // lightbox.fadeIn();
+//선생님이 data속성으로했던이유 : 원래 이미지 src 가 없었고 a태그에 있었어서...
 
 lightbox.click(function () {
   lightbox.fadeOut(500, "easeOutCubic");

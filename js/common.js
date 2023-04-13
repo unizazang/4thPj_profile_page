@@ -2,17 +2,6 @@ let topBtn = $("#go-top");
 
 // ----------- functions -------------
 
-// 스크롤양에 따라 보이고 안보임
-function btnFade(btn, ost) {
-  let scrAmt = $(window).scrollTop();
-
-  if (scrAmt > ost) {
-    btn.fadeIn();
-  } else {
-    btn.fadeOut();
-  }
-}
-
 // $(window).scroll(function () {
 
 // });
@@ -27,6 +16,17 @@ let wholeSectionWrap = $("main"),
   currentIdx = 0,
   targetIdx;
 
+// 스크롤양에 따라 보이고 안보임
+function btnFade(btn, ost) {
+  let scrAmt = $(window).scrollTop();
+
+  if (scrAmt > ost) {
+    btn.fadeIn();
+  } else {
+    btn.fadeOut();
+  }
+}
+
 function navArray() {
   asideNav.each(function () {
     let sectionLink = $(this).attr("href");
@@ -34,6 +34,16 @@ function navArray() {
 
     sectionsOST.push($(sectionLink).offset().top);
   });
+}
+
+function scrollAnimation(target, easing) {
+  $("html, body").stop().animate(
+    {
+      scrollTop: sectionsOST[target],
+    },
+    easing,
+    "easeInOutCubic"
+  );
 }
 
 setTimeout(() => {
@@ -44,14 +54,15 @@ asideNav.click(function (e) {
   e.preventDefault();
 
   targetIdx = $(this).index();
+  scrollAnimation(targetIdx, 800);
 
-  $("html, body").stop().animate(
-    {
-      scrollTop: sectionsOST[targetIdx],
-    },
-    600,
-    "easeOutCubic"
-  );
+  // $("html, body").stop().animate(
+  //   {
+  //     scrollTop: sectionsOST[targetIdx],
+  //   },
+  //   600,
+  //   "easeOutCubic"
+  // );
 });
 
 topBtn.click(function (e) {
