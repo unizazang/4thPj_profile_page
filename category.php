@@ -13,21 +13,17 @@
 
               <?php 
               $catid = $_GET['cat'];
-              $this_category = get_cat_name($catid); //loop 밖에 출력
-            
+              $this_category = get_cat_name($catid);
               $categories = get_categories( array( 'child_of' => 3 ) ); //2번 카테고리의 하위 목록
 
               foreach ( $categories as $category ) {
-                
-              $class = ($this_category == $category->name) ? ' class="line-btn active"' : ' class="line-btn"';
-              
-
-              printf( '<a href="%1$s"'.$class.'">%2$s</a>',
-                  get_category_link( $category ),
-                  esc_html( $category->cat_name )
-              );
-            }
-        ?>
+                $class = ($this_category == $category->name) ? ' class="line-btn active"' : ' class="line-btn"';
+                printf( '<a href="%1$s"'.$class.'">%2$s</a>',
+                    get_category_link( $category ),
+                    esc_html( $category->cat_name )
+                );
+              }
+            ?>
             </div>
           </header>
           <!-- ========================== 섹션 시작 ================================ -->
