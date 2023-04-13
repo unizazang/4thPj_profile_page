@@ -267,7 +267,7 @@ h3 {
 .additionalimgs {
   position: relative;
   margin-bottom: 40px;
-  /* right: 11px; */
+  right: 11px;
 }
 
 .additionalimgs .nextbtn {

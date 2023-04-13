@@ -12,7 +12,7 @@
               </li>
               <li><a href="/wp/?cat=3">portfolio</a></li>
               <li>
-                <a href="">contact</a>
+                <a href="/wp/index.php#contact">contact</a>
               </li>
               <li class="menu-mail">
                 <a href="/wp/index.php#contact"
