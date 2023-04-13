@@ -169,12 +169,12 @@
           <div class="nextprevpost">
           <?php if(get_previous_post_link()){ ?>
               <span class="detail-w-btn">
-                <?php previous_post_link( '%link', __( '<i class="fa-solid fa-chevron-left"></i>이전 포트폴리오', 'alikerock' ), true ); ?> 
+                <?php previous_post_link( '%link', __( '<i class="fa-solid fa-chevron-left"></i>이전 포트폴리오', 'uniprofile' ), true ); ?> 
               </span>
             <?php } ?>
             <?php if(get_next_post_link()){ ?>
               <span class="detail-w-btn">
-                <?php next_post_link( '%link', __( '다음 포트폴리오<i class="fa-solid fa-chevron-right"></i>', 'alikerock' ), true ); ?> 
+                <?php next_post_link( '%link', __( '다음 포트폴리오<i class="fa-solid fa-chevron-right"></i>', 'uniprofile' ), true ); ?> 
               </span>
             <?php } ?>
           </div>
