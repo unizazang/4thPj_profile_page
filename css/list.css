@@ -207,6 +207,49 @@ figure figcaption p {
   }
 }
 
+@media (max-width: 481px) {
+  /*  .pf-card figure {
+    width: 45vw;
+  }
+  .gutter-sizer {
+    width: 5vw;
+  } */
+
+  .pf-card figure {
+    width: 205px;
+  }
+  .gutter-sizer {
+    width: 7%;
+  }
+}
+
+@media (max-width: 420px) {
+  .pf-card figure {
+    width: 180px;
+  }
+  .gutter-sizer {
+    width: 5%;
+  }
+}
+
+@media (max-width: 400px) {
+  .skilltags {
+    gap: 4%;
+  }
+  .pf-card figure {
+    width: 160px;
+  }
+  .pf-thumb {
+    height: 250px;
+  }
+  .gutter-sizer {
+    width: 4%;
+  }
+  figure figcaption h4 {
+    font-size: var(--mobile-medium-fz);
+  }
+}
+
 @media (max-width: 400px) {
   .skilltags {
     gap: 4%;
@@ -242,5 +285,23 @@ figure figcaption p {
   figure figcaption p {
     font-size: var(--mobile-sm-fz);
     line-height: 19px;
+  }
+}
+
+@media (max-width: 324px) {
+  .skilltags {
+    gap: 5px;
+  }
+
+  .pf-card figure {
+    width: 142px;
+  }
+
+  .gutter-sizer {
+    width: 3.5%; /* 모바일 반응형 > % 말고 vw 로... 하는게 나아요 */
+  }
+
+  .pf-card {
+    margin-bottom: 25px;
   }
 }

@@ -571,3 +571,16 @@ h3 {
     height: 450px;
   }
 }
+
+@media (max-width: 400px) {
+  .dt-menubtns .detail-w-btn {
+    font-size: var(--mobile-content-fz);
+    padding: 9px 4px;
+  }
+}
+@media (max-width: 324px) {
+  .dt-menubtns .detail-w-btn {
+    font-size: var(--mobile-sm-fz);
+    padding: 9px 3px;
+  }
+}
