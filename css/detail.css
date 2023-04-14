@@ -1,5 +1,4 @@
 :root {
-  /*  */
   --vivid-purple-C: #8d80dd;
   --tags-radius: 6px;
   --tags-shadow: 0px 2px 3px rgba(124, 124, 124, 0.2);
@@ -546,17 +545,11 @@ h3 {
   }
   .pf-intro {
     padding-bottom: 96px;
-    /* border-bottom: var(--hr-stroke); */
   }
   .pf-intro,
   #pf-points {
     position: relative;
   }
-  /* .pf-intro::after , #pf-points::after{
-    content: '';
-    position: absolute;
-
-  } */
 
   #pf-points {
     padding-top: 77px;

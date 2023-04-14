@@ -76,7 +76,6 @@ font-family: 'Roboto', sans-serif;
 
 body {
   background: var(--background-grad) no-repeat;
-  /* 높이 그냥 주지마세요... 왜줌 */
   font-family: "Roboto", sans-serif;
 }
 
@@ -144,10 +143,6 @@ footer p {
   font-weight: 700;
 }
 
-/* width: 105px; */
-/* 너비주지마세요 패딩으로처리하세요 내용만큼만 나오라고하면되잖아 */
-/* height: 35px; 높이도주지마 ㅡㅡ */
-
 .line-btn,
 .filled-btn {
   font-size: var(--web-content-fz);
@@ -183,11 +178,7 @@ footer p {
   color: var(--highlight-C);
   margin-left: 5px;
 }
-/*
-.dt-menubtns .detail-w-btn:hover {
-  background: var(--hazy-pink-C);
-}
-*/
+
 .white-btn:hover i,
 .detail-w-btn:hover i {
   color: #fff;
@@ -204,8 +195,7 @@ footer p {
   left: 50%;
   top: 50%;
   margin-left: 521px;
-  /* right로 잡으면 어떡합니까 브라우저 너비가 다다른데
- 이럴땐 그냥 left 를 50% 준다음에 마진으로 움직여서 고정 ㄱㄱ*/
+
   transform: translateY(-50%);
 }
 .aside-nav a {
@@ -287,10 +277,6 @@ footer p {
 #go-top i {
   transition: color 0.3s;
 }
-/* 
-#go-top:hover {
-  box-shadow: var(--btn-shadow);
-} */
 
 #go-top:hover i {
   color: var(--highlight-Pink-C);

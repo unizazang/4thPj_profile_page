@@ -52,24 +52,10 @@ figure figcaption p {
   color: #fff;
   transform: translateY(-6px);
 }
-/* li가 아니라 ul한테 줘야지... */
-
-/* ================= masonry 로 주석처리 ==================== */
-/* .pf-wrap {
-  display: flex;
-  gap: 56px;
-  flex-wrap: wrap;
-  align-items: flex-start;
-}
-*/
 
 .pf-card {
   margin-bottom: 54px;
 }
-/* 
-.pf-card.active {
-  height: 520px;
-} */
 
 .pf-card figure {
   width: 291px;
@@ -120,8 +106,7 @@ figure figcaption p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-} /*  */
-/* ================= masonry 로 주석처리 ==================== */
+}
 
 .pf-card figcaption {
   display: none;
@@ -130,8 +115,6 @@ figure figcaption p {
 .pf-card.active figcaption {
   display: inline-block;
 }
-
-/* img shadow */
 
 .gutter-sizer {
   width: 53px;
@@ -208,13 +191,6 @@ figure figcaption p {
 }
 
 @media (max-width: 481px) {
-  /*  .pf-card figure {
-    width: 45vw;
-  }
-  .gutter-sizer {
-    width: 5vw;
-  } */
-
   .pf-card figure {
     width: 205px;
   }

@@ -42,11 +42,6 @@ body {
 }
 
 .video-area video {
-  /* width: 100%;
-  height: 100%;
-  object-fit: cover; */
-  /*     height: 100%;
-    object-fit: cover; 이게 낫지않나 - 반응형하면서봄 */
   position: absolute;
   top: 0;
   left: 0;
@@ -72,7 +67,7 @@ body {
   display: flex;
   gap: 25px;
   align-items: center;
-  /* 안되던이유 : 얘가 기본값이 stretch라... 늘어나잖아요 */
+
   margin-top: 20px;
 }
 .profilebtns a {
@@ -116,7 +111,6 @@ body {
   background: #fff;
 }
 .profilebtns a i {
-  /* color: var(--text-primary-C); */
   font-size: var(--web-sm-TT-fz);
 }
 .profilebtns a .fa-github {
@@ -136,8 +130,6 @@ body {
 }
 
 .share-profile:hover {
-  /* background: var(--highlight-Pink-C); */
-  /* background: var(--hazy-pink-C); */
   transform: translateY(-3px);
   background: #fff;
   color: var(--primary-purple-C);
@@ -156,7 +148,6 @@ body {
 }
 
 .mouse-icon {
-  /* display: inline-block; */
   width: 27px;
   height: 27px;
   position: absolute;
@@ -224,17 +215,12 @@ body {
   height: 4px;
   border-radius: 50%;
   position: absolute;
-  /* right: calc(-100% - 10px); */
 
   left: -10px;
   background: var(--typo-gray-C);
 }
 
 /* ---------------------------------- */
-
-/* .myskills {
-  margin-bottom: 120px;
-} */
 
 #recent-portfolio {
   padding-top: 120px;
@@ -260,12 +246,6 @@ body {
 .skilltags li {
   width: 22%;
 }
-/* .skilltags li:hover {
-  background: var(--highlight-C);
-  box-shadow: var(--btn-shadow);
-  color: #fff;
-  transform: translateY(-6px);
-} */
 
 .pf-tt {
   margin-top: 14px;
@@ -276,7 +256,7 @@ body {
   letter-spacing: 0.05em;
   text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   opacity: 0;
-  /* visibility: hidden; 호버해도 링크안걸리니까 뺌 */
+
   transform: translateY(50px);
   font-family: "Noto Sans KR", sans-serif;
 }
@@ -435,7 +415,6 @@ body {
 
 #contact form textarea {
   margin-bottom: 44px;
-  /* padding-top: 15px; */
 }
 
 #contact form textarea,
@@ -459,7 +438,6 @@ body {
 }
 #contact form p:not(:last-of-type) input:focus,
 #contact form textarea:focus {
-  /* border: none; border가 아니라 outline이었다~~~~ */
   outline: none;
   border: 2px solid var(--form-focus-C);
   box-shadow: var(--form-focus-shadow);
@@ -540,10 +518,9 @@ body {
   transform: translateY(-50%);
   left: 98%;
 
-  border-style: solid; /* 이걸 빼먹어서 안되는거였음 ㅡㅡ... */
+  border-style: solid;
   border-width: 10px;
   border-color: transparent transparent transparent var(--highlight-C);
-  /*  border: 34px solid transparent transparent transparent #fff; */
 }
 
 .wpcf7-response-output {
@@ -575,9 +552,6 @@ body {
 #contact form textarea {
   height: 300px;
 }
-/* .wpcf7-not-valid .wpcf7-not-valid-tip {
-  left: -30px;
-} */
 
 /* === toast message ==== */
 
