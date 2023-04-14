@@ -54,12 +54,20 @@ $("button.share-profile").click(function () {
 
   // navigator.clipboard.writeText(profileURL).then(
   // function () {
-  toast("링크가 클립보드에 복사되었습니다.");
+  // toast("링크가 클립보드에 복사되었습니다.");
   //   },
   //   function () {
   //     toast("링크 복사에 실패했습니다.");
   //   }
   // );
+
+  var url = window.location.href;
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val(url).select();
+  document.execCommand("copy");
+  $temp.remove();
+  toast("링크가 클립보드에 복사되었습니다.");
 });
 
 // TOAST 원본코드
