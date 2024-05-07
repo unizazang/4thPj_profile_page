@@ -40,7 +40,18 @@ font-family: 'Roboto', sans-serif;
 
   /* color ------------------ */
 
-  --background-grad: linear-gradient(180deg, #cdd8cf 38.45%, #a9b8ae 100%);
+  /* 
+
+  ===== 240507 ======
+  
+  기존 : 
+  --background-grad: linear-gradient(180deg, #cdd8cf 38.45%, #a9b8ae 100%); 
+  
+  백그라운드 그라디언트 수정 - */
+  
+
+  --background-grad: linear-gradient(180deg, #DCE4EE 0%, #DCE4EE 20%,  #C5EBD6 100%);
+  /*  ===== 240507 ====== */
   --container-bg-C: #f3f6f5;
   --line-btn-stroke-C: #e6e6e6;
   --highlight-C: #afa1ff;
