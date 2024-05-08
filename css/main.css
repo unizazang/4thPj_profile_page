@@ -30,8 +30,10 @@ body {
 .maintitles {
   text-align: right;
 }
+/* ---------- 240508 추가 -------------- */
 
-.video-area {
+
+/* .video-area {
   width: 93%;
   margin: 0 auto;
   padding-top: 744px;
@@ -39,15 +41,119 @@ body {
   border-radius: var(--box-radius);
   position: relative;
   overflow: hidden;
+} */
+.video-area {
+  width: 93%;
+  margin: 0 auto;
+  padding-top: 744px;
+  background: #0F141C;
+  border-radius: var(--box-radius);
+  position: relative;
+  overflow: hidden;
 }
 
-.video-area video {
+/* .video-area video {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+} */
+
+
+
+/* 첫번째 JS 방식 - GSAP, 너무 렉걸려서 pure CSS 버전으로 다시 도전*/
+.bg-sky {
+  height: 100%;
 }
+
+.star {
+  box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.4);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border-radius: 2px;
+  background-color: white;
+} 
+
+
+/* pure CSS ver. */
+/* 안나옴 ㅡㅡ
+#star{
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  background: #f6f6f6;
+  overflow: hidden;
+  z-index: 2;
+  animation: glitter 4.5s linear 0s infinite normal;
+}
+
+.star-top,
+.star-bottom {
+  position: absolute;
+  display: block;
+  height: 100%;
+}
+
+.star-top:before,
+.star-top:after,
+.star-bottom:before,
+.star-bottom:after {
+  content: '';
+  width: 48px;
+  height: 48px;
+  background: #212121;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.star-top:before {
+  top: -24px;
+  left: -24px;
+}
+.star-top:after {
+  bottom: -24px;
+  left: 24px;
+}
+.star-bottom:before {
+  top: 24px;
+  left: -24px;
+}
+.star-bottom:after {
+  top: 24px;
+  left: 24px;
+}
+
+@keyframes glitter {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+} */
+
+
+/* ---------- 240508 추가 -------------- */
+
 
 #profile {
   margin-top: -161px;
