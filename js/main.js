@@ -159,3 +159,74 @@ $("button.share-profile").click(function () {
   
 //   });
 //   });
+
+
+
+
+// =============== 생성만 하고 애니메이션 없는 vanilla js  > 작동잘됨. 일단 보류 =================
+
+// (function(){
+
+//   function Stars(numberOfStars, divID){
+//     var chosenDiv = document.getElementById(divID)  
+//     chosenDiv.style.display = "none";
+//     chosenDiv.innerHTML = "";
+//     function randomFrom(array) {
+//       return array[Math.floor(Math.random() * array.length)];
+//     }
+//     var text = "";
+//     var i; 
+//     for (i = 0; i < numberOfStars; i++) {
+//         bigRange = Array.apply(null, Array(100)).map(function (_, i) {return i;});
+//         smallRange = Array.apply(null, Array(3)).map(function (_, i) {return i;});
+//         tenRange = Array.apply(null, Array(5)).map(function (_, i) {return i;});
+//         starTwinkleStage = randomFrom("9","13");
+//         var top = randomFrom(bigRange); 
+//         var right = randomFrom(bigRange); 
+//         var width = randomFrom(smallRange);
+//         text += "<style></style>";
+//         text += "<div class='stars' style='top:" + top + "%; right: "+ right +"%; width:" + width + "px; height:" + width + "px;";
+//         text += "animation: twinkling " + starTwinkleStage + "s infinite";
+//         text += ";box-shadow: 0px 0px 1vw rgba(255, 255, 255, 0.2);'></div>";
+//         chosenDiv.innerHTML = text;
+//         chosenDiv.style.display = "block";
+//     }
+// }
+  
+// // Function(How many stars, id that you want populating)
+// Stars(140, "bg-sky");
+
+// })();
+
+
+// === 새로발견한 포르투갈어 그거 !! ===
+
+function init(){
+
+  //estrelas
+
+  var style = ["style1", "style2", "style3", "style4"];
+  var tam = ["tam1", "tam1", "tam1", "tam2", "tam3"];
+  var opacity = ["opacity1", "opacity1", "opacity1", "opacity2", "opacity2", "opacity3"];
+
+  function getRandomArbitrary(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  var estrela = "";
+  var qtdeEstrelas = 100; //기본 250
+  var noite = document.querySelector(".constelacao");
+  var widthWindow = window.innerWidth;
+  var heightWindow = window.innerHeight;
+
+  for (var i = 0; i < qtdeEstrelas; i++) {
+    estrela += "<span class='estrela " + style[getRandomArbitrary(0, 4)] + " " + opacity[getRandomArbitrary(0, 6)] + " "
+    + tam[getRandomArbitrary(0, 5)] + "' style='animation-delay: ." +getRandomArbitrary(0, 9)+ "s; left: "
+    + getRandomArbitrary(0, widthWindow) + "px; top: " + getRandomArbitrary(0, heightWindow) + "px;'></span>";
+  }
+
+  noite.innerHTML = estrela;
+
+}
+
+window.onload = init;
