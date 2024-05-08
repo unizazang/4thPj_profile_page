@@ -147,7 +147,7 @@ footer p {
 .filled-btn,
 .white-btn,
 .detail-w-btn,
-.detail-git-btn {
+.detail-git-btn, .share-profile {
   border-radius: var(--btn-radius);
   text-align: center;
   line-height: 35px;
@@ -155,11 +155,11 @@ footer p {
 }
 
 .line-btn,
-.filled-btn {
+.filled-btn, .share-profile {
   font-size: var(--web-content-fz);
 }
 
-.line-btn {
+.line-btn, .share-profile {
   background: var(--container-bg-C);
   border: 1px solid var(--line-btn-stroke-C);
   color: var(--text-primary-C);

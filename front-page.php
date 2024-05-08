@@ -40,7 +40,7 @@
               <p class="profilebtns">
                 <a href="#contact"><i class="fa-regular fa-envelope"></i></a>
                 <a href="https://github.com/unizazang" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <button class="share-profile">share profile</button>
+                <button class="share-profile">Share profile</button>
                 <span id="toast"></span>
               </p>
             </div>
