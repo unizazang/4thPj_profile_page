@@ -232,7 +232,7 @@ body {
     box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.05);
   }
   30%{
-    box-shadow: 0 0 10px 2.3px rgba(255, 255, 255, 0.48);
+    box-shadow: 0 0 10px 1.5px rgba(255, 255, 255, 0.48);
   }
   50% {
     box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
