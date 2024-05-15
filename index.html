@@ -81,16 +81,17 @@
                     <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
                    </filter> 이거 넣으면 난데없이 사각형이됨;;; 어케해결하지 -->
                     <linearGradient id="path1" x1="20%" y1="50%" x2="100%" y2="20%">
-                    <stop offset="20%" stop-color="#E38EAF"/>
-                    <stop offset="80%" stop-color="#E4F8C7"/>
+                    <stop offset="35%" stop-color="#E38EAF" style="stop-opacity:0.85;"/>
+                    <stop offset="80%" stop-color="#E4F8C7"   style="stop-opacity:1;"/>
                     </linearGradient>
                     <linearGradient id="path2" x1="20%" y1="80%" x2="100%" y2="40%">
-                    <stop offset="20%" stop-color="#3A7B7B"/>
-                    <stop offset="80%" stop-color="#B6A7C8"/>
+                    <stop offset="20%" stop-color="#3A7B7B" style="stop-opacity:0.8;"/>
+                    <stop offset="80%" stop-color="#B6A7C8" style="stop-opacity:1;"/>
                     </linearGradient>
                     <style>
                       path {
                         filter:url(#f1);
+                        
                       }
                         @keyframes rotate {
                       0% {
