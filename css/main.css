@@ -233,13 +233,13 @@ body {
 
 /* 0515 svg 효과 실험 */
 
-svg {
+/* svg { */
   /* position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh; */
-}
+/* } */
 
 /* 별 작업 05 15 */
 
@@ -350,6 +350,21 @@ align-self: start;
     opacity: 1;
   }
 }
+
+/* @keyframes twinklerotate {
+	0% {
+		opacity: 0;
+		transform: rotate(45deg) scale(0);
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: rotate(405deg) scale(1.1);
+	}
+} */
+
 /* 
 @keyframes twinkle-scale {
   0% {
@@ -374,6 +389,9 @@ align-self: start;
   width: 100%;height: 100%;z-index: 1;
 }
 
+.svgwrapper svg{
+  height: 100%;
+}
 
 /* -------0515 ---------- */
 
@@ -524,7 +542,7 @@ align-self: start;
 .headercontent {
   position: relative;
 }
-
+/* 
 .mouse-icon {
   width: 27px;
   height: 27px;
@@ -535,7 +553,7 @@ align-self: start;
   cursor: pointer;
 
   animation: mousebounce 0.8s infinite forwards;
-}
+} */
 
 .myprofile h2 {
   margin-bottom: 14px;
@@ -707,7 +725,6 @@ align-self: start;
 
 .video-area video,
 .profile-img > span img,
-.mouse-icon img,
 .pf-each > img {
   width: 100%;
   height: 100%;
@@ -737,7 +754,7 @@ align-self: start;
   transition: 0.3s;
   animation: bounce 0.7s forwards infinite ease-in;
 }
-
+/* 
 @keyframes mousebounce {
   0% {
     transform: translateX(-50%) translateY(0);
@@ -752,8 +769,8 @@ align-self: start;
   90% {
     transform: translateX(-50%) translateY(0);
   }
-}
-
+} */
+/* 
 @keyframes bounce {
   0% {
     transform: translateX(-1px);
@@ -768,7 +785,7 @@ align-self: start;
   100% {
     transform: translateX(0px);
   }
-}
+} */
 
 #contact > h2 {
   padding-top: 82px;
@@ -961,9 +978,7 @@ align-self: start;
 
 /* 태블릿 768px ~ 1080 */
 @media (max-width: 1080px) {
-  .mouse-icon {
-    display: none;
-  }
+
   .video-area {
     width: 100%;
 
