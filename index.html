@@ -75,16 +75,21 @@
                   <!-- <filter class="blureffect" x="0" y="0" xmlns="http://www.w3.org/2000/svg">
                     <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
                   </filter> -->
-
-                  <linearGradient id="path1" x1="30%" y1="50%" x2="100%" y2="60%">
-                    <stop offset="30%"   stop-color="#E38EAF"/>
-                    <stop offset="100%" stop-color="#E4F8C7"/>
+                  <!-- <filter id="f1" xmlns="">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+                  </filter> 이거 넣으면 난데없이 사각형이됨;;; 어케해결하지 -->
+                  <linearGradient id="path1" x1="20%" y1="50%" x2="100%" y2="20%">
+                    <stop offset="20%" stop-color="#E38EAF"/>
+                    <stop offset="80%" stop-color="#E4F8C7"/>
                   </linearGradient>
                   <linearGradient id="path2" x1="20%" y1="80%" x2="100%" y2="40%">
-                    <stop offset="30%"   stop-color="#3A7B7B"/>
-                    <stop offset="100%" stop-color="#B6A7C8"/>
+                    <stop offset="20%" stop-color="#3A7B7B"/>
+                    <stop offset="80%" stop-color="#B6A7C8"/>
                   </linearGradient>
                     <style>
+                      path {
+                        filter:url(#f1);
+                      }
                         @keyframes rotate {
                        0% {
                                 transform: rotate(0deg);
