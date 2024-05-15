@@ -1,6 +1,10 @@
 $(window).scroll(function () {
-  btnFade(topBtn, 750); //topbtn
-
+  if (window.innerWidth > 450) {
+    btnFade(topBtn, 750); //topbtn
+  }
+ 
+  
+  
   let SCT = $(this).scrollTop();
   btnFade(asideNav, 750); //nav
 
@@ -11,6 +15,10 @@ $(window).scroll(function () {
     }
   });
 });
+
+
+
+
 
 
 

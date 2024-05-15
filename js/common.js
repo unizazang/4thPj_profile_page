@@ -27,6 +27,9 @@ function btnFade(btn, ost) {
   }
 }
 
+
+
+
 function navArray() {
   asideNav.each(function () {
     let sectionLink = $(this).attr("href");
