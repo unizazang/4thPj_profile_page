@@ -269,9 +269,6 @@ align-self: start;
   justify-content: flex-start;
   align-content: space-evenly;
 }
-/* .starwrap2{
-  
-} */
 
 .star-bg .star {
   z-index: 100000;
