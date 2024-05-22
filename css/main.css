@@ -276,7 +276,7 @@ align-self: start;
   width: var(--star-size);
   height: var(--star-size);
   top: 20%;
-  left: 30%;
+  left: 10%;
   transform: rotateZ(45deg);
   transform-origin: 50px;
   
@@ -346,6 +346,21 @@ align-self: start;
   box-shadow: 0 0 var(--star-size) / 2 var(--star-size) / 10 white;
   /* animation: twinkle-glow 2s infinite alternate ease-in-out; */
 }
+
+.star-bg div.star:nth-of-type(2n+1){
+  left: calc(100% - 150px);
+  top: 20%;
+}
+/* 
+.star-bg div.star:nth-child(4){
+  top: 50%;
+} */
+
+/* 
+.star-bg .star:nth-of-type(2n){
+  left: 30%;
+  top: 20%;
+} */
 
 .smstar{ position: absolute;
   width: calc(var(--star-size)/10);height: calc(var(--star-size)/10);
