@@ -8,6 +8,10 @@
   --form-focus-shadow: 0px 4px 4px rgba(90, 75, 255, 0.2);
   --star-size: 35px;
   --space:30%;
+  /* ---- cards 240522 추가 ---- */
+  --card-green-c: #1B4037;
+  --card-purple-c:#5D48B3;
+  --card-gray-c:#DADADA;
 }
 
 body {
@@ -54,114 +58,6 @@ body {
   overflow: hidden;
 }
 
-/* .video-area video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-} */
-
-
-
-/* 첫번째 JS 방식 - GSAP, 너무 렉걸려서 pure CSS 버전으로 다시 도전*/
-/* .bg-sky {
-  height: 100%;
-} */
-
-/* .star {
-  box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.4);
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  border-radius: 2px;
-  background-color: white;
-}  */
-
-
-/* pure CSS ver. */
-/* 안나옴 ㅡㅡ
-#star{
-  display: block;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  width: 48px;
-  height: 48px;
-  background: #f6f6f6;
-  overflow: hidden;
-  z-index: 2;
-  animation: glitter 4.5s linear 0s infinite normal;
-}
-
-.star-top,
-.star-bottom {
-  position: absolute;
-  display: block;
-  height: 100%;
-}
-
-.star-top:before,
-.star-top:after,
-.star-bottom:before,
-.star-bottom:after {
-  content: '';
-  width: 48px;
-  height: 48px;
-  background: #212121;
-  border-radius: 50%;
-  position: absolute;
-}
-
-.star-top:before {
-  top: -24px;
-  left: -24px;
-}
-.star-top:after {
-  bottom: -24px;
-  left: 24px;
-}
-.star-bottom:before {
-  top: 24px;
-  left: -24px;
-}
-.star-bottom:after {
-  top: 24px;
-  left: 24px;
-}
-
-@keyframes glitter {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  25% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  75% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-} */
-
-/* 세번째... 별 랜덤 생성만 하고 애니메이션 없는 버전. */
-/* .bg-sky{
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  background: #000;
-  z-index: -1;
-} */
-
 .bg-sky{
   background-image: linear-gradient(rgb(0, 0, 0,.6) 50%, rgb(25, 19, 39)85%, rgb(43, 32, 72));
   width: 100%;
@@ -203,13 +99,7 @@ body {
 .estrela.opacity1 { opacity:  1; }
 .estrela.opacity2 { opacity: .5; }
 .estrela.opacity3 { opacity: .1; }
-/* .stars {
-  position: absolute;
-  background-color: white;
-  z-index: 18;
-  border-radius: 100%; */
 
-  /* estrela 어쩌고 꺼 합쳐봄 */
 
   .stars {
   position: absolute;
@@ -220,26 +110,7 @@ body {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
-/* .rerun {
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
-} */
 
-/* @keyframes escurecer {
-  0%   { top: 0; }
-  100% { top: 100%; }
-} */
-
-/* 0515 svg 효과 실험 */
-
-/* svg { */
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh; */
-/* } */
 
 /* 별 작업 05 15 */
 
@@ -251,8 +122,7 @@ body {
   height: 100%;
   display: flex;
   justify-content: space-between;
-  /* align-items: flex-start; */
-  /* align-content: space-between; */
+
 }
 
 
