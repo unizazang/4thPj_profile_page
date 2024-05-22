@@ -297,6 +297,56 @@ align-self: start;
 
 /* ---------- 240508 추가 끝 -------------- */
 
+/* ---------- 240522 추가 시작 -------------- */
+
+.bg-sky .cards {
+  position: relative;
+  width: 100%;
+  top: 50%;
+  /* transform: translateY(-50%); */
+}
+
+.bg-sky .cards > div{
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  
+}
+
+.bg-sky .cards .card1{
+  display: flex;
+  right: 10%;
+  
+}
+
+.bg-sky .cards .card1 .wrapgreen{
+  flex:1;
+  background-color: var(--card-green-c);
+}
+.bg-sky .cards .card1 .wrapwhite{
+  flex:1.6;
+  background-color: #fff;
+}
+
+.bg-sky .cards .card2{
+  display: flex;
+}
+
+.bg-sky .cards .card2 p{
+  flex: 1;
+}
+
+.bg-sky .cards .card3 {
+  display: flex;
+
+}
+
+
+/* ---------- 240522 추가 끝 -------------- */
+
+
+
 
 #profile {
   margin-top: -161px;
