@@ -1,5 +1,6 @@
 /* 폰트 */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;0,500;0&family=Roboto+Mono:wght@100&family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap');
+
 @import url(./reset.css);
 
 /* 
@@ -24,6 +25,7 @@ reg 400
 med 500
 
 font-family: "IBM Plex Sans", sans-serif;
+font-family: "IBM Plex Mono", monospace;
 font-family: "Roboto Mono", monospace;
 */
 

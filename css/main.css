@@ -1,4 +1,5 @@
 @import url(./common.css);
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;0,500;0&family=Roboto+Mono:wght@100&display=swap');
 
 :root {
   --lightgray-C: #ececec;
@@ -319,7 +320,7 @@ align-self: start;
 
 .bg-sky .cards > div{
   position: absolute;
-  width: 50%;
+  width: 40%;
   top: 50%;
   transform: translateY(-50%);
   
@@ -327,16 +328,17 @@ align-self: start;
 
 .bg-sky .cards .card1{
   display: flex;
+  width: 55%;
   /* right: 15%; */
   /* 임시로 작업용으로 오른쪽에 붙이고 함 */
   right: 0;
   /* transform: translateX(50%); */
   z-index: 10;
-  
+  /* display: none; */
 }
 
 .bg-sky .cards .card1 .wrapgreen{
-  padding: 7px 11px;
+  padding: 2% 7% 2% 2%;
   flex:1;
   display: flex;
   flex-direction: column;
@@ -354,12 +356,17 @@ align-self: start;
 }
 
 .bg-sky .cards .card1 .wrapgreen h1{
-  font-style: normal;
+  /* font-style: normal; */
   font-size: 55px;
   line-height: 1;
   font-family: "Roboto Mono", monospace;
   font-weight: 100;
-  /* font-style: normal; */
+  font-variation-settings: 'wght' 100;
+  /* padding-right: 20%; */
+  /* font-variation-settings: 'GRAD' 5; */
+  /* font-style: thin; */
+  /* font-variation-settings:'GRAD' 2; */
+  /* font-variation-settings: 'wght' 10; */
 }
 
 .bg-sky .cards .card1 .wrapgreen :not(h1){
@@ -367,36 +374,50 @@ align-self: start;
   color: var(--card-gray-c);
   font-weight: 500;
   font-size: 10px;
+  font-optical-sizing: auto;
   /* text-decoration-thickness: 0.7px; */
 }
 
 .bg-sky .cards .card1 .wrapwhite{
   flex:1.6;
   background-color: #fff;
+  padding: 4% 5%;
+}
+
+.bg-sky .cards .card1 .wrapwhite p:first-of-type{
+  font-size: 17px;
+  font-weight: 500;
+  padding-bottom: 24%;
 }
 
 .bg-sky .cards .card2{
   display: flex;
   /* flex-direction: column; */
+  justify-content: space-between;
   z-index: 2;
   background-color: var(--card-gray-c);
   left: 30%;
-  padding: 11px;
+  padding: 1% 2% 2% 1%;
+  flex-wrap: wrap;
+  /* gap: 10%; */
+  /* width: 40%; */
 }
 
 .bg-sky .cards .card2 p{
-  /* align-self: flex-end;
-  flex:1; */
+  flex: 1;
+  /* justify-self: end; */
+  font-size: 10px;
+  margin-top: 40%;
 }
 
-/* .bg-sky .cards .card2 span, .bg-sky .cards .card2 p{
-  flex: 1;
-} */
+
 
 .bg-sky .cards .card2 span{
   font-size: 250px;
-  /* transform: rotateZ(90deg); */
-  /* padding-top: ; */
+  flex: 1;
+  line-height: 1;
+  /* display: block; */
+  /* width: 100%; */
 }
 
 
