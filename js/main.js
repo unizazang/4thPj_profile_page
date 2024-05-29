@@ -238,3 +238,48 @@ function init(){
 }
 
 window.onload = init;
+
+
+
+
+// =========== cursor animation 0529 ==============
+
+let mouseCursor = document.querySelector(".cursor");
+// let videoArea = document.querySelectorAll(".video-area"); // 영역 선택
+let cards = document.querySelectorAll(".cards"); // 카드
+
+
+//window 객체에 scroll & mouse 이벤트를 추가하고 cursor함수 실행되도록 함
+
+
+// $(videoArea).on('mouseenter',function(){
+//   // $('body').css("cursor", 'none');
+//   $('.cursor').show();
+// });
+
+
+
+
+
+window.addEventListener("scroll", cursor);
+window.addEventListener("mousemove", cursor);
+
+//커스텀 커서의 left값과 top값을 커서의 XY좌표값과 일치시킴
+function cursor(e) {
+  mouseCursor.style.left = e.pageX + "px";
+  mouseCursor.style.top = e.pageY - scrollY + "px";
+}
+
+
+cards.forEach((card) => {
+  card.addEventListener("mouseover", () => {
+    mouseCursor.classList.add("cursor-grow");
+    mouseCursor.style.zIndex = "1000";
+    // card.classList.add("hovered-link");
+  });
+  card.addEventListener("mouseleave", () => {
+    mouseCursor.classList.remove("cursor-grow");
+    mouseCursor.style.zIndex = "1000";
+    // card.classList.remove("hovered-link");
+  });
+});
