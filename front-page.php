@@ -25,6 +25,53 @@
             <!-- 20240508 코딩으로 수정 -->
             <div class="bg-sky">
               <!-- 여기 안에 내용물 넣을 거임 -->
+              <div class="cards">
+                <div class="card1">
+                  <div class="wrapgreen">
+                    <span>Hover mouse here</span>
+                    <h1>Problem solving with a curious mind</h1>
+                    <h2>Yoonhee lee // Profile below / mail me</h2>
+                  </div>
+                  <div class="wrapwhite">
+                    <p>My name is Yoonhee Lee, a continuously striving junior frontend developer. I enjoy solving problems and I’m not afraid of challenges. Currently, I am studying various techniques with the goal of becoming a full-stack developer. <br/> Through my problem-solving skills,  <br/>
+                      I aim to contribute to the team's growth and become a frontend developer who provides better user experiences through numerous challenges and experiences.
+                    </p>
+                    <p>(2)</p>
+                    <p class="introduction">계속해서 노력하는 신입 프론트엔드 개발자 이윤희입니다.<br/>
+                      문제 해결과 개선을 즐기며, 도전을 두려워하지 않습니다.
+                      호기심이 많아 문제를 탐구하는 데 열정적이고 스스로 성장하고자 노력합니다.
+                      현재 풀스택 개발자를 목표로 기술들을 공부하고 있습니다. 
+                      문제해결 능력을 통해 팀의 발전에 기여하고, 수많은 도전과 경험을 통해 
+                      더 나은 사용자 경험을 제공하는 프론트엔드 개발자가 되고 싶습니다.
+                      <br>
+                      2023년 그린컴퓨터아카데미에서 퍼블리셔/프론트엔드 교육을 수료했습니다.
+                      2024년 홍익대학교 시각디자인과를 졸업했습니다.
+                      저와 함께 성장해나갈 회사를 찾고 있습니다.
+                    </p>
+                  </div>
+                </div>
+                <div class="card2">
+                  <span>4</span>
+                  <p>My name is Yoonhee Lee, a continuously striving junior frontend developer. I enjoy solving problems and I’m not afraid of challenges. Currently, I am studying various techniques with the goal of becoming a full-stack developer. 
+                    Through my problem-solving skills, 
+                    I aim to contribute to the team's growth and become a frontend developer who provides better user experiences through numerous challenges and experiences.
+                    <br/>
+                    <br/>
+                    I completed Publisher/Frontend Developer training course at Green Computer Academy in 2023. 
+                    In 2024, I graduated from Hongik University with a degree in Visual Design. 
+                    <br/>
+                    <br/> I am looking for a company to grow with.
+                  </p>
+                </div>
+                <div class="card3">
+                  <span>develop</span>
+                  <h2>PASSIONATE AND ENJOYING CHALLENGES</h2>
+                  <p>My name is Yoonhee Lee, a continuously striving junior frontend developer. I enjoy solving problems and I’m not afraid of challenges. Currently, I am studying various techniques with the goal of becoming a full-stack developer. <br/>
+                    Through my problem-solving skills, <br/>
+                    I aim to contribute to the team's growth and become a frontend developer who provides better user experiences through numerous challenges and experiences.
+                  </p>
+                </div>
+              </div>
               <div class="svgwrapper">
 
                 <svg preserveAspectRatio="xMidYMid slice" viewBox="10 10 100 100">
@@ -82,15 +129,16 @@
                 </svg>
                 </div>
                 <div class="star-bg">
-                <div class="starwrap1">
-                  <div class="star star1"><span class="smstar"></span></div>
-                  <div class="star star2"><span class="smstar"></span></div>
-                  <div class="star star3"><span class="smstar"></span></div>
+                  <div class="starwrap1">
+                    <div class="star star1"><span class="smstar"></span></div>
+                    <div class="star star2"><span class="smstar"></span></div>
+                    <div class="star star3"><span class="smstar"></span></div>
+                  </div>
+                  <div class="starwrap2">
+                    <div class="star star4"><span class="smstar"></span></div>
+                    <div class="star star5"><span class="smstar"></span>
+                  </div>
                 </div>
-                <div class="starwrap2">
-                  <div class="star star4"><span class="smstar"></span></div>
-                  <div class="star star5"><span class="smstar"></span>
-                </div></div>
                 
               </div>
             </div>

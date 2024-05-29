@@ -303,12 +303,18 @@ align-self: start;
 .bg-sky .cards {
   position: relative;
   width: 100%;
+  height: 100%;
+  /* padding-bottom: 100%; */
   top: 50%;
-  /* transform: translateY(-50%); */
+  /* margin: 0 auto; */
+  /* right: 50%; */
+  /* transform: translateX(-50%); */
+  transform: translateY(-50%);
   font-family: "IBM Plex Sans", sans-serif;
   line-height: 1.3;
-  display: flex;
+  display: flex; 
   color: #000;
+  align-items: center;
 }
 
 .bg-sky .cards .introduction{
@@ -321,10 +327,15 @@ align-self: start;
 
 .bg-sky .cards > div{
   position: absolute;
-  width: 31%;
-  top: 50%;
-  transform: translateY(-50%);
-  
+  width: 33%;
+  /* bottom: 22%; */
+  /* transform: translateY(100%); */
+  box-shadow: var(--cards-shadow);
+  transition: transform 0.4s 0.1s;
+}
+
+.bg-sky .cards > div:hover{
+  transform: translateY(-20px);
 }
 
 .bg-sky .cards .card1{
@@ -332,8 +343,9 @@ align-self: start;
   width: 65%;
   /* right: 15%; */
   /* 임시로 작업용으로 오른쪽에 붙이고 함 */
-  right: 0;
-  /* transform: translateX(50%); */
+  right: 2%;
+  /* bottom: 50%; */
+  /* transform: translateY(50%); */
   z-index: 10;
   /* display: none; */
 }
@@ -359,7 +371,7 @@ align-self: start;
 
 .bg-sky .cards .card1 .wrapgreen h1{
   /* font-style: normal; */
-  font-size: 60px;
+  font-size: 55px;
   line-height: 1.2;
   letter-spacing: -3px;
   font-family: "Roboto Mono", monospace;
@@ -392,7 +404,7 @@ align-self: start;
 
 
 .bg-sky .cards .card1 .wrapwhite p:first-of-type{
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
   padding-bottom: 24%;
@@ -411,10 +423,12 @@ align-self: start;
 .bg-sky .cards .card2{
   display: flex;
   /* flex-direction: column; */
+  margin-top: 7%;
   justify-content: space-between;
   z-index: 2;
   background-color: var(--card-gray-c);
-  left: 30%;
+  left: 20%;
+  /* bottom: 0; */
   padding: 1% 2% 2% 1%;
   flex-wrap: wrap;
   /* gap: 10%; */
@@ -425,7 +439,8 @@ align-self: start;
   flex: 1;
   /* justify-self: end; */
   font-size: 10px;
-  margin-top: 40%;
+  /* margin-top: 40%; */
+  margin-top: 30%;
 }
 
 
@@ -442,12 +457,14 @@ align-self: start;
 .bg-sky .cards .card3 {
   display: flex;
   z-index: 1;
+  left: 2%;
   background-color: var(--card-purple-c);
-  position: relative;
+  /* position: relative; 위에서 이미 abs해줘서 안해도됐음 ~~~~ 이것때문에 오류 남. */
   flex-flow: column;
   /* padding-bottom: 30%; */
   padding-top: 10%;
-  margin-left: 3%;
+  /* margin-left: 3%; */
+  overflow: hidden;
 }
 
 .bg-sky .cards .card3 span{
@@ -457,11 +474,11 @@ align-self: start;
   line-height: 1;
   /* vertical-align: text-top; */
   position: absolute;
-  top: -20%;
+  top: -10%;
   left: 0;
-  overflow: hidden;
+  
   pointer-events: none;
-  /* mix-blend-mode:exclusion; */
+  /* mix-blend-mode: color-burn; */
   z-index: 1;
 }
 
@@ -469,7 +486,7 @@ align-self: start;
   margin-bottom: 14px;
   font-size: 10px;
   font-weight: 400;
-  margin: 10% 0 5% 10%;
+  margin: 28% 0 5% 10%;
   z-index: 2;
 }
 

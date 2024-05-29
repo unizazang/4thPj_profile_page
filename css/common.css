@@ -79,6 +79,7 @@ font-family: "Roboto Mono", monospace;
   --btn-radius: 15px;
 
   --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  --cards-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   --btn-shadow: 0px 6px 5px rgba(155, 129, 129, 0.25);
   --thumbnail-shadow: linear-gradient(
     180deg,
