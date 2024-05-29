@@ -321,7 +321,7 @@ align-self: start;
 
 .bg-sky .cards > div{
   position: absolute;
-  width: 40%;
+  width: 31%;
   top: 50%;
   transform: translateY(-50%);
   
@@ -446,6 +446,7 @@ align-self: start;
   position: relative;
   flex-flow: column;
   /* padding-bottom: 30%; */
+  padding-top: 10%;
   margin-left: 3%;
 }
 
