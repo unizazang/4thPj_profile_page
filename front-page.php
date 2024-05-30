@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css" />
 
 <?php get_header('commonsecond'); ?>
+<div class='cursor'></div>
 </div>
 <!-- ==========  head~ nav gnb까지 ========== -->
 
