@@ -587,6 +587,28 @@ align-self: start;
 /* ---------- 240522 추가 끝 -------------- */
 /* ========== 240529 추가 끝 ========================= */
 
+/* ========== 240610 추가 시작 ================================ */
+
+.skill-charts{
+
+  padding-top: 50px;
+  border-top: var(--hr-stroke);
+  margin-top: 70px;
+  width: 100%;
+  /* margin: 100px 0; */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.skill-charts .chart1, .chart2{
+  flex: 1;
+  /* width: 100%; */
+
+}
+
+/* ========== 240610 추가 끝 ================================ */
+
 
 
 
@@ -798,6 +820,7 @@ align-self: start;
   gap: 16px;
   flex-wrap: wrap;
 }
+
 .skilltags li {
   width: 22%;
 }

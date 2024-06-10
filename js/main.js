@@ -283,3 +283,65 @@ cards.forEach((card) => {
     // card.classList.remove("hovered-link");
   });
 });
+
+// chart.js 추가 240610
+
+ const ctx = document.getElementById('Chart1');
+
+//  FRONTEND SKILLS
+ let firstBarChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['HTML/CSS', 'ES6', 'PHP', 'Wordpress', 'React Js', '하나더'], //항목의 이름, 어레이로 해야 함
+    datasets: [{
+        label: 'Skill Proficiency', //데이터가 가리키고 있는 전체 영역의 라벨.
+        barPercentage: 1,
+        barThickness: 20,
+        // maxBarThickness: 30,
+        minBarLength: 2,
+        data: [100, 85, 70, 65, 60, 55, 40, 10] //들어갈 숫자
+    }] //array 에 오브젝트로 들어감
+},
+  options: {
+    indexAxis: 'y',
+    scales: {
+        xAxes: [{
+            gridLines: {
+                offsetGridLines: true
+            }
+        }]
+    }
+  }
+});
+
+
+
+// chart.js 추가 240610
+
+const ctx2 = document.getElementById('Chart2');
+
+//  FRONTEND SKILLS
+ let secondBarChart = new Chart(ctx2, {
+  type: 'bar',
+  data: {
+    labels: ['HTML/CSS', 'ES6', 'PHP', 'Wordpress', 'React Js', '하나더'], //항목의 이름, 어레이로 해야 함
+    datasets: [{
+        label: 'Skill Proficiency', //데이터가 가리키고 있는 전체 영역의 라벨.
+        barPercentage: 1,
+        barThickness: 20,
+        // maxBarThickness: 30,
+        minBarLength: 2,
+        data: [100, 85, 70, 65, 60, 55, 40, 10] //들어갈 숫자
+    }] //array 에 오브젝트로 들어감
+},
+  options: {
+    indexAxis: 'y',
+    scales: {
+        xAxes: [{
+            gridLines: {
+                offsetGridLines: true
+            }
+        }]
+    }
+  }
+});
