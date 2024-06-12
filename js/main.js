@@ -508,19 +508,75 @@ let width, height, gradient;
             // position: 'top',
             display: false, // 범례 가리기
           },
-          title: {
-            display: true,
-            text: 'Frontend skills'
-          },
-          tooltip:{
-            callback:{
-              
-            },
-          },
-          
+        },
+        scales:{
+          y: {
+            ticks: {
+              color: '#868686',
+              font: {
+                weight: 'bold',
+                
+              }
+            }
+          }
         }
       },
     };
 
+/* ------------------- chart 1 끝 --------------------- */
+
+const labels2 = ['PHP', 'MySQL', 'WordPress', 'Git'];
+    const data2 = {
+      labels: labels2,
+      datasets: [
+        {
+          label: 'Skill Proficiency',
+          data: [10, 10, 10, 10, 10, 10],
+          backgroundColor: function(context) {
+            const chart = context.chart;
+            const {ctx, chartArea} = chart;
+            if (!chartArea) {
+              return;
+            }
+            return getGradient(ctx, chartArea);
+          },
+          
+          borderRadius: 4,
+        },
+      ]
+    };
+
+    const config2 = {
+      type: 'bar',
+      data: data2, //여기를 위에 data2 변수명이랑 통일해줘야
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+          legend: {
+            // position: 'top',
+            display: false, // 범례 가리기
+          },
+          
+        },
+        scales:{
+         
+          y: {
+            ticks: {
+              color: '#868686',
+              font: {
+                weight: 'bold'
+              }
+            }
+          }
+        }
+      },
+    };
+
+
+// 실행
     const ctxgpt = document.getElementById('chart1').getContext('2d');
     const myChart = new Chart(ctxgpt, config);
+
+    const ctxgpt2 = document.getElementById('chart2').getContext('2d');
+    const myChart2 = new Chart(ctxgpt2, config2);

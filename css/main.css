@@ -603,10 +603,12 @@ align-self: start;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  gap:35px;
 }
 
 .skill-charts .chart1, .chart2{
   flex: 1;
+  color: var(--chart-txt-C);
   /* width: 100%; */
   /* df 해도 밑에 저게 너비가 생겨버려서그런지 안되네 */
   /* 아마 js에서 해결봐야 할듯 */
@@ -616,23 +618,29 @@ align-self: start;
   font-size: var(--tab-TT-fz);
   font-weight: bold;
   position: relative;
+  padding-bottom: 15px;
 }
 
 .chart1-info, .chart2-info{
   position: absolute;
   font-size: var(--mobile-content-fz);
-  color: var(--new-pink);
+  top:-100%;
+  left:26%;
   line-height: 1;
   padding: 9px 10px;
   background-color: #fff;
   box-shadow: var(--tooltip-shadow);
   /* border: 1px solid #ccc; */
 }
-
-#chart1, #chart2{
-  /* width: 80%; 크기 지정하는순간 안됨 */
-  
+.chart1-info{
+  color: var(--new-pink);
 }
+
+.chart2-info {
+  color:var(--highlight-C);
+}
+
+
 
 
 .chart1-info::after, .chart2-info::after {
