@@ -266,7 +266,7 @@
 <!-- =============== 푸터 시작 ================= -->
 <?php get_footer('commonfirst'); ?>
 <!-- 탑버튼 ~ jQuery, jQueryUi, common.js까지 -->
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 
 <?php get_footer('commonsecond'); ?>

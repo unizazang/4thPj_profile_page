@@ -494,7 +494,8 @@ let width, height, gradient;
       datasets: [
         {
           label: 'Skill Proficiency',
-          data: [10, 10, 10, 10, 10, 10],
+          barThickness: 15,
+          data: [9, 7, 8, 4],
           backgroundColor: function(context) {
             const chart = context.chart;
             const {ctx, chartArea} = chart;
@@ -514,6 +515,21 @@ let width, height, gradient;
       data: data,
       options: {
         indexAxis: 'y',
+        scales: {
+          x: {
+            beginAtZero: true,
+              scaleLineColor: 'red',
+                grid: {
+                  color: 'transparent',
+                },
+             },
+           y: {
+             beginAtZero: true,
+               grid: {
+                 color: 'transparent',
+               },
+           }
+        },
         responsive: true,
         plugins: {
           legend: {
@@ -522,12 +538,24 @@ let width, height, gradient;
           },
         },
         scales:{
+          x: {
+            beginAtZero: true,
+              scaleLineColor: 'red',
+                grid: {
+                  color: 'transparent',
+                },
+             },
+          
           y: {
+
+            beginAtZero: true,
+               grid: {
+                 color: 'transparent',
+               },
             ticks: {
               color: '#868686',
               font: {
-                weight: 'bold',
-                
+                weight: 'bold'
               }
             }
           }
@@ -543,7 +571,8 @@ const labels2 = ['PHP', 'MySQL', 'WordPress', 'Git'];
       datasets: [
         {
           label: 'Skill Proficiency',
-          data: [10, 10, 10, 10, 10, 10],
+          barThickness: 15,
+          data: [5, 4, 6, 7],
           backgroundColor: function(context) {
             const chart = context.chart;
             const {ctx, chartArea} = chart;
@@ -572,8 +601,20 @@ const labels2 = ['PHP', 'MySQL', 'WordPress', 'Git'];
           
         },
         scales:{
-         
+          x: {
+            beginAtZero: true,
+              scaleLineColor: 'red',
+                grid: {
+                  color: 'transparent',
+                },
+             },
+          
           y: {
+
+            beginAtZero: true,
+               grid: {
+                 color: 'transparent',
+               },
             ticks: {
               color: '#868686',
               font: {
