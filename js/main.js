@@ -298,6 +298,11 @@ cards.forEach((card) => {
   });
 });
 
+
+// 마우스 무브 이벤트가 발생 하면 그 영역에 있는지 아닌지 확인,
+// 그 안에 있으면 저거 실행, 아니면 실행안함.
+// 클래스명 있는지 확인.
+
 // chart.js 추가 240610
 
 //  const ctx = document.getElementById('Chart1');
@@ -495,7 +500,7 @@ let width, height, gradient;
         {
           label: 'Skill Proficiency',
           barThickness: 15,
-          data: [9, 7, 8, 4],
+          data: [100, 65, 80, 40],
           backgroundColor: function(context) {
             const chart = context.chart;
             const {ctx, chartArea} = chart;
@@ -572,7 +577,7 @@ const labels2 = ['PHP', 'MySQL', 'WordPress', 'Git'];
         {
           label: 'Skill Proficiency',
           barThickness: 15,
-          data: [5, 4, 6, 7],
+          data: [50, 40, 60, 70],
           backgroundColor: function(context) {
             const chart = context.chart;
             const {ctx, chartArea} = chart;
@@ -615,6 +620,7 @@ const labels2 = ['PHP', 'MySQL', 'WordPress', 'Git'];
                grid: {
                  color: 'transparent',
                },
+            
             ticks: {
               color: '#868686',
               font: {
