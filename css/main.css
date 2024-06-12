@@ -620,13 +620,13 @@ align-self: start;
 
 .chart1-info, .chart2-info{
   position: absolute;
-  font-weight: normal;
-  top: 0;
-  left: 30%;
-  background-color: #333;
-  color: #fff;
-  padding: 5px;
-  border-radius: 5px;
+  font-size: var(--mobile-content-fz);
+  color: var(--new-pink);
+  line-height: 1;
+  padding: 9px 10px;
+  background-color: #fff;
+  box-shadow: var(--tooltip-shadow);
+  /* border: 1px solid #ccc; */
 }
 
 #chart1, #chart2{
@@ -635,6 +635,20 @@ align-self: start;
 }
 
 
+.chart1-info::after, .chart2-info::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: -5%;
+  transform-origin: 100% 100%;
+  transform: translateY(-50%) rotateY(-180deg); 
+  /* ㅡㅡ 각도에 '' 안쓰는거였음 */
+
+  bottom: -60%;
+  border-style: solid;
+  border-width: 10px;
+  border-color:  transparent #fff transparent transparent;
+ }
 /* ========== 240610 추가 끝 ================================ */
 
 
@@ -1115,7 +1129,7 @@ align-self: start;
   font-family:  var(--notosans) !important;
   font-weight: 700 !important;
 }
-.wpcf7-not-valid-tip::after {
+.wpcf7-not-valid-tip::after{
   content: "";
   display: inline-block;
   position: absolute;

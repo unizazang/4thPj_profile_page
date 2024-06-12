@@ -68,7 +68,8 @@ font-family: "Roboto Mono", monospace;
   
 
   --background-grad: linear-gradient(180deg, #DCE4EE 0%, #DCE4EE 20%,  #C5EBD6 100%);
-  /*  ===== 240507 ====== */
+  --new-pink:#FFA3B9;
+  /*  ===== 240507 / 0612 새 변수 추가====== */
   --container-bg-C: #f3f6f5;
   --line-btn-stroke-C: #e6e6e6;
   --highlight-C: #afa1ff;
@@ -92,6 +93,9 @@ font-family: "Roboto Mono", monospace;
     rgba(255, 255, 255, 0) 75%,
     rgba(0, 0, 0, 0.55) 100%
   );
+
+  /* ---240612추가 -- */
+  --tooltip-shadow: 1px 2px 5.8px  rgba(0, 0, 0, 0.25);
 
   --hr-stroke: 1px solid var(--line-btn-stroke-C);
 }
@@ -165,7 +169,7 @@ footer p {
 .filled-btn,
 .white-btn,
 .detail-w-btn,
-.detail-git-btn, .share-profile {
+.detail-git-btn, .share-profile , .chart1-info, .chart2-info{
   border-radius: var(--btn-radius);
   text-align: center;
   line-height: 35px;
