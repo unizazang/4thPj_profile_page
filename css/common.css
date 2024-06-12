@@ -32,6 +32,12 @@ font-family: "Roboto Mono", monospace;
 /* Varients --------------------------------------------------- */
 
 :root {
+  /* font family ----------------- */
+
+  --notosans: 'Noto Sans KR', sans-serif;
+  --roboto: 'Roboto', sans-serif;
+  
+
   /* font size ------------------ */
   --web-mainTT-fz: 50px;
   --tab-mainTT-fz: 40px;
@@ -99,7 +105,7 @@ font-family: "Roboto Mono", monospace;
 
 body {
   background: var(--background-grad) no-repeat;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--roboto);
 }
 
 .content-wrapper {

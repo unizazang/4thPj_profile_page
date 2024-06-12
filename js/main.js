@@ -522,5 +522,5 @@ let width, height, gradient;
       },
     };
 
-    const ctxgpt = document.getElementById('Chart1').getContext('2d');
+    const ctxgpt = document.getElementById('chart1').getContext('2d');
     const myChart = new Chart(ctxgpt, config);
