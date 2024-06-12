@@ -624,8 +624,8 @@ align-self: start;
 .chart1-info, .chart2-info{
   position: absolute;
   font-size: var(--mobile-content-fz);
-  top:-100%;
-  left:26%;
+  top:-70%;
+  left:27%;
   line-height: 1;
   padding: 9px 10px;
   background-color: #fff;
@@ -657,6 +657,11 @@ align-self: start;
   border-width: 10px;
   border-color:  transparent #fff transparent transparent;
  }
+
+
+
+ /* 마우스커서 클래스명 실험 */
+
 /* ========== 240610 추가 끝 ================================ */
 
 

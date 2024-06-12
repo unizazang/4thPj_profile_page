@@ -240,7 +240,20 @@ function init(){
 window.onload = init;
 
 
+// videoArea.hover(()=>{
 
+
+  //이벤트가 일어나면 할일…
+  
+  // 영역 안에 커서가 들어오면 .cursor 를 display:block으로
+  // 영역 밖으로 커서가 나가면  display:none 으로
+
+  // mouseCursor.css('display', 'block');
+  // // $('body').css('cursor','none')
+  // }, ()=>{
+  // mouseCursor.css('display', 'none');
+  // $('body').css('cursor','auto')
+  // });
 
 // =========== cursor animation 0529 ==============
 
@@ -265,11 +278,12 @@ window.addEventListener("scroll", cursor);
 window.addEventListener("mousemove", cursor);
 
 //커스텀 커서의 left값과 top값을 커서의 XY좌표값과 일치시킴
+
 function cursor(e) {
   mouseCursor.style.left = e.pageX + "px";
   mouseCursor.style.top = e.pageY - scrollY + "px";
 }
-
+// 왜 함수만 선언했는데 자동으로 실행 된거지?
 
 cards.forEach((card) => {
   card.addEventListener("mouseover", () => {
@@ -458,8 +472,6 @@ cards.forEach((card) => {
 
 // 이거 데이터... 각 그거에 맞게 넣어야 할 듯. 내일 보고 하기
 
-
-// chatGPT
 
 let width, height, gradient;
 

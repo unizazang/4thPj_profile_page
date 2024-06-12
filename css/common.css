@@ -69,7 +69,7 @@ font-family: "Roboto Mono", monospace;
 
   --background-grad: linear-gradient(180deg, #DCE4EE 0%, #DCE4EE 20%,  #C5EBD6 100%);
   --new-pink:#FFA3B9;
-  --chart-txt-C:#6C6C6C;
+  /* --chart-txt-C:#6C6C6C; */
   /* --new-purple:#B6CCF7; */
   /*  ===== 240507 / 0612 새 변수 추가====== */
   --container-bg-C: #f3f6f5;
