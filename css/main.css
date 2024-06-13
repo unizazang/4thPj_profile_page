@@ -31,7 +31,7 @@
 body {
   font-family: var(--roboto);
   color: var(--text-primary-C);
-  
+  cursor: default; /* 0613 실험  */
 }
 
 
@@ -44,7 +44,7 @@ body {
   background-color: none;
   border-radius: 50%;
   position: fixed;
-  z-index: 1000;
+  z-index: 10000;
   transform: translate(-50%, -50%);
   pointer-events: none;
   transition: all 0.3s 0.1s ease;
@@ -662,6 +662,9 @@ align-self: start;
 
  /* 마우스커서 클래스명 실험 */
 
+
+
+
 /* ========== 240610 추가 끝 ================================ */
 
 
@@ -671,6 +674,7 @@ align-self: start;
   margin-top: -161px;
   position: relative;
   z-index: 1;
+  pointer-events: none;
 }
 
 .profiletop {
@@ -680,13 +684,14 @@ align-self: start;
   margin-bottom: 19px;
   padding-top: 80px;
   z-index: 1000000;
+  /* pointer-events: none; 필요 없을듯 */
 }
 
 .profilebtns {
   display: flex;
   gap: 25px;
   align-items: center;
-
+  pointer-events: auto;
   margin-top: 20px;
 }
 .profilebtns a {
@@ -735,6 +740,10 @@ align-self: start;
 }
 .profilebtns a .fa-github {
   font-size: var(--web-TT-fz);
+}
+
+.myskills{
+  pointer-events: all;
 }
 
 /* .share-profile {
@@ -1260,9 +1269,43 @@ align-self: start;
   #contact form input.filled-btn {
     margin-bottom: 94px;
   }
+
+ /* ---- 0613 추가 ---- */
+ .skill-charts{
+  /* justify-content: end; */
 }
 
+.chart1-info, .chart2-info{
+  left: 50%; 
+}
+
+/* ---- 0613 추가 끝 ---- */
+
+
+}
+@media (max-width: 724px){
+  .skill-charts{
+    flex-wrap: wrap;
+    
+    /* gap: 50px ; */
+  }
+  .chart1-info, .chart2-info{
+    left: 25%;
+  }
+}
+
+
 @media (max-width: 516px) {
+
+  /* ---- 0613 추가 ---- */
+
+
+  .chart1-info, .chart2-info{
+    left: 30%;
+  }
+
+  /* ---- 0613 추가 끝 ---- */
+
   .header-sub-tt {
     font-size: var(--web-TT-fz);
     padding-bottom: 106px;

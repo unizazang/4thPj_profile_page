@@ -353,6 +353,17 @@ footer p {
   #go-top {
     margin-left: 297px;
   }
+
+    /* ---- 0613 추가 ---- */
+    .skill-charts{
+      width: 90%;
+    }
+  
+    .chart1-info, .chart2-info{
+      left: 200%;
+    }
+  
+    /* ---- 0613 추가 끝 ---- */
 }
 
 @media (max-width: 516px) {

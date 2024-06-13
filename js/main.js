@@ -256,7 +256,7 @@ window.onload = init;
   // });
 
 // =========== cursor animation 0529 ==============
-
+/*
 let mouseCursor = document.querySelector(".cursor");
 // let videoArea = document.querySelectorAll(".video-area"); // 영역 선택
 let cards = document.querySelectorAll(".cards"); // 카드
@@ -283,7 +283,7 @@ function cursor(e) {
   mouseCursor.style.left = e.pageX + "px";
   mouseCursor.style.top = e.pageY - scrollY + "px";
 }
-// 왜 함수만 선언했는데 자동으로 실행 된거지?
+// 왜 함수만 선언했는데 자동으로 실행 된거지? > 위에 윈도우에 이벤트 리스너를 붙여줬음 cursor랑
 
 cards.forEach((card) => {
   card.addEventListener("mouseover", () => {
@@ -299,9 +299,79 @@ cards.forEach((card) => {
 });
 
 
+*/ // 240613 jQuery로 바꾸는 실험 중 ---
 // 마우스 무브 이벤트가 발생 하면 그 영역에 있는지 아닌지 확인,
 // 그 안에 있으면 저거 실행, 아니면 실행안함.
 // 클래스명 있는지 확인. 이 코드 작성할 것
+
+
+$(document).ready(function() {
+  let mouseCursor = $(".cursor");
+  let videoArea = $(".video-area"); // 영역 선택
+  let cards = $(".cards"); // 카드
+
+  let pfBtns = $(".profilebtns").children(); //버튼들
+
+  videoArea.on('mousemove', function(e) {
+    mouseCursor.css({
+      left: e.pageX + 'px',
+      top: e.pageY - scrollY + 'px'
+    });
+  });
+
+  videoArea.on('mouseenter', function() {
+    mouseCursor.show();
+    $('body').css('cursor', 'none');
+  });
+
+  videoArea.on('mouseleave', function() {
+    mouseCursor.hide();
+    $('body').css('cursor', 'default');
+  });
+
+  cards.each(function() {
+    $(this).on('mouseover', function() {
+      mouseCursor.addClass('cursor-grow');
+      
+    });
+    $(this).on('mouseleave', function() {
+      mouseCursor.removeClass('cursor-grow');
+      
+    });
+  });
+
+  
+});
+
+
+
+
+
+// pfBtns.each(function() {
+  //   $(this).on('mouseover', function() {
+  //     mouseCursor.addClass('cursor-grow');
+  //     console.log('profilebtns');
+  //   });
+  //   $(this).on('mouseleave', function() {
+  //     mouseCursor.removeClass('cursor-grow');
+      
+  //   });
+  // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // chart.js 추가 240610
 
