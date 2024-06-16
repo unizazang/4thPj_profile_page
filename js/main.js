@@ -671,6 +671,20 @@ const labels2 = ['PHP', 'MySQL', 'WordPress', 'Git'];
       ]
     };
 
+    /* 인도인 코드... 근데 안됨
+        const backgroundBar = {
+      id: 'backgroundBar',
+      beforeDatasetsDraw(chart, args, pluginOptions){
+        const { data, ctx, chartArea: {top,bottom,left,right,width,height}, scale:{ x,y}} = chart;
+
+        ctx.save();
+        const segment = width / data.labels.length;
+        
+        ctx.fillStyle = '#e6e6e6';
+        ctx.fillRect(x.getPixelForValue(0), right, segment, height);
+      }
+    };
+    */
     const config2 = {
       type: 'bar',
       data: data2, //여기를 위에 data2 변수명이랑 통일해줘야
