@@ -580,7 +580,12 @@ let width, height, gradient;
             return getGradient(ctx, chartArea);
           },
           
-          borderRadius: 4,
+          borderRadius: { //객체로 각각설정해서 세로선쪽에도 가능하도록
+            topLeft: 4,
+            topRight: 4,
+            bottomLeft: 4,
+            bottomRight: 4
+          }
         },
       ]
     };
@@ -614,6 +619,7 @@ let width, height, gradient;
         },
         scales:{
           x: {
+            display: false, // 숫자 가리기
             beginAtZero: true,
               scaleLineColor: 'red',
                 grid: {
@@ -622,12 +628,15 @@ let width, height, gradient;
              },
           
           y: {
-
+            border: {
+              display: false
+            },
             beginAtZero: true,
                grid: {
                  color: 'transparent',
                },
             ticks: {
+              
               color: '#868686',
               font: {
                 weight: 'bold'
@@ -657,7 +666,7 @@ const labels2 = ['PHP', 'MySQL', 'WordPress', 'Git'];
             return getGradient(ctx, chartArea);
           },
           
-          borderRadius: 4,
+          borderRadius: 4
         },
       ]
     };
@@ -677,6 +686,7 @@ const labels2 = ['PHP', 'MySQL', 'WordPress', 'Git'];
         },
         scales:{
           x: {
+            display: false,
             beginAtZero: true,
               scaleLineColor: 'red',
                 grid: {
@@ -685,7 +695,9 @@ const labels2 = ['PHP', 'MySQL', 'WordPress', 'Git'];
              },
           
           y: {
-
+            border: {
+              display: false
+            },
             beginAtZero: true,
                grid: {
                  color: 'transparent',
@@ -706,6 +718,8 @@ const labels2 = ['PHP', 'MySQL', 'WordPress', 'Git'];
 // 실행
     const ctxgpt = document.getElementById('chart1').getContext('2d');
     const myChart = new Chart(ctxgpt, config);
+
+    
 
     const ctxgpt2 = document.getElementById('chart2').getContext('2d');
     const myChart2 = new Chart(ctxgpt2, config2);
