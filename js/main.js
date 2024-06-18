@@ -62,6 +62,46 @@ $("button.share-profile").click(function () {
 });
 
 
+// ========= 240618 추가 - typed.js 
+
+document.addEventListener("DOMContentLoaded", function() {
+  // 첫 번째 문자열 타이핑
+  var typed1 = new Typed("#typed-output", {
+    strings: ["Hello, I'm Yoonhee Lee! ^2000 "],
+    typeSpeed: 50,
+    startDelay: 500,
+    showCursor: true,
+    cursorChar: '|',
+    onStringTyped: (strings, self) => {
+      setTimeout(() => {
+        self.cursor.remove();
+      }, 10); // 커서를 0.001초 뒤에 제거
+    },
+    onComplete: (self) => {
+      
+      // 첫 번째 타이핑 완료 후 두 번째 타이핑 시작
+      var typed2 = new Typed("#typed-output-2", {
+        strings: ["<br>Junior Frontend Developer."],
+        typeSpeed: 50,
+        startDelay: 3000,
+        showCursor: true,
+        cursorChar: '|',
+        onComplete: (self) => {
+          setTimeout(() => {
+            self.cursor.remove();
+          }, 3000); // 커서를 3초 뒤에 제거
+        }
+      });
+    }
+  });
+});
+
+
+/* 
+
+*/
+
+
 // ========== 20240508 추가 ===========
 
 // video

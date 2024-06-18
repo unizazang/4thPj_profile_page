@@ -79,15 +79,49 @@ body {
   color: var(--color-textb) !important;
 } */
 
-.header-main-tt {
-  padding: 136px 0 17px;
-}
+
+
+
 .header-sub-tt {
   font-size: 45px;
   font-weight: 400;
   color: var(--primary-purple-C);
   padding-bottom: 58px;
 }
+
+
+/* =================== 0618 헤더 타이핑 추가 ==================== */
+
+/* .header-main-tt, .header-sub-tt {
+  
+  font-weight: bold;
+  opacity: 1;
+ 
+  animation: blink 0.7s infinite;
+} */
+
+.typed-text{
+  padding: 136px 0 17px;
+}
+
+.typed-cursor{
+  font-size: 50px;
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+
+/* =================== 0618 헤더 타이핑 추가 끝 ==================== */
+
 
 .maincontent h2 {
   font-size: var(--web-TT-fz);
@@ -1220,6 +1254,9 @@ align-self: start;
   visibility: visible;
   transform: translate(-50%, 0);
 }
+
+
+
 /* ======================== 반응형 =========================== */
 
 /* 태블릿 768px ~ 1080 */
