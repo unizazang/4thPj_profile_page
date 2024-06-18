@@ -16,8 +16,11 @@
         </nav>
 
         <div class="mycontainer maintitles" id="headervideo">
-          <h2 class="header-main-tt">Hello, I'm Yoonhee Lee!</h2>
-          <h2 class="header-sub-tt">Welcome to my place.</h2>
+          <!-- 20240618 타이핑으로 수정 -->
+          <div class="typed-text">
+            <span id="typed-output" class="header-main-tt"></span>
+            <span id="typed-output-2" class="header-sub-tt "></span>
+          </div>
         </div>
 
         <div class="headercontent">
@@ -267,6 +270,8 @@
 <?php get_footer('commonfirst'); ?>
 <!-- 탑버튼 ~ jQuery, jQueryUi, common.js까지 -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js" integrity="sha512-hIlMpy2enepx9maXZF1gn0hsvPLerXoLHdb095CmRY5HG3bZfN7XPBZ14g+TUDH1aGgfLyPHmY9/zuU53smuMw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- typed.js 추가 0618 -->
 <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 
 <?php get_footer('commonsecond'); ?>
