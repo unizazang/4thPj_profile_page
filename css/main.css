@@ -37,7 +37,8 @@ body {
 
 /* 커스텀 커서 스타일 정의해주기 */
 .cursor {
-  /* display: none; */
+  display: none;
+ 
   width: 2rem;
   height: 2rem;
   border: 2.3px solid var(--color-texta);
@@ -110,7 +111,7 @@ body {
 
 .typed-cursor{
   font-size: 50px;
-  line-height: 1;
+  line-height: var(--sub-TT-fz);
   opacity: 1;
   -webkit-animation: blink 0.7s infinite;
   -moz-animation: blink 0.7s infinite;
