@@ -663,7 +663,30 @@ let width, height, gradient;
           legend: {
             // position: 'top',
             display: false, // 범례 가리기
+          
+          
           },
+          
+          tooltip: {
+            backgroundColor: '#FFFFFF',
+            titleColor: '#FFC7D4',
+            titleFont: {
+              size: 16,
+              weight: 'bold'
+            },
+            bodyColor: '#000000',
+            bodyFont: {
+              size: 14
+            },
+            borderWidth: 1,
+            borderColor: '#ccc',
+            cornerRadius: 8,
+            padding: 10,
+            callbacks: {
+              label: function(context) {
+                return context.raw + '%'; // 값만 표시 (기본 라벨 제거)
+              }
+            }},
         },
         scales:{
           x: {
@@ -743,8 +766,30 @@ const labels2 = ['PHP', 'MySQL', 'WordPress', 'Git'];
           legend: {
             // position: 'top',
             display: false, // 범례 가리기
+          
+          
           },
           
+          tooltip: {
+            backgroundColor: '#FFFFFF',
+            titleColor: '#98BBFF',
+            titleFont: {
+              size: 16,
+              weight: 'bold'
+            },
+            bodyColor: '#000000',
+            bodyFont: {
+              size: 14
+            },
+            borderWidth: 1,
+            borderColor: '#ccc',
+            cornerRadius: 8,
+            padding: 10,
+            callbacks: {
+              label: function(context) {
+                return context.raw + '%'; // 값만 표시 (기본 라벨 제거)
+              }
+            }},
         },
         scales:{
           x: {
