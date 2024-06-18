@@ -67,8 +67,8 @@ $("button.share-profile").click(function () {
 document.addEventListener("DOMContentLoaded", function() {
   // 첫 번째 문자열 타이핑
   var typed1 = new Typed("#typed-output", {
-    strings: ["Hello, I'm Yoonhee Lee! ^2000 "],
-    typeSpeed: 50,
+    strings: ["Hello, I'm Yoonhee Lee!^2000"],
+    typeSpeed: 90,
     startDelay: 500,
     showCursor: true,
     cursorChar: '|',
@@ -82,14 +82,14 @@ document.addEventListener("DOMContentLoaded", function() {
       // 첫 번째 타이핑 완료 후 두 번째 타이핑 시작
       var typed2 = new Typed("#typed-output-2", {
         strings: ["<br>Junior Frontend Developer."],
-        typeSpeed: 50,
+        typeSpeed: 90,
         startDelay: 3000,
         showCursor: true,
         cursorChar: '|',
         onComplete: (self) => {
           setTimeout(() => {
             self.cursor.remove();
-          }, 3000); // 커서를 3초 뒤에 제거
+          }, 5000); // 커서를 3초 뒤에 제거
         }
       });
     }
@@ -349,8 +349,9 @@ $(document).ready(function() {
   let mouseCursor = $(".cursor");
   let videoArea = $(".video-area"); // 영역 선택
   let cards = $(".cards"); // 카드
+  var windowWidth = $( window ).width();
 
-  let pfBtns = $(".profilebtns").children(); //버튼들
+  // let pfBtns = $(".profilebtns").children(); //버튼들
 
   videoArea.on('mousemove', function(e) {
     mouseCursor.css({
@@ -378,6 +379,13 @@ $(document).ready(function() {
       mouseCursor.removeClass('cursor-grow');
       
     });
+
+    if(windowWidth < 515){
+      mouseCursor.hide();
+      $('body').css('cursor', 'default');
+    }
+
+    
   });
 
   
