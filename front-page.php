@@ -49,7 +49,7 @@
                       더 나은 사용자 경험을 제공하는 프론트엔드 개발자가 되고 싶습니다.
                       <br>
                       2023년 그린컴퓨터아카데미에서 퍼블리셔/프론트엔드 교육을 수료했습니다.
-                      2024년 홍익대학교 시각디자인과를 졸업했습니다.
+                      2024년 홍익대학교 시각디자인과를 졸업하고 정보처리기사, SQL 개발자를 취득했습니다.
                       저와 함께 성장해나갈 회사를 찾고 있습니다.
                     </p>
                   </div>
@@ -160,7 +160,7 @@
                 ><span><img src="<?php bloginfo('template_url'); ?>/images/profile-cat.jpg" alt="" /></span
               ></span>
               <p class="profilebtns">
-                <a href="#contact"><i class="fa-regular fa-envelope"></i></a>
+                <a href="#contact" class="emailbtn" onClick="sendEmail(event)"><i class="fa-regular fa-envelope"></i></a>
                 <a href="https://github.com/unizazang" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <button class="share-profile">Share profile</button>
                 <span id="toast"></span>
@@ -276,4 +276,3 @@
 
 <?php get_footer('commonsecond'); ?>
 <!-- body, html -->
-

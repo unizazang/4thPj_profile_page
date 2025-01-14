@@ -35,10 +35,9 @@ body {
 }
 
 
-/* 커스텀 커서 스타일 정의해주기 */
+/* 커스텀 커서 스타일 */
 .cursor {
   display: none;
- 
   width: 2rem;
   height: 2rem;
   border: 2.3px solid var(--color-texta);
@@ -105,15 +104,13 @@ body {
   line-height: 1.22;
 }
 
-#typed-output-2.header-sub-tt{
-  line-height: 50px;
-}
+
 
 
 
 .typed-cursor{
   font-size: 50px;
-  line-height: var(--sub-TT-fz);
+  line-height: 1;
   opacity: 1;
   -webkit-animation: blink 0.7s infinite;
   -moz-animation: blink 0.7s infinite;

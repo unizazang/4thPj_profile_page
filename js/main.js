@@ -618,7 +618,7 @@ let width, height, gradient;
         {
           label: 'Skill Proficiency',
           barThickness: 15,
-          data: [100, 65, 80, 40],
+          data: [100, 65, 80, 60],
           backgroundColor: function(context) {
             const chart = context.chart;
             const {ctx, chartArea} = chart;
@@ -663,30 +663,7 @@ let width, height, gradient;
           legend: {
             // position: 'top',
             display: false, // 범례 가리기
-          
-          
           },
-          
-          tooltip: {
-            backgroundColor: '#FFFFFF',
-            titleColor: '#FFC7D4',
-            titleFont: {
-              size: 16,
-              weight: 'bold'
-            },
-            bodyColor: '#000000',
-            bodyFont: {
-              size: 14
-            },
-            borderWidth: 1,
-            borderColor: '#ccc',
-            cornerRadius: 8,
-            padding: 10,
-            callbacks: {
-              label: function(context) {
-                return context.raw + '%'; // 값만 표시 (기본 라벨 제거)
-              }
-            }},
         },
         scales:{
           x: {
@@ -766,30 +743,8 @@ const labels2 = ['PHP', 'MySQL', 'WordPress', 'Git'];
           legend: {
             // position: 'top',
             display: false, // 범례 가리기
-          
-          
           },
           
-          tooltip: {
-            backgroundColor: '#FFFFFF',
-            titleColor: '#98BBFF',
-            titleFont: {
-              size: 16,
-              weight: 'bold'
-            },
-            bodyColor: '#000000',
-            bodyFont: {
-              size: 14
-            },
-            borderWidth: 1,
-            borderColor: '#ccc',
-            cornerRadius: 8,
-            padding: 10,
-            callbacks: {
-              label: function(context) {
-                return context.raw + '%'; // 값만 표시 (기본 라벨 제거)
-              }
-            }},
         },
         scales:{
           x: {
@@ -830,3 +785,23 @@ const labels2 = ['PHP', 'MySQL', 'WordPress', 'Git'];
 
     const ctxgpt2 = document.getElementById('chart2').getContext('2d');
     const myChart2 = new Chart(ctxgpt2, config2);
+
+
+
+// =================== 250114 이메일 바로보내기 버튼 추가 ========================
+
+function sendEmail(event) {
+  // 기본 동작 막기
+  event.preventDefault();
+
+  // 이메일 주소 설정
+  const email = "zifnffk32123@gmail.com"; // 여기에 자신의 이메일 주소를 입력하세요.
+  const subject = encodeURIComponent(""); // 이메일 제목
+  const body = encodeURIComponent(""); // 이메일 본문
+  
+  // Gmail로 이동하는 링크 열기
+  const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+  
+  // 브라우저가 mailto 링크로 이동
+  window.location.href = mailtoLink;
+}
