@@ -23,8 +23,11 @@
         </div>
 
         <div class="headercontent">
-          <div class="video-area">
-            <video src="<?php bloginfo('template_url'); ?>/images/ocean-65560_hr.mp4" muted autoplay></video>
+        <div class="video-area">
+            <!-- <video src="<?php bloginfo('template_url'); ?>/images/ocean-65560_hr.mp4" muted autoplay loop></video> -->
+            <!-- 20240508 코딩으로 수정 -->
+            <div class="bg-sky"></div>
+            <div class="constelacao"></div>
           </div>
           <span class="mouse-icon">
             <img src="<?php bloginfo('template_url'); ?>/images/mouse.png" alt="" />
