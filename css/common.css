@@ -1,6 +1,6 @@
 /* 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap");
 @import url(./reset.css);
 
 /* 
@@ -16,11 +16,28 @@ Extrabold 900
 
 font-family: 'Noto Sans KR', sans-serif;
 font-family: 'Roboto', sans-serif;
+
+Roboto mono
+Thin 100
+
+IBM Plex Sans
+reg 400 
+med 500
+
+font-family: "IBM Plex Sans", sans-serif;
+font-family: "IBM Plex Mono", monospace;
+font-family: "Roboto Mono", monospace;
 */
 
 /* Varients --------------------------------------------------- */
 
 :root {
+  /* font family ----------------- */
+
+  --notosans: 'Noto Sans KR', sans-serif;
+  --roboto: 'Roboto', sans-serif;
+  
+
   /* font size ------------------ */
   --web-mainTT-fz: 50px;
   --tab-mainTT-fz: 40px;
@@ -40,7 +57,21 @@ font-family: 'Roboto', sans-serif;
 
   /* color ------------------ */
 
-  --background-grad: linear-gradient(180deg, #cdd8cf 38.45%, #a9b8ae 100%);
+  /* 
+
+  ===== 240507 ======
+  
+  기존 : 
+  --background-grad: linear-gradient(180deg, #cdd8cf 38.45%, #a9b8ae 100%); 
+  
+  백그라운드 그라디언트 수정 - */
+  
+
+  --background-grad: linear-gradient(180deg, #DCE4EE 0%, #DCE4EE 20%,  #C5EBD6 100%);
+  --new-pink:#FFA3B9;
+  /* --chart-txt-C:#6C6C6C; */
+  /* --new-purple:#B6CCF7; */
+  /*  ===== 240507 / 0612 새 변수 추가====== */
   --container-bg-C: #f3f6f5;
   --line-btn-stroke-C: #e6e6e6;
   --highlight-C: #afa1ff;
@@ -57,12 +88,16 @@ font-family: 'Roboto', sans-serif;
   --btn-radius: 15px;
 
   --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  --cards-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   --btn-shadow: 0px 6px 5px rgba(155, 129, 129, 0.25);
   --thumbnail-shadow: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 75%,
     rgba(0, 0, 0, 0.55) 100%
   );
+
+  /* ---240612추가 -- */
+  --tooltip-shadow: 1px 2px 5.8px  rgba(0, 0, 0, 0.25);
 
   --hr-stroke: 1px solid var(--line-btn-stroke-C);
 }
@@ -76,7 +111,7 @@ font-family: 'Roboto', sans-serif;
 
 body {
   background: var(--background-grad) no-repeat;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--roboto);
 }
 
 .content-wrapper {
@@ -136,7 +171,7 @@ footer p {
 .filled-btn,
 .white-btn,
 .detail-w-btn,
-.detail-git-btn {
+.detail-git-btn, .share-profile , .chart1-info, .chart2-info{
   border-radius: var(--btn-radius);
   text-align: center;
   line-height: 35px;
@@ -144,11 +179,11 @@ footer p {
 }
 
 .line-btn,
-.filled-btn {
+.filled-btn, .share-profile {
   font-size: var(--web-content-fz);
 }
 
-.line-btn {
+.line-btn, .share-profile {
   background: var(--container-bg-C);
   border: 1px solid var(--line-btn-stroke-C);
   color: var(--text-primary-C);
@@ -318,6 +353,17 @@ footer p {
   #go-top {
     margin-left: 297px;
   }
+
+    /* ---- 0613 추가 ---- */
+    .skill-charts{
+      width: 90%;
+    }
+  
+    .chart1-info, .chart2-info{
+      left: 200%;
+    }
+  
+    /* ---- 0613 추가 끝 ---- */
 }
 
 @media (max-width: 516px) {
