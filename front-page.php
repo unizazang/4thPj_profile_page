@@ -162,10 +162,7 @@
               <p class="profilebtns">
                 <a href="#contact" class="emailbtn" onClick="sendEmail(event)"><i class="fa-regular fa-envelope"></i></a>
                 <a href="https://github.com/unizazang" target="_blank"><i class="fa-brands fa-github"></i></a>
-<<<<<<< HEAD
                 <a href="https://velog.io/@zifnffk321/posts" target="_blank"><i class="fa-solid fa-book"></i></a>
-=======
->>>>>>> master
                 <button class="share-profile">Share profile</button>
                 <span id="toast"></span>
               </p>
