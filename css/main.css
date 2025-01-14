@@ -728,7 +728,7 @@ align-self: start;
 
 .profilebtns {
   display: flex;
-  gap: 25px;
+  gap: 15px;
   align-items: center;
   pointer-events: auto;
   margin-top: 20px;
