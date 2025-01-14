@@ -1,27 +1,132 @@
 @import url(./common.css);
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;0,500;0&family=Roboto+Mono:wght@100&display=swap');
 
 :root {
+  --ibm-sans: "IBM Plex Sans", sans-serif;
+  --ibm-mono: "IBM Plex Mono", monospace;
+  --roboto-mono:"Roboto Mono", monospace;
+
   --lightgray-C: #ececec;
   --typo-gray-C: #a9a9a9;
 
   --form-focus-C: #0094ff;
   --form-focus-shadow: 0px 4px 4px rgba(90, 75, 255, 0.2);
+  --star-size: 35px;
+  --space:30%;
+  /* ---- cards 240522 추가 ---- */
+  --card-green-c: #1B4037;
+  --card-purple-c:#5D48B3;
+  --card-gray-c:#DADADA;
+
+  /* === cursor color === */
+  --color-texta: #9EE2FF;
+  --color-textb: #fff;
 }
+
+
+/* ===== cursor css 0529 ===== */
+
+
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--roboto);
   color: var(--text-primary-C);
+  cursor: default; /* 0613 실험  */
 }
 
-.header-main-tt {
-  padding: 136px 0 17px;
+
+/* 커스텀 커서 스타일 */
+.cursor {
+  display: none;
+  width: 2rem;
+  height: 2rem;
+  border: 2.3px solid var(--color-texta);
+  background-color: none;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.3s 0.1s ease;
+  transition-property: background, transform;
+  transform-origin: 100% 100%;
+  background-size: cover;
+  mix-blend-mode: difference; 
+ /*  */
+
+  /* width: 3rem;
+  height: 3rem;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transform-origin: 100% 100%;
+ */
 }
+
+/* 마우스 오버됐을 때 커스텀 커서 스타일 */
+.cursor-grow {
+  transform: scale(2.8);
+  background-color: #FFBDBD;
+  border-color: #000;
+  border-width: 1.5px;
+}
+
+/* hover된 링크의 글자 색상 정의(하얀색)*/
+/* .hovered-link 선택자명은 추후 JS로 추가 */
+/* .hovered-link {
+  color: var(--color-textb) !important;
+} */
+
+
+
+
 .header-sub-tt {
-  font-size: 45px;
+  font-size: var(--sub-TT-fz);
   font-weight: 400;
   color: var(--primary-purple-C);
-  padding-bottom: 58px;
+  /* padding-bottom: 58px; */
 }
+
+
+/* =================== 0618 헤더 타이핑 추가 ==================== */
+
+/* .header-main-tt, .header-sub-tt {
+  
+  font-weight: bold;
+  opacity: 1;
+ 
+  animation: blink 0.7s infinite;
+} */
+.typed-text{
+  padding: 136px 0 58px;
+  line-height: 1.22;
+}
+
+
+
+
+
+.typed-cursor{
+  font-size: 50px;
+  line-height: 1;
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+
+/* =================== 0618 헤더 타이핑 추가 끝 ==================== */
+
 
 .maincontent h2 {
   font-size: var(--web-TT-fz);
@@ -30,8 +135,10 @@ body {
 .maintitles {
   text-align: right;
 }
+/* ---------- 240508 추가 -------------- */
 
-.video-area {
+
+/* .video-area {
   width: 93%;
   margin: 0 auto;
   padding-top: 744px;
@@ -39,20 +146,574 @@ body {
   border-radius: var(--box-radius);
   position: relative;
   overflow: hidden;
+} */
+.video-area {
+  width: 93%;
+  margin: 0 auto;
+  padding-top: 744px;
+  background: #0F141C;
+  border-radius: var(--box-radius);
+  position: relative;
+  overflow: hidden;
 }
 
-.video-area video {
-  position: absolute;
+.bg-sky{
+  background-image: linear-gradient(rgb(0, 0, 0,.6) 50%, rgb(25, 19, 39)85%, rgb(43, 32, 72));
+  width: 100%;
+  height: 100%;
   top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  position: absolute;
+  overflow: hidden;
 }
+.constelacao { /* 별자리 */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.estrela {
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: estrela;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+.estrela.style1 { animation-duration: 2.5s; animation-name: estrela; }
+.estrela.style2 { animation-duration: 1s; animation-name: estrela; }
+.estrela.style3 { animation-duration: 1.5s; animation-name: estrela; }
+.estrela.style4 { animation-duration: 2s; animation-name: estrelaDestacada; }
+/* Destacada : outstanding */
+
+.estrela.tam1 { width: 1px; height: 1px; }
+.estrela.tam2 { width: 2px; height: 2px; }
+.estrela.tam3 { width: 3px; height: 3px; }
+
+.estrela.opacity1 { opacity:  1; }
+.estrela.opacity2 { opacity: .5; }
+.estrela.opacity3 { opacity: .1; }
+
+
+  .stars {
+  position: absolute;
+  background-color: white;
+  z-index: 18;
+  border-radius: 50%;
+  animation-name: estrela;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+/* 별 작업 05 15 */
+
+
+/* scss 복붙 --- */
+
+.star-bg{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+/* .star1 , .star3, .star5{
+align-self: start;
+} */
+
+[class^=starwrap]{
+  /* margin: 10% 15% 40% ; */
+  display: flex;
+  flex:1;
+  flex-flow: column;
+  gap: 20%;
+  justify-content: flex-start;
+  align-content: space-evenly;
+}
+
+.star-bg .star {
+  z-index: 100000;
+  position: relative;
+  width: var(--star-size);
+  height: var(--star-size);
+  top: 20%;
+  left: 10%;
+  transform: rotateZ(45deg);
+  transform-origin: 50px;
+  
+  /* animation: twinkle-glow 2s infinite alternate ease-in-out; */
+
+  background: linear-gradient(
+      135deg,
+      transparent,
+      transparent 48%,
+      white 48%,
+      white 52%,
+      transparent 52%,
+      transparent 75%
+    ),
+    linear-gradient(
+      45deg,
+      transparent,
+      transparent 48%,
+      white 48%,
+      white 52%,
+      transparent 52%,
+      transparent 75%
+    );
+
+}
+
+.star:before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: calc(var(--star-size) / 2 );
+  height: calc(var(--star-size) / 2 );
+  top: calc(var(--star-size) / 4 );
+  left: calc(var(--star-size) / 4 );
+  transform: rotateZ(45deg);
+  /* animation: twinkle-glow 2s infinite alternate ease-in-out; */
+
+  background: linear-gradient(
+      135deg,
+      transparent,
+      transparent 46%,
+      white 46%,
+      white 54%,
+      transparent 54%,
+      transparent 75%
+    ),
+    linear-gradient(
+      45deg,
+      transparent,
+      transparent 46%,
+      white 46%,
+      white 54%,
+      transparent 54%,
+      transparent 75%
+    );
+}
+
+.star:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 1px;
+  height: 1px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  box-shadow: 0 0 var(--star-size) / 2 var(--star-size) / 10 white;
+  /* animation: twinkle-glow 2s infinite alternate ease-in-out; */
+}
+
+
+
+.star-bg [class^=starwrap] div.star:nth-of-type(2n-1){
+  left: 20%;
+  top: 40%;
+}
+
+.star-bg [class=starwrap1] div.star:first-child{
+  left: 33%;
+  top: 6%;
+}
+
+.star-bg [class=starwrap2] div.star:first-child{
+  left: 70%;
+  top: 18%;
+}
+
+.star-bg [class^=starwrap] div.star:nth-child(2){
+  left: 2%;
+  top: 30%;
+}
+/* 
+.star-bg [class^=starwrap] div.star:nth-of-type(3){
+  left: 36%;
+} */
+/* 
+.star-bg [class^=starwrap] div.star:nth-of-type(3){
+
+  right: 43%;
+  top: 57%;
+} */
+/* 
+.star-bg div.star:nth-child(4){
+  top: 50%;
+} */
+
+/* 
+.star-bg .star:nth-of-type(2n){
+  left: 30%;
+  top: 20%;
+} */
+
+.smstar{ position: absolute;
+  width: calc(var(--star-size)/10);height: calc(var(--star-size)/10);
+  background: #fff;
+  border-radius: 0;
+  left: 200%;top: 100%;
+}
+
+@keyframes twinkle-glow {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.svgwrapper{
+  position: absolute;
+  width: 100%;height: 100%;
+  z-index: 1;
+}
+
+.svgwrapper svg{
+  height: 100%;
+  width: 100%;
+}
+
+/* -------0515 ---------- */
+
+@keyframes estrela {
+  0% {
+    box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.05);
+  }
+  30%{
+    box-shadow: 0 0 10px 1.5px rgba(255, 255, 255, 0.48);
+  }
+  50% {
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.05);
+  }
+}
+
+@keyframes estrelaDestacada {
+  0% {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px 0px rgba(255, 255, 255, 1);
+  }
+  20% {
+    background-color: #FFC4C4;
+    box-shadow: 0 0 10px 0px rgb(255, 196, 196, 1);
+  }
+  80% {
+    background-color: #C4CFFF;
+    box-shadow: 0 0 10px 0px rgb(196, 207, 255, 1);
+  }
+  100% {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* ---------- 240508 추가 끝 -------------- */
+
+/* ---------- 240522 추가 시작 -------------- */
+
+.bg-sky .cards {
+  position: relative;
+  width: 100%;
+  /* height: 100%; */
+  /* padding-bottom: 100%; */
+  top: 50%;
+  /* margin: 0 auto; */
+  /* right: 50%; */
+  /* transform: translateX(-50%); */
+  transform: translateY(-50%);
+  font-family: var(--ibm-sans);
+  line-height: 1.3;
+  display: flex; 
+  color: #000;
+  align-items: center;
+  z-index: 2;
+}
+
+.bg-sky .cards .introduction{
+  font-family: var(--notosans);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.5;
+  flex:10;
+}
+
+.bg-sky .cards > div{
+  position: absolute;
+  width: 33%;
+  opacity: 0.9;
+  /* bottom: 22%; */
+  /* transform: translateY(100%); */
+  box-shadow: var(--cards-shadow);
+  transition: 0.4s 0.1s;
+  transition-property: opacity, transform;
+}
+
+.bg-sky .cards > div:hover{
+  transform: translateY(-20px);
+  opacity: 1;
+}
+
+.bg-sky .cards .card1{
+  display: flex;
+  width: 65%;
+  /* right: 15%; */
+  /* 임시로 작업용으로 오른쪽에 붙이고 함 */
+  right: 2%;
+  /* bottom: 50%; */
+  /* transform: translateY(50%); */
+  z-index: 10;
+  /* display: none; */
+}
+
+.bg-sky .cards .card1 .wrapgreen{
+  padding: 2% 7% 2% 2%;
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--card-green-c);
+  color: var(--card-gray-c)
+}
+
+.bg-sky .cards .card1 .wrapgreen span{
+  /* margin-top: 11px;
+  margin: 11px 0 77px ;
+  margin-bottom: 77px; */
+  margin-bottom: 77px; 
+  cursor: pointer;
+
+}
+
+.bg-sky .cards .card1 .wrapgreen h1{
+  /* font-style: normal; */
+  font-size: 55px;
+  line-height: 1.2;
+  letter-spacing: -3px;
+  font-family: var(--roboto-mono);
+  font-weight: 100;
+  /* font-variation-settings: 'wght' 100; */
+  /* padding-right: 20%; */
+  /* font-variation-settings: 'GRAD' 5; */
+  /* font-style: thin; */
+  /* font-variation-settings:'GRAD' 2; */
+  /* font-variation-settings: 'wght' 10; */
+}
+
+.bg-sky .cards .card1 .wrapgreen :not(h1){
+  text-decoration: underline;
+  color: var(--card-gray-c);
+  font-weight: 500;
+  font-size: 10px;
+  font-optical-sizing: auto;
+  /* text-decoration-thickness: 0.7px; */
+}
+
+.bg-sky .cards .card1 .wrapwhite{
+  display: flex;
+  flex-flow: row wrap ;
+  flex:1.6;
+  background-color: #fff;
+  padding: 4% 5%;
+  justify-content: space-between;
+}
+
+
+.bg-sky .cards .card1 .wrapwhite p:first-of-type{
+  font-size: var(--web-sm-content-fz);
+  font-weight: 400;
+  line-height: 1.4;
+  padding-bottom: 24%;
+  width: 100%;
+}
+
+.bg-sky .cards .card1 .wrapwhite p:nth-of-type(2){
+  flex:1;
+  font-weight: 500;
+  font-size: var(--mobile-content-fz);
+}
+/* .bg-sky .cards .card1 .wrapwhite p.introduction{
+  
+} */
+
+.bg-sky .cards .card2{
+  display: flex;
+  /* flex-direction: column; */
+  margin-top: 7%;
+  justify-content: space-between;
+  z-index: 2;
+  background-color: var(--card-gray-c);
+  left: 20%;
+  /* bottom: 0; */
+  padding: 1% 2% 2% 1%;
+  flex-wrap: wrap;
+  /* gap: 10%; */
+  /* width: 40%; */
+}
+
+.bg-sky .cards .card2 p{
+  flex: 1;
+  /* justify-self: end; */
+  font-size: 10px;
+  /* margin-top: 40%; */
+  margin-top: 30%;
+}
+
+
+
+.bg-sky .cards .card2 span{
+  font-size: 250px;
+  flex: 1;
+  line-height: 1;
+  /* display: block; */
+  /* width: 100%; */
+}
+
+
+.bg-sky .cards .card3 {
+  display: flex;
+  z-index: 1;
+  left: 2%;
+  background-color: var(--card-purple-c);
+  /* position: relative; 위에서 이미 abs해줘서 안해도됐음 ~~~~ 이것때문에 오류 남. */
+  flex-flow: column;
+  /* padding-bottom: 30%; */
+  padding-top: 10%;
+  /* margin-left: 3%; */
+  overflow: hidden;
+}
+
+.bg-sky .cards .card3 span{
+  font-size: 250px;
+  text-transform: capitalize;
+  letter-spacing: -30px;
+  line-height: 1;
+  /* vertical-align: text-top; */
+  position: absolute;
+  top: -10%;
+  left: 0;
+  
+  pointer-events: none;
+  /* mix-blend-mode: color-burn; */
+  z-index: 1;
+}
+
+.bg-sky .cards .card3 h2{
+  margin-bottom: 14px;
+  font-size: 10px;
+  font-weight: 400;
+  margin: 28% 0 5% 10%;
+  z-index: 2;
+}
+
+.bg-sky .cards .card3 p{
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: .2rem;
+  margin: 0 10% 10% 10%;
+  z-index: 2;
+}
+/* ---------- 240522 추가 끝 -------------- */
+/* ========== 240529 추가 끝 ========================= */
+
+/* ========== 240610 추가 시작 ================================ */
+
+.skill-charts{
+
+  padding-top: 50px;
+  border-top: var(--hr-stroke);
+  margin-top: 70px;
+  width: 100%;
+  /* margin: 100px 0; */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  gap:35px;
+}
+
+.skill-charts .chart1, .chart2{
+  flex: 1;
+  color: var(--chart-txt-C);
+  /* width: 100%; */
+  /* df 해도 밑에 저게 너비가 생겨버려서그런지 안되네 */
+  /* 아마 js에서 해결봐야 할듯 */
+}
+
+.chart1-title, .chart2-title{
+  font-size: var(--tab-TT-fz);
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.chart1-info, .chart2-info{
+  position: absolute;
+  font-size: var(--mobile-content-fz);
+  top:-70%;
+  left:27%;
+  line-height: 1;
+  padding: 9px 10px;
+  background-color: #fff;
+  box-shadow: var(--tooltip-shadow);
+  /* border: 1px solid #ccc; */
+}
+.chart1-info{
+  color: var(--new-pink);
+}
+
+.chart2-info {
+  color:var(--highlight-C);
+}
+
+
+
+
+.chart1-info::after, .chart2-info::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: -5%;
+  transform-origin: 100% 100%;
+  transform: translateY(-50%) rotateY(-180deg); 
+  /* ㅡㅡ 각도에 '' 안쓰는거였음 */
+
+  bottom: -60%;
+  border-style: solid;
+  border-width: 10px;
+  border-color:  transparent #fff transparent transparent;
+ }
+
+
+
+ /* 마우스커서 클래스명 실험 */
+
+
+
+
+/* ========== 240610 추가 끝 ================================ */
+
+
+
 
 #profile {
   margin-top: -161px;
   position: relative;
   z-index: 1;
+  pointer-events: none;
 }
 
 .profiletop {
@@ -61,13 +722,15 @@ body {
   align-items: flex-start;
   margin-bottom: 19px;
   padding-top: 80px;
+  z-index: 1000000;
+  /* pointer-events: none; 필요 없을듯 */
 }
 
 .profilebtns {
   display: flex;
   gap: 25px;
   align-items: center;
-
+  pointer-events: auto;
   margin-top: 20px;
 }
 .profilebtns a {
@@ -109,6 +772,7 @@ body {
   height: 37px;
   border-radius: 50%;
   background: #fff;
+  color: #000;
 }
 .profilebtns a i {
   font-size: var(--web-sm-TT-fz);
@@ -117,7 +781,11 @@ body {
   font-size: var(--web-TT-fz);
 }
 
-.share-profile {
+.myskills{
+  pointer-events: all;
+}
+
+/* .share-profile {
   width: 106px;
   height: 29px;
   text-align: center;
@@ -127,14 +795,26 @@ body {
   border-radius: var(--box-radius);
   font-weight: 500;
   transition: 0.3s;
-}
+} */
+
+.share-profile {
+  width: 106px;
+  text-align: center;
+  color: #000;
+  background: #fff;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 15.5px;
+  font-weight: 500;
+  transition: 0.3s;
+} 
 
 .share-profile:hover {
   transform: translateY(-3px);
-  background: #fff;
-  color: var(--primary-purple-C);
+  background: var(--highlight-C);
+  color: #fff;
   box-shadow: 0 4px 4px rgba(75, 29, 107, 0.3);
-}
+  border: none;
+} /* */
 
 .profiletag {
   display: flex;
@@ -146,7 +826,7 @@ body {
 .headercontent {
   position: relative;
 }
-
+/* 
 .mouse-icon {
   width: 27px;
   height: 27px;
@@ -157,7 +837,7 @@ body {
   cursor: pointer;
 
   animation: mousebounce 0.8s infinite forwards;
-}
+} */
 
 .myprofile h2 {
   margin-bottom: 14px;
@@ -243,6 +923,7 @@ body {
   gap: 16px;
   flex-wrap: wrap;
 }
+
 .skilltags li {
   width: 22%;
 }
@@ -258,7 +939,7 @@ body {
   opacity: 0;
 
   transform: translateY(50px);
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: var(--notosans);
 }
 
 .pf-tt > * {
@@ -329,7 +1010,6 @@ body {
 
 .video-area video,
 .profile-img > span img,
-.mouse-icon img,
 .pf-each > img {
   width: 100%;
   height: 100%;
@@ -359,7 +1039,7 @@ body {
   transition: 0.3s;
   animation: bounce 0.7s forwards infinite ease-in;
 }
-
+/* 
 @keyframes mousebounce {
   0% {
     transform: translateX(-50%) translateY(0);
@@ -374,8 +1054,8 @@ body {
   90% {
     transform: translateX(-50%) translateY(0);
   }
-}
-
+} */
+/* 
 @keyframes bounce {
   0% {
     transform: translateX(-1px);
@@ -390,7 +1070,7 @@ body {
   100% {
     transform: translateX(0px);
   }
-}
+} */
 
 #contact > h2 {
   padding-top: 82px;
@@ -408,7 +1088,7 @@ body {
   border: 2px solid var(--highlight-C);
   box-shadow: var(--box-shadow);
   padding-left: 15px;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family:  var(--notosans);
   font-size: var(--web-sm-content-fz);
   transition: 0.3s ease-in;
 }
@@ -432,7 +1112,7 @@ body {
 
 #contact form input::placeholder,
 #contact form textarea::placeholder {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--roboto);
   color: var(--typo-gray-C);
   font-size: var(--web-content-fz);
 }
@@ -507,10 +1187,10 @@ body {
   line-height: 13px;
 
   color: #fff !important;
-  font-family: "Noto Sans KR", sans-serif !important;
+  font-family:  var(--notosans) !important;
   font-weight: 700 !important;
 }
-.wpcf7-not-valid-tip::after {
+.wpcf7-not-valid-tip::after{
   content: "";
   display: inline-block;
   position: absolute;
@@ -527,7 +1207,7 @@ body {
   background: #fff;
   box-shadow: var(--box-shadow);
   border-radius: var(--box-radius);
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: var(--notosans);
   font-size: var(--web-content-fz);
   color: var(--text-primary-C);
   border: 2px solid var(--highlight-Pink-C) !important;
@@ -570,7 +1250,7 @@ body {
   background: rgba(0, 0, 0, 0.35);
   color: #fff;
   z-index: 10000;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: var(--notosans);
   font-weight: 700;
 }
 
@@ -579,13 +1259,14 @@ body {
   visibility: visible;
   transform: translate(-50%, 0);
 }
+
+
+
 /* ======================== 반응형 =========================== */
 
 /* 태블릿 768px ~ 1080 */
 @media (max-width: 1080px) {
-  .mouse-icon {
-    display: none;
-  }
+
   .video-area {
     width: 100%;
 
@@ -593,13 +1274,32 @@ body {
     padding-top: 883px;
   }
 
-  .header-main-tt {
-    padding: 142px 0 20px 0;
-  }
-  .header-sub-tt {
-    font-size: var(--sub-TT-fz);
-    padding-bottom: 81px;
-  }
+  .bg-sky .cards .card1{
+
+    width: 90%;
+    right: 50%;
+    transform: translateX(50%);
+    opacity: 1;
+    }
+ 
+    .bg-sky .card2, .card3{
+      display:none;
+      visibility: hidden;
+    }
+
+    .bg-sky .cards > div:hover{
+      transform: translateX(50%);
+    }
+
+    .card1 .wrapgreen h1  {
+    font-size: var(--web-TT-fz);
+    }
+
+    .introduction{
+      font-size: var(--mobile-content-fz);
+      padding: 5% 5%;
+    }
+    
   .profilebtns {
     gap: 17px;
   }
@@ -630,14 +1330,87 @@ body {
   #contact form input.filled-btn {
     margin-bottom: 94px;
   }
+
+ /* ---- 0613 추가 ---- */
+ .skill-charts{
+  /* justify-content: end; */
 }
 
+.chart1-info, .chart2-info{
+  left: 50%; 
+}
+
+
+/* ---- 0613 추가 끝 ---- */
+/* -------0618 추가 시작 -----*/
+
+.typed-text {
+  line-height: 1.4;
+}
+
+.header-main-tt{
+  font-size: var(--tab-mainTT-fz);
+} 
+.header-sub-tt{
+  font-size: var(--sub-TT-fz);
+}
+
+.typed-cursor{
+  font-size: var(--tab-mainTT-fz);
+  line-height: 35px;
+}
+
+}
+@media (max-width: 724px){
+  .skill-charts{
+    flex-wrap: wrap;
+    
+    /* gap: 50px ; */
+  }
+  .chart1-info, .chart2-info{
+    left: 25%;
+  }
+}
+
+
 @media (max-width: 516px) {
+
+  /* ---- 0613 추가 ---- */
+
+
+  .chart1-info, .chart2-info{
+    left: 30%;
+  }
+  
+  /* .cursor{
+    display: none;
+    visibility: hidden;
+  } */
+
+  /* ---- 0613 추가 끝 ---- */
+
+  .typed-text {
+    
+    padding: 142px 0 104px;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+
+.typed-cursor{
+  font-size: 35px;
+  line-height: 25px;
+}
+
+.header-main-tt{
+  font-size: var(--mob-mainTT-fz);
+}
+
   .header-sub-tt {
     font-size: var(--web-TT-fz);
-    padding-bottom: 106px;
-    text-align: center;
+    
   }
+
   .portfolio .pf-each:last-of-type {
     display: none;
   }
@@ -721,6 +1494,123 @@ body {
   #contact > h2 {
     margin-bottom: 52px;
   }
+
+  /* --- 0618 ---- */
+
+
+
+  .bg-sky .cards .card1{
+
+    width: 90%;
+    /* right: auto; */
+    flex-direction: column;
+    }
+    
+ 
+    
+    .bg-sky .card2, .card3{
+      display:none;
+      visibility: hidden;
+    }
+
+    .bg-sky .cards > div:hover{
+      transform: translateX(50%);
+    }
+
+    .bg-sky .cards .card1 .wrapgreen{
+      padding:  7% 10%;
+      text-align: center;
+    }
+
+    
+    .bg-sky .cards .card1 .wrapgreen :not(h1){
+      display: none;
+      visibility: hidden;
+    }
+
+    .bg-sky .cards .card1 .wrapgreen h1 {
+    font-size: var(--tab-mainTT-fz);
+    padding: 20px 0 20px;
+   
+    /* padding-bottom: 50px; */
+    }
+
+    .bg-sky .cards .card1 .wrapwhite{
+      flex:1;
+      padding: 5% 5% 10% 6%;
+      
+    }
+    .bg-sky .cards .card1 .wrapwhite p.introduction{
+      /* padding- 5%; */
+      padding: 0;
+      font-size: var(--mobile-content-fz);
+      line-height: 1.6;
+    }
+
+    .bg-sky .cards .card1 .wrapwhite p:first-of-type{
+      padding-bottom: 9%;
+      width: 100%;
+    }
+
+    .bg-sky .cards .card1 .wrapwhite p:nth-of-type(2){
+     display: none; visibility: hidden;
+    }
+
+
+
+.star-bg [class^=starwrap] div.star:nth-of-type(2n-1){
+  left: 20%;
+  top: 40%;
+}
+
+.star-bg [class=starwrap1] div.star:first-child{
+  left: 33%;
+  top: 6%;
+}
+
+.star-bg [class=starwrap2] div.star:first-child{
+  left: 70%;
+  top: 18%;
+}
+
+.star-bg [class^=starwrap] div.star:nth-child(2){
+  left: 2%;
+  top: 61%;
+}
+
+.star-bg [class^=starwrap] div.star:nth-child(2).star2{
+  left: -4%;
+  top: 34%;
+}
+
+    /* charts---------------*/
+    
+.skill-charts{
+
+  padding-top: 50px;
+  border-top: var(--hr-stroke);
+  margin: 70px auto 0;
+  width: 90%;
+  
+}
+
+.skill-charts .chart1{
+  padding-bottom: 10px;
+}
+
+.chart1-info::after, .chart2-info::after {
+}
+
+
+
+    
+
+
+    /* ----- // 0618 // */
+   
+    
+    
+
 }
 @media (max-width: 400px) {
   .skilltags {
@@ -729,11 +1619,14 @@ body {
   .skilltags a {
     width: 25%;
   }
+
+    #go-top {
+    display: none;
+    visibility: hidden;
+  }
 }
 @media (max-width: 340px) {
-  #go-top {
-    display: none;
-  }
+
 
   .portfolio .pf-each {
     height: 213px;
