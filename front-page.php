@@ -1,6 +1,7 @@
 <?php get_header('commonfirst'); ?>
 <!-- head 끝나기전 -->
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css" />
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/list.css" />
 
 <?php get_header('commonsecond'); ?>
 <div class='cursor'></div>
@@ -12,7 +13,7 @@
           <a href="#headervideo"></a>
           <a href="#profile"></a>
           <a href="#recent-portfolio" class="active"></a>
-          <a href="#contact"></a>
+       
         </nav>
 
         <div class="mycontainer maintitles" id="headervideo">
@@ -37,7 +38,7 @@
                     <h2>Yoonhee lee // Profile below / mail me</h2>
                   </div>
                   <div class="wrapwhite">
-                    <p>My name is Yoonhee Lee, a continuously striving junior frontend developer. I enjoy solving problems and I’m not afraid of challenges. Currently, I am studying various techniques with the goal of becoming a full-stack developer. <br/> Through my problem-solving skills,  <br/>
+                    <p>My name is Yoonhee Lee, a continuously striving junior frontend developer. I enjoy solving problems and I'm not afraid of challenges. Currently, I am studying various techniques with the goal of becoming a full-stack developer. <br/> Through my problem-solving skills,  <br/>
                       I aim to contribute to the team's growth and become a frontend developer who provides better user experiences through numerous challenges and experiences.
                     </p>
                     <p>(2)</p>
@@ -56,7 +57,7 @@
                 </div>
                 <div class="card2">
                   <span>4</span>
-                  <p>My name is Yoonhee Lee, a continuously striving junior frontend developer. I enjoy solving problems and I’m not afraid of challenges. Currently, I am studying various techniques with the goal of becoming a full-stack developer. 
+                  <p>My name is Yoonhee Lee, a continuously striving junior frontend developer. I enjoy solving problems and I'm not afraid of challenges. Currently, I am studying various techniques with the goal of becoming a full-stack developer. 
                     Through my problem-solving skills, 
                     I aim to contribute to the team's growth and become a frontend developer who provides better user experiences through numerous challenges and experiences.
                     <br/>
@@ -70,7 +71,7 @@
                 <div class="card3">
                   <span>develop</span>
                   <h2>PASSIONATE AND ENJOYING CHALLENGES</h2>
-                  <p>My name is Yoonhee Lee, a continuously striving junior frontend developer. I enjoy solving problems and I’m not afraid of challenges. Currently, I am studying various techniques with the goal of becoming a full-stack developer. <br/>
+                  <p>My name is Yoonhee Lee, a continuously striving junior frontend developer. I enjoy solving problems and I'm not afraid of challenges. Currently, I am studying various techniques with the goal of becoming a full-stack developer. <br/>
                     Through my problem-solving skills, <br/>
                     I aim to contribute to the team's growth and become a frontend developer who provides better user experiences through numerous challenges and experiences.
                   </p>
@@ -218,51 +219,91 @@
           <!-- // profile  -->
           <section id="recent-portfolio">
             <h2>Recent Portfolio</h2>
-            <div class="portfolio">
-              <?php 
-              $args = array(
-                'post_type' => 'post',
-                'posts_per_page' => 3,
-                'category_name' => 'portfolio',
-                'orderby' => 'date',
-                'order' => 'DESC'
-              );
-              $query = new WP_Query( $args );
+            <ul class="pf-wrap">
+              <div class="gutter-sizer"></div>
               
-              if ( $query->have_posts() ) {
-                while ( $query->have_posts() ) {
-                  $query->the_post();
-                  // 최신 글 출력
-                  ?>
-                <div class="pf-each">
-                  <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>" alt="">
-                  <a href="<?php the_permalink(); ?>" class="pf-tt">
-                    <?php split_title(); ?>
-                    <span><i class="fa-solid fa-arrow-right"></i></span>
-                  </a>
-                </div>
-                  <?php
-                }
-              } else {
-                // 포스트가 없을 경우 출력
-                ?>
-                <div class="pf-each">
-                  <p>아직 글이 없습니다.</p>
-                </div>
-                <?php
-              }
-              ?>
-              <?php wp_reset_postdata(); ?>
-            </div>
-            <p>
-              <a href="/wp/?cat=3">more works <i class="fa-solid fa-arrow-right"></i></a>
-            </p>
+              <li class="pf-card">
+                <figure>
+                  <span class="pf-thumb">
+                    <img src="<?php bloginfo('template_url'); ?>/images/레이크사이드1.png" alt="Project 1 Thumbnail">
+                  </span>
+                  <figcaption>
+                    <h4>Lakeside Landing page</h4>
+                    <p>레이크사이드 홈페이지를 리뉴얼했습니다.</p>
+                    <a href="http://unizazang123.dothome.co.kr/lakeside/index.html" class="white-btn" target="_blank">페이지로 이동 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <li class="pf-card">
+                <figure>
+                  <span class="pf-thumb">
+                    <img src="<?php bloginfo('template_url'); ?>/images/레이크사이드2.png" alt="Project 2 Thumbnail">
+                  </span>
+                  <figcaption>
+                    <h4>Lakeside Notice page</h4>
+                    <p>레이크사이드 홈페이지를 리뉴얼했습니다.</p>
+                    <a href="http://unizazang123.dothome.co.kr/lakeside/notice.html" class="white-btn" target="_blank">페이지로 이동 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <li class="pf-card">
+                <figure>
+                  <span class="pf-thumb">
+                    <img src="<?php bloginfo('template_url'); ?>/images/패스트코드1.png" alt="Project 3 Thumbnail">
+                  </span>
+                  <figcaption>
+                    <h4>Fastcode Admin page</h4>
+                    <p>가상의 LMS 사이트를 구현했습니다.</p>
+                    <a href="http://unizazang123.dothome.co.kr/fastcode/admin/login.php" class="white-btn" target="_blank">페이지로 이동 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <li class="pf-card">
+                <figure>
+                  <span class="pf-thumb">
+                    <img src="<?php bloginfo('template_url'); ?>/images/패스트코드2.png" alt="Project 4 Thumbnail">
+                  </span>
+                  <figcaption>
+                    <h4>Fastcode Coupon page</h4>
+                    <p>LMS 사이트의 쿠폰 페이지를 만들었습니다.</p>
+                    <a href="http://unizazang123.dothome.co.kr/fastcode/admin/coupon/coupon_list.php" class="white-btn" target="_blank">페이지로 이동 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  </figcaption>
+                </figure>
+              </li>
+              
+              <li class="pf-card">
+                <figure>
+                  <span class="pf-thumb">
+                    <img src="<?php bloginfo('template_url'); ?>/images/패스트코드3.png" alt="Project 5 Thumbnail">
+                  </span>
+                  <figcaption>
+                    <h4>Fastcode Board page</h4>
+                    <p>LMS 공지사항 게시판을 만들었습니다.</p>
+                    <a href="http://unizazang123.dothome.co.kr/fastcode/admin/board/board_index.php" class="white-btn" target="_blank">페이지로 이동 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <li class="pf-card">
+                <figure>
+                  <span class="pf-thumb">
+                    <img src="<?php bloginfo('template_url'); ?>/images/프로필페이지1.png" alt="Project 6 Thumbnail">
+                  </span>
+                  <figcaption>
+                    <h4>Profile page</h4>
+                    <p>포트폴리오 백업용 페이지를 만들었습니다.</p>
+                    <a href="#" class="white-btn" target="_blank">페이지로 이동 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
           </section>
           <!-- // recent portfolio -->
-          <section id="contact">
-            <h2>Contact</h2>
-            <?php echo do_shortcode( '[contact-form-7 id="218" title="profilepage-contact"]' ); ?>
-          </section>
+          <!-- // recent portfolio -->
+
           <!-- // contact -->
         </div>
     </main>
@@ -273,6 +314,10 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js" integrity="sha512-hIlMpy2enepx9maXZF1gn0hsvPLerXoLHdb095CmRY5HG3bZfN7XPBZ14g+TUDH1aGgfLyPHmY9/zuU53smuMw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- typed.js 추가 0618 -->
+<!-- masonry -->
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/list.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 
 <?php get_footer('commonsecond'); ?>

@@ -8,14 +8,14 @@
           <nav>
             <ul>
               <li class="active">
-                <a href="/wp/">main</a>
+                <a href="http://unizazang123.dothome.co.kr/wordpress/">main</a>
               </li>
-              <li><a href="/wp/?cat=3">portfolio</a></li>
+              <li><a href="#recent-portfolio">portfolio</a></li>
               <li>
-                <a href="/wp/index.php#contact">contact</a>
+                <a href="" onClick="sendEmail(event)">contact</a>
               </li>
               <li class="menu-mail">
-                <a href="/wp/index.php#contact"
+                <a href="/wp/index.php#contact"  onClick="sendEmail(event)"
                   ><i class="fa-regular fa-paper-plane"></i> mail me!</a
                 >
               </li> 

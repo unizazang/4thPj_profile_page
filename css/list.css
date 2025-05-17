@@ -53,12 +53,23 @@ figure figcaption p {
   transform: translateY(-6px);
 }
 
+.pf-wrap {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .pf-card {
+  width: calc(33.333% - 35.33px);
   margin-bottom: 54px;
+  transition: padding-bottom 0.4s ease;
+}
+
+.pf-card.active {
+  padding-bottom: 120px;
 }
 
 .pf-card figure {
-  width: 291px;
+  width: 100%;
 }
 
 .pf-thumb {
@@ -69,7 +80,6 @@ figure figcaption p {
   background: #ccc;
   overflow: hidden;
   box-shadow: var(--box-shadow);
-
   position: relative;
   transition: 0.4s;
 }
@@ -124,8 +134,8 @@ figure figcaption p {
 
 /* 태블릿 768px ~ 1080 */
 @media (max-width: 1080px) {
-  .pf-card figure {
-    width: 193px;
+  .pf-card {
+    width: calc(33.333% - 12.67px);
   }
   .gutter-sizer {
     width: 19px;
@@ -150,18 +160,27 @@ figure figcaption p {
   .portfolio-list .white-btn {
     padding: 10px 12px;
   }
-  .pf-card {
-    margin-bottom: 28px;
-  }
-  figure figcaption h4 {
-    margin: 29px 0 12px;
-  }
   .portfolio-list {
     padding-bottom: 200px;
   }
 }
 
+@media (max-width: 768px) {
+  .pf-card {
+    width: calc(50% - 9.5px);
+  }
+  .gutter-sizer {
+    width: 19px;
+  }
+}
+
 @media (max-width: 516px) {
+  .pf-card {
+    width: calc(50% - 8.5px);
+  }
+  .gutter-sizer {
+    width: 17px;
+  }
   .header-main-tt {
     margin: 108px 0 73px;
   }
@@ -179,20 +198,14 @@ figure figcaption p {
   .pf-thumb {
     height: 286px;
   }
-  .gutter-sizer {
-    width: 17px;
-  }
-  .pf-card {
-    margin-bottom: 32px;
-  }
   figure figcaption h4 {
     margin-top: 27px;
   }
 }
 
 @media (max-width: 481px) {
-  .pf-card figure {
-    width: 205px;
+  .pf-card {
+    width: calc(50% - 3.5%);
   }
   .gutter-sizer {
     width: 7%;
@@ -200,8 +213,8 @@ figure figcaption p {
 }
 
 @media (max-width: 420px) {
-  .pf-card figure {
-    width: 180px;
+  .pf-card {
+    width: calc(50% - 2.5%);
   }
   .gutter-sizer {
     width: 5%;
@@ -209,40 +222,14 @@ figure figcaption p {
 }
 
 @media (max-width: 400px) {
-  .skilltags {
-    gap: 4%;
-  }
-  .pf-card figure {
-    width: 160px;
-  }
-  .pf-thumb {
-    height: 250px;
+  .pf-card {
+    width: calc(50% - 2%);
   }
   .gutter-sizer {
     width: 4%;
-  }
-  figure figcaption h4 {
-    font-size: var(--mobile-medium-fz);
   }
 }
 
-@media (max-width: 400px) {
-  .skilltags {
-    gap: 4%;
-  }
-  .pf-card figure {
-    width: 160px;
-  }
-  .pf-thumb {
-    height: 250px;
-  }
-  .gutter-sizer {
-    width: 4%;
-  }
-  figure figcaption h4 {
-    font-size: var(--mobile-medium-fz);
-  }
-}
 @media (max-width: 340px) {
   .skilltags {
     gap: 10px;
@@ -265,16 +252,18 @@ figure figcaption p {
 }
 
 @media (max-width: 324px) {
+  .pf-card {
+    width: calc(50% - 1.75%);
+  }
+  .gutter-sizer {
+    width: 3.5%;
+  }
   .skilltags {
     gap: 5px;
   }
 
   .pf-card figure {
     width: 142px;
-  }
-
-  .gutter-sizer {
-    width: 3.5%; /* 모바일 반응형 > % 말고 vw 로... 하는게 나아요 */
   }
 
   .pf-card {
