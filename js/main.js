@@ -741,11 +741,9 @@ const config2 = {
 };
 
 // 실행
-const ctxgpt = document.getElementById("chart1").getContext("2d");
-const myChart = new Chart(ctxgpt, config);
-
-const ctxgpt2 = document.getElementById("chart2").getContext("2d");
-const myChart2 = new Chart(ctxgpt2, config2);
+// 251001 - canvas 차트를 CSS 미터(.skill-meters)로 교체했습니다.
+// 막대 그리기/애니메이션은 js/sparkle.js + css/sparkle.css 에서 처리합니다.
+// 위의 config / config2 는 Chart.js 시절 설정으로, 지금은 쓰이지 않습니다.
 
 // =================== 250114 이메일 바로보내기 버튼 추가 ========================
 

@@ -2,6 +2,8 @@
 <!-- head 끝나기전 -->
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/list.css" />
+<!-- 251001 반짝임 효과 + 스킬 미터 차트. 덮어쓰기용이라 반드시 마지막에 -->
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/sparkle.css" />
 
 <?php get_header('commonsecond'); ?>
 <div class='cursor'></div>
@@ -200,19 +202,52 @@
                 }
                 ?>
               </ul>
+              <?php
+              // 스킬 차트 데이터 (canvas → CSS 미터로 교체)
+              $skill_groups = array(
+                array(
+                  'key'    => 'chart1',
+                  'title'  => 'Frontend skills',
+                  'info'   => '업무에 활용해요',
+                  'skills' => array(
+                    array( 'HTML/CSS', 100 ),
+                    array( 'Javascript', 65 ),
+                    array( 'JQuery', 80 ),
+                    array( 'React', 60 ),
+                  ),
+                ),
+                array(
+                  'key'    => 'chart2',
+                  'title'  => 'Backend&amp;etc',
+                  'info'   => '사용할 줄 알아요',
+                  'skills' => array(
+                    array( 'PHP', 50 ),
+                    array( 'MySQL', 40 ),
+                    array( 'WordPress', 60 ),
+                    array( 'Git', 70 ),
+                  ),
+                ),
+              );
+              ?>
               <div class="skill-charts">
-                <div class="chart1">
-                  <h3 class="chart1-title">Frontend skills
-                    <span class="chart1-info">업무에 활용해요</span>
+                <?php foreach ( $skill_groups as $group ) { ?>
+                <div class="<?php echo $group['key']; ?>">
+                  <h3 class="<?php echo $group['key']; ?>-title"><?php echo $group['title']; ?>
+                    <span class="<?php echo $group['key']; ?>-info"><?php echo $group['info']; ?></span>
                   </h3>
-                  <canvas id="chart1"></canvas>
+                  <ul class="skill-meters">
+                    <?php foreach ( $group['skills'] as $i => $skill ) { ?>
+                    <li class="skill-meter" style="--i:<?php echo $i; ?>">
+                      <span class="skill-meter-label"><?php echo $skill[0]; ?></span>
+                      <span class="skill-meter-track">
+                        <span class="skill-meter-fill" style="--val:<?php echo $skill[1]; ?>%"></span>
+                      </span>
+                      <span class="skill-meter-value" data-val="<?php echo $skill[1]; ?>"><?php echo $skill[1]; ?></span>
+                    </li>
+                    <?php } ?>
+                  </ul>
                 </div>
-                <div class="chart2">
-                  <h3 class="chart2-title">Backend&amp;etc
-                    <span class="chart2-info">사용할 줄 알아요</span>
-                  </h3>
-                  <canvas id="chart2"></canvas>
-                </div>
+                <?php } ?>
               </div>
             </div>
           </section>
@@ -225,7 +260,7 @@
               <li class="pf-card">
                 <figure>
                   <span class="pf-thumb">
-                    <img src="<?php bloginfo('template_url'); ?>/images/모모스1.webp" alt="Momos Coffee Thumbnail">
+                    <img src="<?php bloginfo('template_url'); ?>/images/momos1.webp" alt="Momos Coffee Thumbnail">
                   </span>
                   <figcaption>
                     <h4>Momos Coffee</h4>
@@ -238,7 +273,7 @@
               <li class="pf-card">
                 <figure>
                   <span class="pf-thumb">
-                    <img src="<?php bloginfo('template_url'); ?>/images/코코호도1.webp" alt="Cocohodo Thumbnail">
+                    <img src="<?php bloginfo('template_url'); ?>/images/cocohodo.webp" alt="Cocohodo Thumbnail">
                   </span>
                   <figcaption>
                     <h4>Cocohodo</h4>
@@ -248,31 +283,6 @@
                 </figure>
               </li>
               
-              <li class="pf-card">
-                <figure>
-                  <span class="pf-thumb">
-                    <img src="<?php bloginfo('template_url'); ?>/images/레이크사이드1.png" alt="Project 1 Thumbnail">
-                  </span>
-                  <figcaption>
-                    <h4>Lakeside Landing page</h4>
-                    <p>레이크사이드 홈페이지를 리뉴얼했습니다.</p>
-                    <a href="http://unizazang123.dothome.co.kr/lakeside/index.html" class="white-btn" target="_blank">페이지로 이동 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                  </figcaption>
-                </figure>
-              </li>
-
-              <li class="pf-card">
-                <figure>
-                  <span class="pf-thumb">
-                    <img src="<?php bloginfo('template_url'); ?>/images/레이크사이드2.png" alt="Project 2 Thumbnail">
-                  </span>
-                  <figcaption>
-                    <h4>Lakeside Notice page</h4>
-                    <p>레이크사이드 홈페이지를 리뉴얼했습니다.</p>
-                    <a href="http://unizazang123.dothome.co.kr/lakeside/notice.html" class="white-btn" target="_blank">페이지로 이동 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                  </figcaption>
-                </figure>
-              </li>
 
               <li class="pf-card">
                 <figure>
@@ -325,6 +335,32 @@
                   </figcaption>
                 </figure>
               </li>
+              
+              <li class="pf-card">
+                <figure>
+                  <span class="pf-thumb">
+                    <img src="<?php bloginfo('template_url'); ?>/images/레이크사이드1.png" alt="Project 1 Thumbnail">
+                  </span>
+                  <figcaption>
+                    <h4>Lakeside Landing page</h4>
+                    <p>레이크사이드 홈페이지를 리뉴얼했습니다.</p>
+                    <a href="http://unizazang123.dothome.co.kr/lakeside/index.html" class="white-btn" target="_blank">페이지로 이동 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <li class="pf-card">
+                <figure>
+                  <span class="pf-thumb">
+                    <img src="<?php bloginfo('template_url'); ?>/images/레이크사이드2.png" alt="Project 2 Thumbnail">
+                  </span>
+                  <figcaption>
+                    <h4>Lakeside Notice page</h4>
+                    <p>레이크사이드 홈페이지를 리뉴얼했습니다.</p>
+                    <a href="http://unizazang123.dothome.co.kr/lakeside/notice.html" class="white-btn" target="_blank">페이지로 이동 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  </figcaption>
+                </figure>
+              </li>
             </ul>
           </section>
           <!-- // recent portfolio -->
@@ -337,7 +373,7 @@
 <!-- =============== 푸터 시작 ================= -->
 <?php get_footer('commonfirst'); ?>
 <!-- 탑버튼 ~ jQuery, jQueryUi, common.js까지 -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- 251001 chart.js 제거 — 스킬 차트를 CSS 미터로 교체했습니다 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js" integrity="sha512-hIlMpy2enepx9maXZF1gn0hsvPLerXoLHdb095CmRY5HG3bZfN7XPBZ14g+TUDH1aGgfLyPHmY9/zuU53smuMw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- typed.js 추가 0618 -->
 <!-- masonry -->
@@ -345,6 +381,8 @@
 <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/list.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
+<!-- 251001 스킬 미터 + 스크롤 등장 효과 -->
+<script src="<?php bloginfo('template_url'); ?>/js/sparkle.js"></script>
 
 <?php get_footer('commonsecond'); ?>
 <!-- body, html -->

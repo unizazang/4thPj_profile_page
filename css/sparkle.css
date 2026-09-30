@@ -1,0 +1,519 @@
+/* =========================================================================
+   sparkle.css — 251001
+   트윙클 스타 배경 + 떠다니는 점 + 버튼 톡 터지는 효과
+   + 스킬 미터 차트 + 포트폴리오 카드 폴리시
+
+   common.css / main.css / list.css 다음에 마지막으로 로드됩니다.
+   ※ "빛이 쓱 지나가는" sweep 효과는 쓰지 않습니다.
+   ========================================================================= */
+
+:root {
+  /* 모션 토큰 */
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 0.25s;
+  --dur-base: 0.45s;
+  --dur-slow: 0.8s;
+
+  /* 스킬 미터 램프 (보라 → 핑크, 인접 색상) */
+  --meter-track: #e7e2fb;
+  --meter-from: #c3b2ff;
+  --meter-mid: #afa1ff;
+  --meter-to: #ffa3b9;
+  --meter-glow: rgba(175, 161, 255, 0.45);
+}
+
+/* =========================================================================
+   1. 별 — 래퍼 바깥 배경 전체
+   JS가 body에 .sky-layer 를 만들어 별을 뿌립니다.
+
+   ※ 애니메이션은 main.css 에 직접 만들어 두신 twinkle-glow 를 씁니다
+      (원본: opacity 0 → 1, 2s infinite alternate ease-in-out).
+      별마다 시간/딜레이만 흩어서 다 같이 깜빡이지 않게 했습니다.
+   ※ 별 색은 전부 흰색입니다.
+   ※ 떠다니거나 회전하는 움직임은 쓰지 않습니다.
+   ========================================================================= */
+
+/* fixed 로 두면 화면 크기만큼만 깔려서, 가운데를 덮는 컨텐츠 박스 때문에
+   양옆 얇은 띠에만 별이 보입니다. 문서 전체에 깔아 페이지 어디를 봐도
+   별이 흩어져 있게 합니다.
+
+   body 에 position 을 주면 .content-wrapper 의 margin-top(105px) 이
+   마진 병합으로 body 밖으로 빠져나가, 맨 윗단 105px 에 별이 안 깔립니다.
+   그래서 일부러 positioned 조상을 만들지 않고 문서 최상단에 붙이고,
+   높이는 JS 가 문서 높이에 맞춰 잡아줍니다. */
+.sky-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* 컨텐츠 박스가 항상 별 위에 오도록 */
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* 작은 알갱이 별 */
+.twinkle {
+  position: absolute;
+  width: var(--s, 3px);
+  height: var(--s, 3px);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 var(--glow, 6px) rgba(255, 255, 255, 0.9);
+  animation: twinkle-glow var(--dur, 2s) infinite alternate ease-in-out;
+  animation-delay: var(--delay, 0s);
+}
+
+/* 네 갈래 별 — 빛줄기가 끝으로 갈수록 가늘어집니다 */
+.sparkle-star {
+  position: absolute;
+  width: var(--s, 14px);
+  height: var(--s, 14px);
+  animation: twinkle-glow var(--dur, 2s) infinite alternate ease-in-out;
+  animation-delay: var(--delay, 0s);
+}
+
+.sparkle-star::before,
+.sparkle-star::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+}
+
+.sparkle-star::before {
+  width: 100%;
+  height: 12%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #fff 42%,
+    #fff 58%,
+    transparent 100%
+  );
+}
+
+.sparkle-star::after {
+  width: 12%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    #fff 42%,
+    #fff 58%,
+    transparent 100%
+  );
+}
+
+/* 직접 그리신 .star (main.css) 의 십자 별을 배경용으로 가져왔습니다.
+   --s 로 크기를 조절할 수 있게 %로 바꾸고, 원본 .star:after 의
+   box-shadow 가 `var() / 2` 라 값이 깨져 글로우가 안 나오던 걸
+   calc() 로 고쳐 넣었습니다. (원본 파일은 그대로 둡니다) */
+.drawn-star {
+  position: absolute;
+  width: var(--s, 35px);
+  height: var(--s, 35px);
+  transform: rotate(45deg);
+  animation: twinkle-glow var(--dur, 2s) infinite alternate ease-in-out;
+  animation-delay: var(--delay, 0s);
+  background: linear-gradient(
+      135deg,
+      transparent,
+      transparent 48%,
+      #fff 48%,
+      #fff 52%,
+      transparent 52%,
+      transparent 75%
+    ),
+    linear-gradient(
+      45deg,
+      transparent,
+      transparent 48%,
+      #fff 48%,
+      #fff 52%,
+      transparent 52%,
+      transparent 75%
+    );
+}
+
+.drawn-star::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  transform: rotate(45deg);
+  background: linear-gradient(
+      135deg,
+      transparent,
+      transparent 46%,
+      #fff 46%,
+      #fff 54%,
+      transparent 54%,
+      transparent 75%
+    ),
+    linear-gradient(
+      45deg,
+      transparent,
+      transparent 46%,
+      #fff 46%,
+      #fff 54%,
+      transparent 54%,
+      transparent 75%
+    );
+}
+
+.drawn-star::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 1px;
+  height: 1px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  box-shadow: 0 0 calc(var(--s, 35px) / 2) calc(var(--s, 35px) / 10) #fff;
+}
+
+/* 히어로의 회전 SVG 래퍼 안에도 작은 별들 */
+.svgwrapper {
+  overflow: visible;
+}
+
+.svg-stars {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* =========================================================================
+   2. 스킬 미터 차트
+   ========================================================================= */
+
+.skill-meters {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.skill-meter {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) 38px;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 6px;
+}
+
+.skill-meter-label {
+  font-size: var(--web-sm-content-fz);
+  font-weight: 700;
+  color: var(--text-primary-C);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+/* 트랙: 같은 램프의 밝은 단계. 기준선(왼쪽)은 각지게, 데이터 끝(오른쪽)만 4px */
+.skill-meter-track {
+  position: relative;
+  display: block;
+  height: 12px;
+  background: var(--meter-track);
+  border-radius: 0 4px 4px 0;
+}
+
+.skill-meter-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--val);
+  border-radius: 0 4px 4px 0;
+  background: linear-gradient(
+    90deg,
+    var(--meter-from) 0%,
+    var(--meter-mid) 45%,
+    var(--meter-to) 100%
+  );
+  box-shadow: 0 2px 8px var(--meter-glow);
+  transition: width 1.1s var(--ease-soft);
+}
+
+/* JS가 붙으면 0에서 시작해 화면에 들어올 때 채워집니다.
+   JS가 없거나 실패하면 위의 width:var(--val) 그대로 보입니다. */
+.skill-meters.js-anim .skill-meter-fill {
+  width: 0;
+}
+
+.skill-meters.js-anim.in-view .skill-meter-fill {
+  width: var(--val);
+  transition-delay: calc(var(--i) * 0.11s);
+}
+
+/* 값은 데이터 색이 아니라 잉크 색으로. 세로로 정렬되므로 tabular-nums */
+.skill-meter-value {
+  font-size: var(--web-sm-content-fz);
+  font-weight: 700;
+  color: var(--text-primary-C);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.skill-meter-value::after {
+  content: "%";
+  font-size: 0.78em;
+  font-weight: 500;
+  color: var(--text-secondary-C);
+  margin-left: 1px;
+}
+
+/* 좁아지면 라벨/값을 윗줄로 올리고 막대가 가로 전체를 씁니다.
+   (가로로 붙여두면 막대가 50px까지 찌그러집니다) */
+@media (max-width: 1080px) {
+  .skill-meter {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "label value"
+      "track track";
+    row-gap: 7px;
+    column-gap: 10px;
+  }
+  .skill-meter-label {
+    grid-area: label;
+  }
+  .skill-meter-value {
+    grid-area: value;
+  }
+  .skill-meter-track {
+    grid-area: track;
+  }
+  .skill-meters {
+    gap: 15px;
+  }
+}
+
+/* 차트 두 개가 한 줄에서 서로를 짓누르지 않도록 세로로 쌓습니다 */
+@media (max-width: 724px) {
+  .skill-charts {
+    flex-direction: column;
+    gap: 22px;
+  }
+}
+
+@media (max-width: 516px) {
+  .skill-meter-label,
+  .skill-meter-value {
+    font-size: var(--mobile-content-fz);
+  }
+}
+
+/* 제목 옆 말풍선: 좌표를 breakpoint마다 손으로 맞추던 구조라
+   폭이 바뀔 때마다 깨졌습니다. 인라인 배지로 바꿔 고정합니다. */
+.chart1-title,
+.chart2-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.chart1-info,
+.chart2-info {
+  position: static;
+  font-size: var(--mobile-content-fz);
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 2px 7px rgba(64, 54, 127, 0.13);
+  white-space: nowrap;
+}
+
+.chart1-info::after,
+.chart2-info::after {
+  display: none;
+}
+
+/* 차트 뒤 라운드 박스는 쓰지 않습니다 — 여백만 늘어납니다 */
+.skill-charts .chart1,
+.skill-charts .chart2 {
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+/* 차트 위쪽 여백 축소 */
+.skill-charts {
+  padding-top: 34px;
+  margin-top: 44px;
+}
+
+/* h2가 font-size(25px)와 같은 line-height(25px)를 써서 글자가 들어갈
+   높이가 6px 모자랐습니다(scrollHeight 31 > clientHeight 25).
+   행간을 늘리고 아래 여백은 줄여 전체 높이는 오히려 줄입니다. */
+.maincontent h2 {
+  line-height: 1.35;
+  margin-bottom: 36px;
+}
+
+.skill-charts .chart1-title,
+.skill-charts .chart2-title {
+  padding-bottom: 18px;
+}
+
+/* =========================================================================
+   4. 포트폴리오 카드
+   ========================================================================= */
+
+/* ── 버벅임 제거 ────────────────────────────────────────────────
+   .active 에 붙던 padding-bottom:120px 때문에 클릭할 때마다 카드 높이가
+   변하고, 그때마다 Masonry 가 전체 카드를 다시 배치했습니다.
+   캡션은 원래 position:absolute 라 자리(figure 의 padding-bottom)가 이미
+   확보돼 있으므로, 높이를 고정해 재배치 자체를 없앱니다.
+
+   들어올리는 동작은 .pf-card 대신 안쪽 .pf-thumb 이 맡습니다.
+   (.pf-card 는 Masonry 가 인라인 transform 으로 위치를 잡는 요소라
+    바깥에서 transform 을 얹지 않는 편이 안전합니다.) */
+.pf-card:hover {
+  transform: none;
+}
+
+.pf-card.active {
+  padding-bottom: 0;
+}
+
+.pf-thumb {
+  transition: transform var(--dur-base) var(--ease-soft),
+    box-shadow var(--dur-base) var(--ease-soft);
+  will-change: transform;
+}
+
+.pf-thumb img {
+  transition: transform var(--dur-slow) var(--ease-soft),
+    filter var(--dur-base) var(--ease-soft);
+}
+
+.pf-card:hover .pf-thumb {
+  transform: translateY(-14px);
+  box-shadow: 0 18px 34px rgba(64, 54, 127, 0.28);
+}
+
+.pf-card:hover .pf-thumb img {
+  transform: scale(1.07);
+  filter: saturate(1.08);
+}
+
+/* 캡션은 원래 position:absolute 오버레이입니다(main.css).
+   display none/block 으로 껐다 켜면 전환이 안 되므로 opacity로 바꿉니다. */
+.pf-card figcaption,
+.pf-card:not(.active):hover figcaption {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.pf-card.active figcaption {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* 캡션이 들어갈 자리(main.css는 130px)가 살짝 모자라 글자가 썸네일을 물었습니다 */
+.pf-card figure {
+  padding-bottom: 142px;
+}
+
+.pf-card figcaption > * {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--dur-base) var(--ease-soft),
+    transform var(--dur-base) var(--ease-soft);
+}
+
+.pf-card.active figcaption > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pf-card.active figcaption > *:nth-child(1) {
+  transition-delay: 0.06s;
+}
+.pf-card.active figcaption > *:nth-child(2) {
+  transition-delay: 0.12s;
+}
+.pf-card.active figcaption > *:nth-child(3) {
+  transition-delay: 0.18s;
+}
+
+/* 카드가 스크롤에 들어올 때 살짝 떠오릅니다.
+   (Masonry가 li에 transform을 쓰므로 안쪽 figure에만 겁니다) */
+.pf-card figure {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s var(--ease-soft), transform 0.7s var(--ease-soft);
+}
+
+.pf-card.revealed figure {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================================
+   5. 섹션 등장
+   ========================================================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.75s var(--ease-soft), transform 0.75s var(--ease-soft);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================================
+   6. 모션 최소화 설정 존중
+   ========================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .twinkle,
+  .sparkle-star,
+  .drawn-star {
+    animation: none;
+  }
+
+  .skill-meters.js-anim .skill-meter-fill {
+    width: var(--val);
+  }
+
+  .pf-card figure,
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .pf-card:hover .pf-thumb,
+  .pf-card:hover .pf-thumb img {
+    transform: none;
+  }
+}
